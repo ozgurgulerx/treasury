@@ -57,8 +57,16 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
-  - Documentation:
-    - Overview: docs/overview.md
+  - AI Use Cases:
+    - Overview: use-cases/index.md
+    - Cash Flow Forecasting: use-cases/cash-forecasting.md
+    - Fraud Detection: use-cases/fraud-detection.md
+    - FX Risk Management: use-cases/fx-risk.md
+    - Commodity Hedging: use-cases/commodity-hedging.md
+    - Trade Finance: use-cases/trade-finance.md
+    - Working Capital: use-cases/working-capital.md
+    - Treasury Analytics: use-cases/treasury-analytics.md
+    - Regulatory Compliance: use-cases/compliance.md
   - About: about.md
 
 extra:
