@@ -67,6 +67,17 @@ nav:
     - Working Capital: use-cases/working-capital.md
     - Treasury Analytics: use-cases/treasury-analytics.md
     - Regulatory Compliance: use-cases/compliance.md
+  - Notebooks:
+    - Overview: notebooks/index.md
+    - 01 Cash Flow Forecasting: notebooks/01-cash-flow-forecasting.md
+    - 02 Fraud Detection: notebooks/02-fraud-detection.md
+    - 03 FX Risk Management: notebooks/03-fx-risk-management.md
+    - 04 Commodity Hedging: notebooks/04-commodity-hedging.md
+    - 05 Trade Finance: notebooks/05-trade-finance.md
+    - 06 Working Capital: notebooks/06-working-capital.md
+    - 07 Treasury Copilot: notebooks/07-treasury-copilot.md
+    - 08 Compliance (TAS 29): notebooks/08-compliance.md
+    - Data Generators: notebooks/data-generators.md
   - Architecture:
     - Overview: architecture/index.md
     - Microsoft Foundry: architecture/microsoft-foundry.md
