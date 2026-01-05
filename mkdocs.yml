@@ -67,6 +67,13 @@ nav:
     - Working Capital: use-cases/working-capital.md
     - Treasury Analytics: use-cases/treasury-analytics.md
     - Regulatory Compliance: use-cases/compliance.md
+  - Architecture:
+    - Overview: architecture/index.md
+    - Microsoft Foundry: architecture/microsoft-foundry.md
+    - Microsoft Fabric: architecture/microsoft-fabric.md
+    - Copilot Studio: architecture/copilot-studio.md
+    - Data Sources: architecture/data-sources.md
+    - Verdict & Recommendation: architecture/verdict.md
   - About: about.md
 
 extra:
@@ -75,4 +82,4 @@ extra:
       link: https://github.com
   generator: false
 
-copyright: Copyright &copy; 2025 Treasury
+copyright: Copyright &copy; 2025 Ozgur Guler (ozgur.guler1@gmail.com)
