@@ -2499,6 +2499,236 @@ documents with this discrepancy...
 
 ---
 
+### 6.8 Checklist & Control Agents
+
+**What it does:** AI agents that execute pre-defined checklists for treasury operations, ensuring all control steps are completed and documented.
+
+**Key Inputs:**
+
+- Control checklists and procedures
+- Transaction data
+- User actions and timestamps
+- Approval workflows
+
+**AI/LLM Approach:** Agentic AI monitors processes, prompts users for required actions, and validates completion against control requirements.
+
+**Example Execution:**
+
+```
+═══════════════════════════════════════════════════════════════════════════════
+              CONTROL CHECKLIST AGENT - MONTH-END CLOSE
+═══════════════════════════════════════════════════════════════════════════════
+
+**CHECKLIST:** Treasury Month-End Close - January 2025
+**Owner:** Treasury Operations
+**Deadline:** February 3, 2025 17:00
+**Status:** IN PROGRESS (68% Complete)
+
+**CONTROL STEPS**
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CASH & LIQUIDITY                                                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ [✅] 1. Bank reconciliation completed (all accounts)                        │
+│      Completed: Feb 1, 09:15 by M. Yilmaz                                  │
+│      Evidence: RECON-2025-01-FINAL.xlsx attached                           │
+│                                                                             │
+│ [✅] 2. Cash position verified against SAP                                  │
+│      Completed: Feb 1, 10:30 by A. Kaya                                    │
+│      Variance: $0 (reconciled)                                             │
+│                                                                             │
+│ [⏳] 3. Intercompany balances confirmed                                     │
+│      Status: PENDING - 2 of 5 entities confirmed                           │
+│      Awaiting: Trading Sub, Singapore Branch, Dubai Office                 │
+│      ⚠️ DEADLINE: Feb 2, 12:00                                             │
+│                                                                             │
+│ [✅] 4. Outstanding payments reviewed                                       │
+│      Completed: Feb 1, 14:00 by S. Demir                                   │
+│      Result: 3 stale items >90 days escalated                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ FX & HEDGING                                                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ [✅] 5. FX position marked-to-market                                        │
+│      Completed: Feb 1, 11:00 by System                                     │
+│      MTM P&L: +$1.2M (hedges) / -$0.8M (exposure)                          │
+│                                                                             │
+│ [✅] 6. Hedge effectiveness testing                                         │
+│      Completed: Feb 1, 15:30 by Treasury Analyst                           │
+│      All hedges within 80-125% bounds ✅                                    │
+│                                                                             │
+│ [⏳] 7. Hedge accounting documentation reviewed                             │
+│      Status: PENDING - Awaiting Risk Manager approval                      │
+│      Document: HedgeDoc-Q4-2024-Review.pdf                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ COMPLIANCE                                                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ [✅] 8. Counterparty limit breaches - None                                  │
+│ [✅] 9. Policy compliance attestation signed                                │
+│ [⏳] 10. Month-end report to CFO                                            │
+│       Status: Draft complete, pending final data                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+**AGENT ACTIONS**
+
+| Time | Action | Result |
+|------|--------|--------|
+| 09:00 | Sent IC confirmation reminders | 3 emails sent |
+| 12:00 | Escalated pending items to manager | Ticket created |
+| 14:00 | Auto-attached evidence files | 4 docs linked |
+| 16:00 | Generated progress report | Sent to stakeholders |
+
+**NEXT AUTOMATED ACTIONS**
+
+1. Feb 2, 08:00 - Second reminder for IC confirmations
+2. Feb 2, 12:00 - Escalate to CFO if still pending
+3. Feb 3, 09:00 - Generate final close package
+
+**AUDIT TRAIL:** All actions logged to ControlLog-2025-01.json
+```
+
+**Outputs:**
+
+- Checklist execution tracking
+- Evidence collection and linking
+- Automated reminders and escalations
+- Audit-ready documentation
+
+**KPIs:**
+
+- On-time close rate (target: 100%)
+- Control step completion (target: 100%)
+- Audit findings (target: 0)
+- Time to close (target: -20%)
+
+---
+
+### 6.9 Liquidity Buffer Optimization
+
+**What it does:** Optimizes the liquidity buffer held across accounts and instruments to balance safety, return, and operational needs.
+
+**Key Inputs:**
+
+- Cash flow forecasts (multiple horizons)
+- Minimum liquidity policy requirements
+- Investment rates (MMF, deposits, repos)
+- Historical volatility and stress scenarios
+
+**AI/LLM Approach:** Optimization models determine optimal allocation; GenAI explains trade-offs and generates investment recommendations.
+
+**Example Analysis:**
+
+```
+═══════════════════════════════════════════════════════════════════════════════
+              LIQUIDITY BUFFER OPTIMIZER - FEBRUARY 2025
+═══════════════════════════════════════════════════════════════════════════════
+
+**CURRENT LIQUIDITY POSITION**
+
+| Component | Balance | Yield | Availability |
+|-----------|---------|-------|--------------|
+| Operating accounts | $85M | 0.5% | Immediate |
+| Overnight deposits | $120M | 4.2% | T+0 |
+| Money market funds | $65M | 4.8% | T+1 |
+| Term deposits (<30d) | $42M | 5.1% | Fixed |
+| **Total** | **$312M** | **3.2% avg** | |
+
+**POLICY REQUIREMENTS**
+
+| Requirement | Current | Policy | Status |
+|-------------|---------|--------|--------|
+| Minimum liquidity | $312M | $200M | ✅ +$112M |
+| Immediate access (T+0) | $205M | $100M | ✅ +$105M |
+| Maximum single bank | 31% | 35% | ✅ |
+
+**OPTIMIZATION ANALYSIS**
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ OPPORTUNITY: Excess liquidity of $112M above policy minimum                 │
+│                                                                             │
+│ Current allocation:                                                         │
+│                                                                             │
+│     Operating    Overnight    MMF      Term                                │
+│     ████████    ████████████  ██████   █████                               │
+│      $85M         $120M       $65M     $42M                                │
+│      0.5%         4.2%        4.8%     5.1%                                │
+│                                                                             │
+│ Recommended allocation:                                                     │
+│                                                                             │
+│     Operating    Overnight    MMF      Term                                │
+│     ████         ████████████  ████████████  ███████████                    │
+│      $50M         $100M       $90M     $72M                                │
+│      0.5%         4.2%        4.8%     5.1%                                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+**RECOMMENDED ACTIONS**
+
+| Action | Amount | From | To | Impact |
+|--------|--------|------|-------|--------|
+| Reduce operating | $35M | Garanti 0.5% | MMF 4.8% | +$1.5M/yr |
+| Shift to term | $30M | Overnight 4.2% | 30-day 5.1% | +$270K/yr |
+| Reduce overnight | $20M | YKB 4.2% | MMF 4.8% | +$120K/yr |
+
+**PROJECTED IMPROVEMENT**
+
+| Metric | Current | Optimized | Change |
+|--------|---------|-----------|--------|
+| Weighted avg yield | 3.2% | 4.4% | +1.2% |
+| Annual interest income | $10.0M | $13.7M | +$3.7M |
+| Immediate access (T+0) | $205M | $150M | -$55M |
+| Policy compliance | ✅ | ✅ | Maintained |
+
+**STRESS TEST RESULTS**
+
+| Scenario | Cash Need | Available (T+0) | Buffer |
+|----------|-----------|-----------------|--------|
+| Normal operations | $45M | $150M | +$105M ✅ |
+| Crude price spike +20% | $85M | $150M | +$65M ✅ |
+| Major cargo acceleration | $120M | $150M | +$30M ✅ |
+| Extreme stress (P99) | $145M | $150M | +$5M ⚠️ |
+
+**AI RECOMMENDATION**
+
+"The current liquidity buffer exceeds policy requirements by $112M, with
+excess funds earning below-market rates in operating accounts. Recommend:
+
+1. **Immediate:** Move $35M from operating to MMF (T+1 access maintained)
+2. **This week:** Place $30M in 30-day term deposits (matches cash forecast)
+3. **Maintain:** $150M in T+0 instruments for stress scenarios
+
+Expected improvement: +$3.7M annual interest income (+37% vs current)
+Risk impact: Minimal - stress scenarios still covered with buffer"
+
+**EXECUTION CHECKLIST**
+
+- [ ] Confirm MMF investment limits with Risk
+- [ ] Obtain term deposit quotes from 3 banks
+- [ ] Update cash forecast for February
+- [ ] Execute transfers per approval matrix
+
+[Generate Investment Memo] [Execute Recommendations] [Modify]
+```
+
+**Outputs:**
+
+- Optimal allocation recommendations
+- Yield improvement analysis
+- Stress test validation
+- Investment execution checklist
+
+**KPIs:**
+
+- Yield on liquidity buffer (target: benchmark + 50bps)
+- Policy compliance (100%)
+- Excess liquidity cost reduction
+- Stress test pass rate
+
+---
+
 ## Summary: T8 Use Case Matrix
 
 | # | Use Case | Layer | AI Type | Difficulty | Value |

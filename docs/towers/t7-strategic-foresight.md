@@ -3293,3 +3293,1007 @@ The LLM matches company activities to available incentives, tracks qualification
 
 ---
 
+## Layer 5: Policy, Sanctions, Geopolitics & Counterparty Macro-Shocks
+
+**Purpose**: Monitor and assess geopolitical risks, sanctions developments, and policy changes that could impact treasury operations, counterparty relationships, and cross-border payment flows.
+
+**Core Capability**: The system continuously scans for sanctions updates, geopolitical developments, and policy changes, models their potential impacts on treasury operations, and generates proactive alerts and contingency recommendations.
+
+```mermaid
+flowchart LR
+    subgraph Inputs
+        A[Sanctions Lists] --> E[Risk Engine]
+        B[Geopolitical News] --> E
+        C[Counterparty Data] --> E
+        D[Policy Updates] --> E
+    end
+
+    subgraph Processing
+        E --> F[Screening]
+        F --> G[Impact Analysis]
+        G --> H[Scenario Modeling]
+    end
+
+    subgraph Outputs
+        H --> I[Risk Alerts]
+        H --> J[Compliance Reports]
+        H --> K[Contingency Plans]
+    end
+```
+
+---
+
+### Use Case 5.1: Sanctions Screening & Alert Engine
+
+#### What It Does
+Continuously screens counterparties, transactions, and payment flows against global sanctions lists (OFAC, EU, UN, UK), generates alerts for potential matches, and provides guidance on compliance actions required.
+
+#### Key Inputs
+- Global sanctions lists (OFAC SDN, EU Consolidated, UN, UK)
+- Counterparty master data
+- Transaction and payment records
+- Beneficial ownership information
+- Vessel and cargo data (for trade finance)
+
+#### AI/LLM Approach
+The LLM processes sanctions updates in real-time, performs fuzzy matching on counterparty names, analyzes ownership structures for indirect exposure, and generates clear compliance guidance with supporting rationale.
+
+#### Example Interaction
+
+**User**: "Run sanctions screening on our counterparty portfolio and flag any concerns"
+
+**AI Response**:
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    SANCTIONS SCREENING REPORT                                   │
+│                    Portfolio Scan: January 2026 | 2,847 Counterparties          │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  SCREENING SUMMARY                                                               │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  Total Counterparties Screened:    2,847                                  │ │
+│  │  Clear (No Match):                 2,831  (99.4%)                         │ │
+│  │  Potential Matches:                    12  (0.4%)                         │ │
+│  │  Confirmed Matches:                     4  (0.1%)                         │ │
+│  │                                                                            │ │
+│  │  Lists Screened:                                                          │ │
+│  │  ├─ OFAC SDN List          │ 4 matches                                   │ │
+│  │  ├─ OFAC Sectoral (SSI)    │ 2 matches                                   │ │
+│  │  ├─ EU Consolidated        │ 3 matches                                   │ │
+│  │  ├─ UN Security Council    │ 1 match                                     │ │
+│  │  ├─ UK Sanctions           │ 2 matches                                   │ │
+│  │  └─ Other (national lists) │ 0 matches                                   │ │
+│  │                                                                            │ │
+│  │  Last Full Scan: Today 06:00 UTC                                         │ │
+│  │  Lists Updated: OFAC (Jan 10), EU (Jan 8), UK (Jan 9)                    │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  ⚠ CONFIRMED MATCHES - IMMEDIATE ACTION REQUIRED                                │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  MATCH 1: PETROX TRADING LLC                                              │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Match Type: DIRECT (100% confidence)                                     │ │
+│  │  Lists: OFAC SDN, EU Consolidated                                         │ │
+│  │                                                                            │ │
+│  │  Counterparty Details:                                                     │ │
+│  │  • Name: Petrox Trading LLC                                               │ │
+│  │  • Country: UAE (Dubai)                                                   │ │
+│  │  • Relationship: Crude oil supplier                                       │ │
+│  │  • Outstanding exposure: $12.5M (open invoices)                          │ │
+│  │  • Last transaction: December 15, 2025                                    │ │
+│  │                                                                            │ │
+│  │  Sanctions Details:                                                        │ │
+│  │  • OFAC: Added to SDN Jan 8, 2026                                        │ │
+│  │  • Reason: Evasion of Russia-related oil price cap                       │ │
+│  │  • Program: RUSSIA-EO14024                                                │ │
+│  │  • EU: Listed under Council Regulation (EU) 833/2014                     │ │
+│  │                                                                            │ │
+│  │  REQUIRED ACTIONS:                                                         │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ 1. FREEZE all payments immediately                           ⚡ NOW │  │ │
+│  │  │ 2. Block any pending transactions                           ⚡ NOW │  │ │
+│  │  │ 3. File blocking report with OFAC (10 business days)        Due: Jan 22│  │ │
+│  │  │ 4. Notify EU competent authority                           Due: Jan 20│  │ │
+│  │  │ 5. Engage sanctions counsel for wind-down guidance                   │  │ │
+│  │  │ 6. Identify alternative supplier for continuity                      │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  Compliance Officer Sign-off Required: [Pending]                          │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  ⚠ POTENTIAL MATCHES - INVESTIGATION REQUIRED                                   │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  MATCH 2: VOLGA SHIPPING COMPANY (Fuzzy Match: 87%)                       │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Our Counterparty: Volga Shipping Company Ltd (Cyprus)                    │ │
+│  │  SDN Entry: Volga Shipping Co. (Russia)                                   │ │
+│  │                                                                            │ │
+│  │  Analysis:                                                                 │ │
+│  │  • Name similarity: 87%                                                   │ │
+│  │  • Different jurisdiction (Cyprus vs Russia)                             │ │
+│  │  • Different registration numbers                                         │ │
+│  │  • Beneficial ownership: Under investigation                              │ │
+│  │                                                                            │ │
+│  │  AI Assessment: LIKELY FALSE POSITIVE                                     │ │
+│  │  • Common name in shipping industry                                       │ │
+│  │  • Cyprus entity established 2008 (pre-sanctions)                        │ │
+│  │  • No ownership links to sanctioned entity found                         │ │
+│  │                                                                            │ │
+│  │  REQUIRED ACTIONS:                                                         │ │
+│  │  1. Obtain updated beneficial ownership certificate                       │ │
+│  │  2. Verify no common directors/shareholders                               │ │
+│  │  3. Document false positive determination                                 │ │
+│  │                                                                            │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  MATCH 3: BANK OF RECONSTRUCTION (Sectoral Sanctions)                     │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Match Type: SSI (Sectoral Sanctions)                                     │ │
+│  │  Our Relationship: Correspondent bank (RUB clearing)                      │ │
+│  │                                                                            │ │
+│  │  Restrictions:                                                             │ │
+│  │  • Debt > 14 days: PROHIBITED                                            │ │
+│  │  • Equity: PROHIBITED                                                     │ │
+│  │  • Standard trade finance: PERMITTED                                      │ │
+│  │  • Payment processing: PERMITTED (with enhanced due diligence)           │ │
+│  │                                                                            │ │
+│  │  Current Activity:                                                         │ │
+│  │  • RUB payments processed: $2.3M (last 30 days)                          │ │
+│  │  • All transactions within permitted scope                                │ │
+│  │                                                                            │ │
+│  │  REQUIRED ACTIONS:                                                         │ │
+│  │  1. Maintain enhanced transaction monitoring                              │ │
+│  │  2. Document permitted nature of each transaction                        │ │
+│  │  3. Quarterly review of relationship necessity                           │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  OWNERSHIP CHAIN ANALYSIS                                                        │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  Indirect Exposure Identified: 2 counterparties                          │ │
+│  │                                                                            │ │
+│  │  ALPHA COMMODITIES GMBH (Austria)                                         │ │
+│  │  ├─ Direct Owner: Gamma Holdings AG (Switzerland) - 100%                 │ │
+│  │  │   └─ Ultimate Owner: [Sanctioned Individual] - 35%                    │ │
+│  │  │                                                                        │ │
+│  │  │  50% ownership threshold NOT met, but:                                │ │
+│  │  │  • Individual has significant control (board seat)                    │ │
+│  │  │  • Risk rating: ELEVATED                                              │ │
+│  │  │  • Recommendation: Enhanced due diligence, consider wind-down         │ │
+│  │  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  [Full Report]  [Export Alerts]  [Filing Templates]  [Escalate to Counsel]     │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Real-time screening results
+- Match classification (direct, fuzzy, ownership)
+- Required action checklists
+- Filing templates (OFAC blocking reports)
+- Audit trail documentation
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Screening frequency | Weekly | Real-time | Continuous |
+| False positive rate | 40% | <10% | 75% reduction |
+| Match resolution time | 5 days | 4 hours | 95% faster |
+| Regulatory filing accuracy | 85% | 99% | Near-perfect |
+
+---
+
+### Use Case 5.2: Geopolitical Risk Scenario Simulator
+
+#### What It Does
+Models the financial and operational impacts of geopolitical scenarios on treasury operations, including regional conflicts, trade wars, regime changes, and economic crises. Generates contingency recommendations.
+
+#### Key Inputs
+- Geopolitical risk intelligence feeds
+- Country exposure data
+- Supply chain dependencies
+- Currency and commodity correlations
+- Historical crisis impact data
+
+#### AI/LLM Approach
+The LLM synthesizes geopolitical intelligence, maps potential scenarios to treasury exposures, quantifies financial impacts, and generates probability-weighted contingency plans.
+
+#### Example Interaction
+
+**User**: "Model impact of escalating tensions in the Middle East on our operations"
+
+**AI Response**:
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    GEOPOLITICAL SCENARIO ANALYSIS                               │
+│                    Scenario: Middle East Escalation                             │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  SCENARIO DEFINITION                                                             │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  Base Scenario: Regional conflict escalation affecting Strait of Hormuz   │ │
+│  │                                                                            │ │
+│  │  Key Assumptions:                                                          │ │
+│  │  • Strait of Hormuz transit disrupted for 30-90 days                     │ │
+│  │  • Oil supply reduction: 15-20% of global seaborne crude                  │ │
+│  │  • Insurance and shipping premiums spike                                  │ │
+│  │  • Regional banking access compromised                                    │ │
+│  │  • Secondary sanctions risk on Iran-adjacent transactions                 │ │
+│  │                                                                            │ │
+│  │  Scenario Variants:                                                        │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │  Variant     │ Duration │ Oil Price │ Probability │ Severity       │  │ │
+│  │  │  ────────────┼──────────┼───────────┼─────────────┼────────────────│  │ │
+│  │  │  Limited     │ 2 weeks  │  +$15/bbl │    40%      │ Moderate       │  │ │
+│  │  │  Extended    │ 2 months │  +$35/bbl │    35%      │ High           │  │ │
+│  │  │  Severe      │ 6 months │  +$60/bbl │    15%      │ Very High      │  │ │
+│  │  │  De-escalate │ N/A      │  +$5/bbl  │    10%      │ Low            │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  YOUR EXPOSURE MAPPING                                                          │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  DIRECT EXPOSURES                                                          │ │
+│  │                                                                            │ │
+│  │  Category                 │ Current │ At Risk │ Impact                    │ │
+│  │  ─────────────────────────┼─────────┼─────────┼──────────────────────────│ │
+│  │  UAE Operations (Dubai)   │  $85M   │  $85M   │ Banking, payments        │ │
+│  │  Saudi Receivables        │  $42M   │  $42M   │ Collection delays        │ │
+│  │  Iranian-origin crude     │   $0    │   $0    │ N/A (not sourced)       │ │
+│  │  Regional bank balances   │  $28M   │  $28M   │ Access risk              │ │
+│  │  In-transit cargo         │  $65M   │  $65M   │ Shipping/insurance       │ │
+│  │  ─────────────────────────┴─────────┴─────────┴──────────────────────────│ │
+│  │  Total Direct Exposure                │ $220M │                          │ │
+│  │                                                                            │ │
+│  │  INDIRECT EXPOSURES                                                        │ │
+│  │                                                                            │ │
+│  │  Oil price sensitivity:                                                    │ │
+│  │  • +$10/bbl = +$45M feedstock cost (annual)                              │ │
+│  │  • Crack spread impact: Variable (could improve or worsen)               │ │
+│  │                                                                            │ │
+│  │  Currency impact:                                                          │ │
+│  │  • USD strength expected (+5-10% vs EM)                                  │ │
+│  │  • TRY depreciation risk: $15M translation exposure                      │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  SCENARIO IMPACT ANALYSIS                                                        │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  EXTENDED SCENARIO (2 months, Oil +$35/bbl) - Base Case Analysis          │ │
+│  │                                                                            │ │
+│  │  Financial Impacts:                                                        │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │                                                                     │  │ │
+│  │  │  Impact Category        │ Estimate    │ Confidence │ Timing        │  │ │
+│  │  │  ───────────────────────┼─────────────┼────────────┼───────────────│  │ │
+│  │  │  Feedstock cost increase│ +$78M       │ High       │ Immediate     │  │ │
+│  │  │  Shipping/insurance     │ +$12M       │ High       │ 1-2 weeks     │  │ │
+│  │  │  Payment delays (A/R)   │ -$25M cash  │ Medium     │ 2-4 weeks     │  │ │
+│  │  │  Banking access issues  │ -$28M avail │ Medium     │ Immediate     │  │ │
+│  │  │  Hedging losses (MTM)   │ -$18M       │ Medium     │ Immediate     │  │ │
+│  │  │  Crack spread benefit   │ +$35M       │ Medium     │ 2-4 weeks     │  │ │
+│  │  │  FX translation         │ -$15M       │ Medium     │ Immediate     │  │ │
+│  │  │  ───────────────────────┴─────────────┴────────────┴───────────────│  │ │
+│  │  │  NET FINANCIAL IMPACT   │ -$91M       │            │               │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  Liquidity Impact Timeline:                                                │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │                                                                     │  │ │
+│  │  │  Week     │ 1    │ 2    │ 3    │ 4    │ 5    │ 6    │ 7    │ 8    │  │ │
+│  │  │  ─────────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────│  │ │
+│  │  │  Cash Δ   │ -$15M│ -$28M│ -$35M│ -$42M│ -$38M│ -$30M│ -$20M│ -$10M│  │ │
+│  │  │  Cumul.   │ -$15M│ -$43M│ -$78M│-$120M│-$158M│-$188M│-$208M│-$218M│  │ │
+│  │  │  Avail.   │ $285M│ $257M│ $222M│ $180M│ $142M│ $112M│ $92M │ $82M │  │ │
+│  │  │  Status   │  ✓   │  ✓   │  ✓   │  ⚠   │  ⚠   │  ⚠   │  ⚠   │  ✓   │  │ │
+│  │  │                                                                     │  │ │
+│  │  │  ⚠ Weeks 4-7: Liquidity approaches minimum threshold               │  │ │
+│  │  │  RCF draw of $100M may be required in Week 3                       │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  CONTINGENCY RECOMMENDATIONS                                                     │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  IMMEDIATE ACTIONS (Pre-emptive)                                          │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ 1. Repatriate $20M from UAE accounts to Turkey (reduce trapped cash)│  │ │
+│  │  │ 2. Accelerate Saudi A/R collection ($15M collectable this week)    │  │ │
+│  │  │ 3. Review insurance coverage for in-transit cargo                   │  │ │
+│  │  │ 4. Pre-position RCF draw approval with board (contingency)         │  │ │
+│  │  │ 5. Identify alternative payment routes for Gulf region             │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  TRIGGER-BASED ACTIONS                                                    │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ IF Strait closure confirmed:                                        │  │ │
+│  │  │ • Execute oil hedge overlay (+$50M protection)                     │  │ │
+│  │  │ • Draw $75M RCF immediately                                        │  │ │
+│  │  │ • Activate alternative shipping routes (Cape of Good Hope)        │  │ │
+│  │  │ • Engage war risk insurers for enhanced coverage                  │  │ │
+│  │  │                                                                     │  │ │
+│  │  │ IF Banking access disrupted:                                        │  │ │
+│  │  │ • Activate backup correspondent banking arrangements               │  │ │
+│  │  │ • Route payments through Singapore hub                             │  │ │
+│  │  │ • Notify suppliers of potential payment delays                    │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  [Run Full Model]  [Alternative Scenarios]  [Playbook Detail]  [Export]        │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Scenario definition with variants
+- Exposure mapping and quantification
+- Financial impact projections
+- Liquidity stress timeline
+- Prioritized contingency actions
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Scenario coverage | 2-3 | 10+ | Comprehensive |
+| Impact quantification | Qualitative | ±$M precision | Quantified |
+| Response planning | Reactive | Pre-positioned | Proactive |
+| Playbook readiness | Ad-hoc | Documented | Always ready |
+
+---
+
+### Use Case 5.3: Counterparty Country Risk Monitor
+
+#### What It Does
+Monitors country-level risks for all counterparty locations, tracks sovereign credit ratings, political stability indices, and economic indicators, and generates alerts when risk profiles deteriorate.
+
+#### Key Inputs
+- Sovereign credit ratings (S&P, Moody's, Fitch)
+- Political risk indices
+- Economic indicators (GDP, inflation, reserves)
+- Capital controls and convertibility status
+- Counterparty concentration by country
+
+#### AI/LLM Approach
+The LLM aggregates multiple risk indicators into composite scores, tracks trend changes, identifies threshold breaches, and generates contextual alerts with recommended actions.
+
+#### Example Interaction
+
+**User**: "Show country risk dashboard for our counterparty portfolio"
+
+**AI Response**:
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    COUNTERPARTY COUNTRY RISK MONITOR                            │
+│                    Portfolio Coverage: 47 Countries | $2.8B Exposure            │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  RISK HEAT MAP                                                                   │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │           LOW         MEDIUM        HIGH          CRITICAL                │ │
+│  │          (1-25)       (26-50)      (51-75)        (76-100)                │ │
+│  │  ┌──────────────┬──────────────┬──────────────┬──────────────┐            │ │
+│  │  │ Germany (18) │ Turkey (42)  │ Egypt (62)   │ Russia (92)  │            │ │
+│  │  │ UK (15)      │ Brazil (48)  │ Nigeria (58) │ Venezuela(95)│            │ │
+│  │  │ NL (12)      │ India (38)   │ Pakistan (68)│              │            │ │
+│  │  │ Singapore(10)│ Indonesia(45)│ Argentina(72)│              │            │ │
+│  │  │ USA (8)      │ Mexico (40)  │              │              │            │ │
+│  │  │ Japan (14)   │ S.Africa (52)│              │              │            │ │
+│  │  │ Switzerland(6)│ China (35)  │              │              │            │ │
+│  │  └──────────────┴──────────────┴──────────────┴──────────────┘            │ │
+│  │                                                                            │ │
+│  │  Countries: 23          15             7              2                    │ │
+│  │  Exposure:  $1.85B      $720M         $180M          $45M                 │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  TOP 10 EXPOSURES BY COUNTRY                                                    │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  Country    │ Exposure │ Risk  │ Rating │ Trend  │ Key Risks              │ │
+│  │  ───────────┼──────────┼───────┼────────┼────────┼────────────────────────│ │
+│  │  Germany    │  $450M   │  18   │ AAA    │ →      │ None significant       │ │
+│  │  Turkey     │  $380M   │  42   │ B+     │ ↗ Impr │ FX vol, inflation      │ │
+│  │  UK         │  $320M   │  15   │ AA-    │ →      │ None significant       │ │
+│  │  USA        │  $285M   │   8   │ AA+    │ →      │ None significant       │ │
+│  │  UAE        │  $220M   │  22   │ AA-    │ →      │ Regional geopolitics   │ │
+│  │  Brazil     │  $180M   │  48   │ BB-    │ ↘ Weak │ Fiscal, FX             │ │
+│  │  Singapore  │  $165M   │  10   │ AAA    │ →      │ None significant       │ │
+│  │  India      │  $145M   │  38   │ BBB-   │ ↗ Impr │ FX controls            │ │
+│  │  China      │  $125M   │  35   │ A+     │ ↘ Weak │ Capital controls, RE   │ │
+│  │  S.Africa   │  $95M    │  52   │ BB-    │ ↘ Weak │ Energy crisis, FX      │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  ⚠ ALERT: DETERIORATING CONDITIONS                                             │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  BRAZIL - Risk Score: 48 → 55 (+7 in 30 days)                             │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Your Exposure: $180M                                                      │ │
+│  │  • Receivables: $95M                                                      │ │
+│  │  • Bank deposits: $45M                                                    │ │
+│  │  • Subsidiary equity: $40M                                                │ │
+│  │                                                                            │ │
+│  │  Risk Factor Changes:                                                      │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │  Factor             │ Previous │ Current │ Change │ Concern         │  │ │
+│  │  │  ──────────────────┼──────────┼─────────┼────────┼─────────────────│  │ │
+│  │  │  Sovereign Rating   │   BB-    │   BB-   │   →    │ Negative outlook│  │ │
+│  │  │  FX Reserves (mo)   │  12.5    │  10.8   │  -1.7  │ Below threshold │  │ │
+│  │  │  Fiscal Deficit     │  -5.8%   │  -7.2%  │  -1.4% │ Widening        │  │ │
+│  │  │  BRL/USD (30d chg)  │  5.15    │  5.45   │  -5.8% │ Depreciating    │  │ │
+│  │  │  CDS Spread (5Y)    │  185bp   │  225bp  │  +40bp │ Widening        │  │ │
+│  │  │  Political Stability│   42     │   38    │   -4   │ Election risk   │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  RECOMMENDED ACTIONS:                                                      │ │
+│  │  1. Accelerate A/R collection ($95M → target $60M within 60 days)        │ │
+│  │  2. Reduce bank deposits to minimum operational needs ($15M)              │ │
+│  │  3. Evaluate dividend repatriation window (before potential controls)    │ │
+│  │  4. Review BRL hedging strategy (increase coverage to 75%)               │ │
+│  │  5. Identify alternative suppliers outside Brazil                         │ │
+│  │                                                                            │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  SOUTH AFRICA - Risk Score: 52 → 58 (+6 in 30 days)                       │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Your Exposure: $95M                                                       │ │
+│  │                                                                            │ │
+│  │  Key Concerns:                                                             │ │
+│  │  • Energy crisis: Load shedding at Stage 6 (production impact)           │ │
+│  │  • FX volatility: ZAR -8% vs USD in 30 days                              │ │
+│  │  • Grey list: FATF monitoring continues (banking friction)               │ │
+│  │                                                                            │ │
+│  │  RECOMMENDED ACTIONS:                                                      │ │
+│  │  1. Review operational continuity plans for load shedding                 │ │
+│  │  2. Consider backup power investments at key sites                        │ │
+│  │  3. Reduce ZAR cash holdings to minimum                                  │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  POSITIVE DEVELOPMENTS                                                          │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  TURKEY - Risk Score: 48 → 42 (-6 in 30 days)                            │ │
+│  │  • Improved: Inflation declining (45% → 38%), reserves rebuilding        │ │
+│  │  • Rating: Moody's upgraded outlook to Positive                          │ │
+│  │  • Recommendation: Maintain current exposure, consider increase          │ │
+│  │                                                                            │ │
+│  │  INDIA - Risk Score: 42 → 38 (-4 in 30 days)                             │ │
+│  │  • Improved: Strong GDP growth, stable FX reserves                       │ │
+│  │  • Rating: S&P affirmed BBB- with Stable outlook                        │ │
+│  │  • Recommendation: Potential to increase exposure within limits          │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  [Country Deep-Dive]  [Exposure Detail]  [Risk Trends]  [Export Dashboard]     │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Country risk heat map
+- Exposure concentration analysis
+- Trend alerts with context
+- Recommended actions by country
+- Historical risk trajectories
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Country monitoring coverage | Top 10 | All 47 | Complete |
+| Risk score updates | Monthly | Daily | Real-time |
+| Early warning lead time | Days | Weeks | Proactive |
+| Action recommendation | Generic | Specific | Actionable |
+
+---
+
+### Use Case 5.4: Trade Finance & Export Control Compliance
+
+#### What It Does
+Monitors trade finance transactions for export control compliance, screens goods and technologies against control lists, and ensures proper licensing for dual-use items and restricted destinations.
+
+#### Key Inputs
+- Trade finance transaction data
+- Export control classification numbers (ECCNs)
+- Dual-use goods lists (EU, US EAR)
+- End-user certificates
+- License applications and approvals
+
+#### AI/LLM Approach
+The LLM classifies goods against control lists, identifies licensing requirements, screens end-users and destinations, and generates compliance documentation with audit trails.
+
+#### Example Interaction
+
+**User**: "Screen our pending trade finance transactions for export control compliance"
+
+**AI Response**:
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    EXPORT CONTROL COMPLIANCE SCREENING                          │
+│                    Pending Trade Finance: 23 Transactions | $48.5M              │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  SCREENING SUMMARY                                                               │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  Transactions Screened:      23                                           │ │
+│  │  Clear (No License Req):     18  ($35.2M)                                 │ │
+│  │  License Required:            3  ($8.5M)                                  │ │
+│  │  Investigation Needed:        2  ($4.8M)                                  │ │
+│  │                                                                            │ │
+│  │  Control Regimes Checked:                                                 │ │
+│  │  ├─ US EAR (Export Administration Regulations)                           │ │
+│  │  ├─ EU Dual-Use Regulation (2021/821)                                    │ │
+│  │  ├─ Wassenaar Arrangement                                                 │ │
+│  │  ├─ Nuclear Suppliers Group                                               │ │
+│  │  └─ Missile Technology Control Regime                                     │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  ⚠ LICENSE REQUIRED                                                             │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  TRANSACTION 1: Industrial Control Systems to China                       │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Transaction Details:                                                      │ │
+│  │  • L/C Reference: LC-2026-00145                                          │ │
+│  │  • Value: $3.2M                                                           │ │
+│  │  • Buyer: Shenzen Industrial Automation Co.                              │ │
+│  │  • Goods: SCADA control systems, PLCs, HMI interfaces                    │ │
+│  │                                                                            │ │
+│  │  Export Control Classification:                                            │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │  Item              │ ECCN      │ Control Reason │ License Req       │  │ │
+│  │  │  ─────────────────┼───────────┼────────────────┼───────────────────│  │ │
+│  │  │  SCADA System      │ 4A003.g   │ NS, AT         │ YES - BIS         │  │ │
+│  │  │  PLCs (industrial) │ 3A001.a.5 │ NS             │ YES - BIS         │  │ │
+│  │  │  HMI Software      │ 4D001     │ NS             │ YES - BIS         │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  Destination Analysis:                                                     │ │
+│  │  • China: Country Group D:1 (National Security controls apply)           │ │
+│  │  • End-user: Not on Entity List (verified Jan 2026)                      │ │
+│  │  • End-use: Commercial manufacturing (no military concerns)              │ │
+│  │                                                                            │ │
+│  │  License Options:                                                          │ │
+│  │  1. Apply for BIS Individual Validated License (IVL)                      │ │
+│  │     • Processing time: 60-90 days                                        │ │
+│  │     • Approval likelihood: 75% (commercial end-use)                      │ │
+│  │                                                                            │ │
+│  │  2. Restructure to qualify for License Exception CIV                      │ │
+│  │     • Requires civil end-use statement                                   │ │
+│  │     • Processing time: 30 days                                           │ │
+│  │     • Approval likelihood: 85%                                           │ │
+│  │                                                                            │ │
+│  │  REQUIRED ACTIONS:                                                         │ │
+│  │  □ Obtain end-user statement from buyer                                   │ │
+│  │  □ File BIS license application (Form BIS-748P)                          │ │
+│  │  □ Notify L/C issuing bank of potential delay                            │ │
+│  │  □ Consider license exception qualification                               │ │
+│  │                                                                            │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  TRANSACTION 2: Specialty Chemicals to India                              │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Transaction Details:                                                      │ │
+│  │  • L/C Reference: LC-2026-00152                                          │ │
+│  │  • Value: $2.8M                                                           │ │
+│  │  • Buyer: Mumbai Pharma Research Ltd                                      │ │
+│  │  • Goods: Precursor chemicals (pharmaceutical grade)                     │ │
+│  │                                                                            │ │
+│  │  Classification: 1C350 (Chemical Weapons Convention Schedule 2)          │ │
+│  │  License: EU Dual-Use Regulation Annex I authorization required          │ │
+│  │                                                                            │ │
+│  │  EU Authorization Status:                                                  │ │
+│  │  • Company holds EU General Export Authorization (EU001)                 │ │
+│  │  • India: PERMITTED destination under EU001                              │ │
+│  │  • End-use: Pharmaceutical (permitted)                                   │ │
+│  │                                                                            │ │
+│  │  CONCLUSION: Covered by existing authorization - no additional license   │ │
+│  │  ACTION: Document EU001 reliance in transaction file                     │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  ⚠ INVESTIGATION REQUIRED                                                       │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  TRANSACTION 3: Unclassified Machinery to UAE                             │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  • Value: $2.1M                                                           │ │
+│  │  • Goods: "Industrial pumps and valves - oil & gas"                      │ │
+│  │  • Issue: Insufficient product specifications for classification         │ │
+│  │                                                                            │ │
+│  │  Red Flags Identified:                                                     │ │
+│  │  ⚠ Vague product description                                             │ │
+│  │  ⚠ End-user in UAE free zone (re-export risk)                           │ │
+│  │  ⚠ Buyer recently established (2024)                                     │ │
+│  │                                                                            │ │
+│  │  REQUIRED ACTIONS:                                                         │ │
+│  │  □ Request detailed technical specifications from seller                  │ │
+│  │  □ Perform ECCN classification with specs                                │ │
+│  │  □ Enhanced due diligence on end-user                                    │ │
+│  │  □ Verify ultimate destination (re-export diversion risk)               │ │
+│  │                                                                            │ │
+│  │  HOLD transaction pending investigation completion                        │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  [License Application]  [Classification Tool]  [End-User Check]  [Export]      │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Transaction screening results
+- Export classification analysis
+- License requirement determination
+- Red flag identification
+- Compliance documentation
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Classification accuracy | 85% | 98% | Near-perfect |
+| License requirement ID | Manual | Automated | Zero missed |
+| Screening time | 2 hours | 10 minutes | 92% faster |
+| Red flag detection | Inconsistent | Systematic | Comprehensive |
+
+---
+
+### Use Case 5.5: Cross-Border Payment Risk Mapper
+
+#### What It Does
+Maps payment routes for cross-border transactions, identifies potential risks (correspondent banking gaps, sanctions, capital controls), and recommends optimal payment pathways for each currency corridor.
+
+#### Key Inputs
+- Payment instruction data
+- Correspondent banking network
+- SWIFT/payment rail availability
+- Currency control regulations
+- Historical payment success rates
+
+#### AI/LLM Approach
+The LLM analyzes payment routes, identifies potential friction points, maps alternative pathways, and recommends optimal routing with risk mitigation strategies.
+
+#### Example Interaction
+
+**User**: "Map payment risks for our key currency corridors"
+
+**AI Response**:
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    CROSS-BORDER PAYMENT RISK MAP                                │
+│                    Key Corridors: 15 | Monthly Volume: $285M                    │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  CORRIDOR RISK OVERVIEW                                                          │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  Corridor       │ Volume │ Risk  │ Avg Time │ Fail Rate │ Key Risk        │ │
+│  │  ───────────────┼────────┼───────┼──────────┼───────────┼─────────────────│ │
+│  │  EUR → TRY      │ $65M   │ LOW   │ Same day │   0.2%    │ FX volatility   │ │
+│  │  USD → TRY      │ $55M   │ LOW   │ Same day │   0.3%    │ FX volatility   │ │
+│  │  TRY → EUR      │ $42M   │ LOW   │ Same day │   0.1%    │ None significant│ │
+│  │  USD → BRL      │ $28M   │ MED   │ T+1      │   1.2%    │ Central bank    │ │
+│  │  EUR → CNY      │ $22M   │ MED   │ T+1-2    │   0.8%    │ CIPS routing    │ │
+│  │  USD → INR      │ $18M   │ MED   │ T+1      │   0.5%    │ Documentation   │ │
+│  │  USD → RUB      │ $12M   │ HIGH  │ T+2-5    │   8.5%    │ Sanctions       │ │
+│  │  EUR → ARS      │ $8M    │ HIGH  │ T+2-3    │   5.2%    │ Capital control │ │
+│  │  USD → NGN      │ $6M    │ HIGH  │ T+3-5    │   12.5%   │ FX shortage     │ │
+│  │  USD → VEF      │ $2M    │ CRIT  │ T+5-10   │   25.0%   │ Sanctions       │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  ⚠ HIGH-RISK CORRIDOR ANALYSIS                                                  │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  USD → RUB CORRIDOR                                                        │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Monthly Volume: $12M | Failure Rate: 8.5%                                │ │
+│  │                                                                            │ │
+│  │  Payment Route Analysis:                                                   │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │                                                                     │  │ │
+│  │  │  CURRENT ROUTE (Primary):                                           │  │ │
+│  │  │  Your Bank → [US Corresp.] → SWIFT → [Russian Bank] → Beneficiary  │  │ │
+│  │  │                   │                        │                        │  │ │
+│  │  │                   ▼                        ▼                        │  │ │
+│  │  │              ⚠ OFAC Review           ⚠ Sanctions Risk              │  │ │
+│  │  │              (delays 3-5 days)       (rejection risk)               │  │ │
+│  │  │                                                                     │  │ │
+│  │  │  Risk Points:                                                       │  │ │
+│  │  │  1. US correspondent requires enhanced OFAC screening              │  │ │
+│  │  │  2. Russian bank on SSI list (sectoral sanctions)                 │  │ │
+│  │  │  3. SWIFT connectivity intermittent                               │  │ │
+│  │  │  4. Payment purpose scrutiny (energy-related)                     │  │ │
+│  │  │                                                                     │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  Alternative Routes:                                                       │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │                                                                     │  │ │
+│  │  │  ROUTE B: EUR-denominated via non-US bank                          │  │ │
+│  │  │  Your Bank → [EU Corresp.] → SWIFT → [Russian Bank] → Beneficiary  │  │ │
+│  │  │  • Avoids US nexus and OFAC jurisdiction                           │  │ │
+│  │  │  • EU sanctions still apply (narrower scope)                       │  │ │
+│  │  │  • Success rate: 92% (vs 91.5% USD)                               │  │ │
+│  │  │  • Cost: +0.3% FX spread                                          │  │ │
+│  │  │                                                                     │  │ │
+│  │  │  ROUTE C: RUB via UAE intermediary                                 │  │ │
+│  │  │  Your Bank → [UAE Bank] → Local RUB → [Russian Bank]              │  │ │
+│  │  │  • No US/EU sanctions jurisdiction                                 │  │ │
+│  │  │  • Higher compliance documentation required                       │  │ │
+│  │  │  • Success rate: 95%                                              │  │ │
+│  │  │  • Cost: +0.8% total fees                                         │  │ │
+│  │  │                                                                     │  │ │
+│  │  │  ★ RECOMMENDED: Route B for payments <$5M                         │  │ │
+│  │  │    Route C for larger/time-sensitive payments                      │  │ │
+│  │  │                                                                     │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  USD → NGN CORRIDOR                                                        │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Monthly Volume: $6M | Failure Rate: 12.5%                                │ │
+│  │                                                                            │ │
+│  │  Issues Identified:                                                        │ │
+│  │  • CBN FX controls: USD supply constraints                               │ │
+│  │  • Multiple exchange rates: Official vs parallel (40% gap)               │ │
+│  │  • Beneficiary bank USD liquidity shortages                              │ │
+│  │  • Repatriation documentation delays                                     │ │
+│  │                                                                            │ │
+│  │  Current Failure Reasons (last 6 months):                                 │ │
+│  │  ├─ FX unavailability at beneficiary bank: 45%                          │ │
+│  │  ├─ Documentation rejection: 30%                                         │ │
+│  │  ├─ CBN approval delays: 15%                                             │ │
+│  │  └─ Other: 10%                                                           │ │
+│  │                                                                            │ │
+│  │  RECOMMENDATIONS:                                                          │ │
+│  │  1. Pre-fund beneficiary account in NGN (eliminate FX conversion)        │ │
+│  │  2. Use domiciliary accounts for USD receipts                            │ │
+│  │  3. Consider crypto settlement for urgent payments (regulatory check)    │ │
+│  │  4. Maintain buffer inventory at Nigerian operations                     │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  CORRESPONDENT BANKING NETWORK HEALTH                                           │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  Currency │ Primary Corresp. │ Status │ Backup │ Coverage                 │ │
+│  │  ─────────┼──────────────────┼────────┼────────┼──────────────────────────│ │
+│  │  USD      │ JPMorgan Chase   │ ✓      │ BofA   │ Full coverage           │ │
+│  │  EUR      │ Deutsche Bank    │ ✓      │ BNP    │ Full coverage           │ │
+│  │  GBP      │ Barclays         │ ✓      │ HSBC   │ Full coverage           │ │
+│  │  CNY      │ Bank of China    │ ✓      │ ICBC   │ CIPS connected          │ │
+│  │  RUB      │ Raiffeisen       │ ⚠      │ None   │ Limited (sanctions)     │ │
+│  │  BRL      │ Itaú             │ ✓      │ BTG    │ Full coverage           │ │
+│  │  INR      │ HDFC Bank        │ ✓      │ SBI    │ Full coverage           │ │
+│  │                                                                            │ │
+│  │  ⚠ RUB Corridor: Raiffeisen under pressure to exit Russia               │ │
+│  │    Contingency: Establish backup via Turkish bank corridor               │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  [Route Optimizer]  [Failure Analysis]  [Backup Routes]  [Export Report]       │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Corridor risk ratings
+- Route analysis with alternatives
+- Failure rate tracking
+- Correspondent network health
+- Optimal routing recommendations
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Payment failure rate | 5.2% | 1.8% | 65% reduction |
+| Route optimization | Manual | AI-optimized | Best path always |
+| Corridor visibility | Partial | Complete | Full coverage |
+| Contingency readiness | Reactive | Pre-planned | Always ready |
+
+---
+
+### Use Case 5.6: Policy Horizon Scanner
+
+#### What It Does
+Scans regulatory and policy horizons for upcoming changes that could impact treasury operations, including central bank policy shifts, capital control changes, and fiscal policy developments.
+
+#### Key Inputs
+- Central bank communications
+- Regulatory consultation papers
+- Government budget announcements
+- Industry association alerts
+- Academic and think-tank research
+
+#### AI/LLM Approach
+The LLM processes policy documents and communications, identifies relevant changes, assesses impact probability and timing, and generates strategic recommendations for treasury positioning.
+
+#### Example Interaction
+
+**User**: "Scan policy horizon for developments affecting our key markets"
+
+**AI Response**:
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    POLICY HORIZON SCANNER                                       │
+│                    Key Markets: 12 | Scan Period: Next 12 Months                │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  POLICY DEVELOPMENT RADAR                                                        │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │                    IMMINENT (0-3 months)                                   │ │
+│  │                         │                                                  │ │
+│  │    ┌────────────────────┼────────────────────┐                            │ │
+│  │    │                    │                    │                            │ │
+│  │    │  • TCMB rate cut   │  • Fed pause       │                            │ │
+│  │    │  • Brazil IOF tax  │  • ECB QT adjust   │                            │ │
+│  │    │  • India RBI hold  │                    │                            │ │
+│  │    │                    │                    │                            │ │
+│  │    └────────────────────┴────────────────────┘                            │ │
+│  │              HIGH IMPACT         LOW IMPACT                               │ │
+│  │                                                                            │ │
+│  │                    MEDIUM-TERM (3-6 months)                                │ │
+│  │                         │                                                  │ │
+│  │    ┌────────────────────┼────────────────────┐                            │ │
+│  │    │                    │                    │                            │ │
+│  │    │  • China PBOC RRR  │  • UK BOE cuts     │                            │ │
+│  │    │  • Turkey new FX   │  • Japan YCC end   │                            │ │
+│  │    │    regulations     │                    │                            │ │
+│  │    │                    │                    │                            │ │
+│  │    └────────────────────┴────────────────────┘                            │ │
+│  │              HIGH IMPACT         LOW IMPACT                               │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  HIGH-IMPACT POLICY DEVELOPMENTS                                                │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  1. TURKEY: TCMB Monetary Policy Shift                                    │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Development: Central Bank signaling rate cuts as inflation declines      │ │
+│  │  Timeline: Q1 2026 (first cut expected February MPC)                     │ │
+│  │  Probability: 85%                                                         │ │
+│  │                                                                            │ │
+│  │  Current Policy:                                                           │ │
+│  │  • Policy rate: 45.0%                                                     │ │
+│  │  • Inflation: 38.5% (down from 65% peak)                                 │ │
+│  │  • Real rate: +6.5% (significantly positive)                             │ │
+│  │                                                                            │ │
+│  │  Expected Path:                                                            │ │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐  │ │
+│  │  │  Date    │ Feb'26 │ Mar'26 │ May'26 │ Jul'26 │ Sep'26 │ Dec'26    │  │ │
+│  │  │  ────────┼────────┼────────┼────────┼────────┼────────┼───────────│  │ │
+│  │  │  Rate    │ 42.5%  │ 40.0%  │ 37.5%  │ 35.0%  │ 32.5%  │ 30.0%     │  │ │
+│  │  │  Cut     │ -250bp │ -250bp │ -250bp │ -250bp │ -250bp │ -250bp    │  │ │
+│  │  └─────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                            │ │
+│  │  Treasury Impact:                                                          │ │
+│  │  • TRY funding costs: -1,500bp potential savings over 12 months          │ │
+│  │  • Intercompany loan rates: Opportunity to refinance at lower rates      │ │
+│  │  • TRY bond investments: Duration extension opportunity                  │ │
+│  │  • FX impact: Potential TRY weakness as rate differential narrows        │ │
+│  │                                                                            │ │
+│  │  RECOMMENDED ACTIONS:                                                      │ │
+│  │  ✓ Lock in current high deposit rates for 6-month term                   │ │
+│  │  ✓ Prepare to refinance TRY debt post-first cut                         │ │
+│  │  ✓ Increase FX hedging as TRY carry trade unwinds                       │ │
+│  │                                                                            │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  2. BRAZIL: IOF Tax on FX Transactions                                    │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Development: Government considering reinstating IOF on FX operations    │ │
+│  │  Timeline: Q1 2026 (budget implementation)                               │ │
+│  │  Probability: 60%                                                         │ │
+│  │                                                                            │ │
+│  │  Proposed Change:                                                          │ │
+│  │  • Current IOF on FX: 0% (suspended)                                     │ │
+│  │  • Proposed: 1.5% on FX purchases, 0.5% on FX sales                     │ │
+│  │  • Scope: Cross-border payments, intercompany loans                      │ │
+│  │                                                                            │ │
+│  │  Your Exposure:                                                            │ │
+│  │  • Monthly FX volume Brazil: $28M                                        │ │
+│  │  • Annual IOF impact if implemented: $5.0M                               │ │
+│  │                                                                            │ │
+│  │  RECOMMENDED ACTIONS:                                                      │ │
+│  │  ✓ Accelerate planned repatriations before potential implementation     │ │
+│  │  ✓ Consider netting intercompany flows to reduce FX transactions        │ │
+│  │  ✓ Evaluate BRL hedging via NDF (offshore, no IOF)                      │ │
+│  │                                                                            │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  3. CHINA: PBOC Reserve Requirement Ratio Cut                            │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Development: PBOC expected to cut RRR to support economy                │ │
+│  │  Timeline: Q2 2026                                                        │ │
+│  │  Probability: 75%                                                         │ │
+│  │                                                                            │ │
+│  │  Expected Change:                                                          │ │
+│  │  • Current RRR: 10.0%                                                    │ │
+│  │  • Expected cut: -50bp to 9.5%                                           │ │
+│  │  • Liquidity injection: ~RMB 1.2 trillion                                │ │
+│  │                                                                            │ │
+│  │  Treasury Impact:                                                          │ │
+│  │  • CNY funding costs may decline marginally                              │ │
+│  │  • CNY deposit rates likely to fall                                      │ │
+│  │  • CNY/USD volatility may increase                                       │ │
+│  │                                                                            │ │
+│  │  RECOMMENDED ACTIONS:                                                      │ │
+│  │  ✓ Review CNY cash position (optimize vs opportunity cost)               │ │
+│  │  ✓ Consider locking CNY deposits at current rates                       │ │
+│  │  ✓ Monitor CNH/USD for hedging opportunities                            │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  REGULATORY DEVELOPMENTS                                                        │
+│  ┌────────────────────────────────────────────────────────────────────────────┐ │
+│  │                                                                            │ │
+│  │  TURKEY: New FX Position Regulations (Draft)                              │ │
+│  │  ────────────────────────────────────────────────────────────────────────  │ │
+│  │                                                                            │ │
+│  │  Status: Consultation phase | Expected implementation: Q3 2026           │ │
+│  │                                                                            │ │
+│  │  Key Provisions:                                                           │ │
+│  │  • FX-protected deposit restrictions relaxed                             │ │
+│  │  • Corporate FX borrowing limits modified                                 │ │
+│  │  • Required reserve ratios on FX deposits adjusted                       │ │
+│  │                                                                            │ │
+│  │  Impact Assessment:                                                        │ │
+│  │  • May improve access to FX funding domestically                         │ │
+│  │  • Potential reduction in required FX hedging                            │ │
+│  │  • Simplification of treasury operations in Turkey                       │ │
+│  │                                                                            │ │
+│  │  ACTION: Monitor consultation, prepare submission if beneficial          │ │
+│  │                                                                            │ │
+│  └────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│  [Full Analysis]  [Alert Settings]  [Impact Simulator]  [Export Report]        │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Policy radar visualization
+- Impact assessments by development
+- Probability and timing estimates
+- Treasury-specific recommendations
+- Action item tracking
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Policy monitoring coverage | Key markets | All 12 markets | Complete |
+| Lead time on changes | Weeks | Months | Early warning |
+| Impact quantification | Qualitative | $M precision | Quantified |
+| Response preparedness | Reactive | Pre-positioned | Proactive |
+
+---
+
