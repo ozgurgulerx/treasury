@@ -45,7 +45,11 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
@@ -101,5 +105,8 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com
   generator: false
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
 
 copyright: Copyright &copy; 2025 Ozgur Guler (ozgur.guler1@gmail.com)
