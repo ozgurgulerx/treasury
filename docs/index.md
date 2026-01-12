@@ -21,11 +21,12 @@ Each use case follows a consistent structure: **what it does**, **key inputs**, 
 
 We've deliberately chosen use cases that showcase where AI delivers transformational value:
 
-- **High-volume, pattern-rich tasks** where ML excels (fraud detection, reconciliation, cash forecasting)
-- **Complex multi-source analysis** where LLMs synthesize information humans can't process at scale
-- **Natural language interactions** that democratize access to treasury data and insights
-- **Predictive capabilities** that shift treasury from reactive to proactive
-- **Narrative generation** that transforms raw data into board-ready intelligence
+- **Multi-horizon forecasting & scenario analysis** where ML captures patterns across cash flows, FX exposures, and market drivers (T1, T2, T7)
+- **Complex document processing & compliance** where LLMs parse LC/BG documents, check UCP/ISBP rules, and automate trade finance workflows (T4, T6)
+- **Working capital optimization** where predictive models forecast payment behavior, optimize DSO/DPO, and recommend collection strategies (T3)
+- **Natural language interfaces** that democratize access to treasury data, policies, and insights through conversational copilots (T9)
+- **Narrative generation** that transforms raw data into board-ready ALCO packs, variance explanations, and executive summaries (T7, T9)
+- **Operational automation** where ML-powered reconciliation, close acceleration, and exception handling reduce manual effort (T6)
 
 The examples throughout this documentation demonstrate the *art of the possible*—not distant future concepts, but capabilities achievable today with current AI technology.
 
