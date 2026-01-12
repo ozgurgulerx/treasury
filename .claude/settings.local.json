@@ -30,7 +30,9 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(cat:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(tr:*)",
+      "Bash(pip3 install:*)"
     ]
   }
 }

@@ -4297,3 +4297,2745 @@ The LLM processes policy documents and communications, identifies relevant chang
 
 ---
 
+## Layer 6: Energy Transition & Sustainability Finance Foresight
+
+### Purpose
+Equip Treasury with specialized analytics and compliance tools for navigating the energy transition, tracking sustainability-linked financial commitments, managing carbon portfolios, and quantifying climate-related financial risks—enabling strategic positioning in the evolving sustainable finance landscape.
+
+### Core Capability
+The Energy Transition & Sustainability Finance module provides integrated management of ESG-linked financing instruments, carbon credit portfolios, green bond compliance, and climate risk modeling. Through connection with emissions data, sustainability reporting systems, market intelligence, and climate scenario databases, Treasury gains comprehensive visibility into transition risks and opportunities while ensuring compliance with increasingly stringent sustainability commitments.
+
+```mermaid
+flowchart TB
+    subgraph Inputs["Data Sources"]
+        A1[ESG Commitments]
+        A2[Carbon Markets]
+        A3[Climate Scenarios]
+        A4[Asset Registry]
+        A5[Emissions Data]
+    end
+
+    subgraph Processing["Energy Transition Analytics"]
+        B1[ESG Financing Tracker]
+        B2[Carbon Portfolio Manager]
+        B3[Green Bond Compliance]
+        B4[Climate Risk Modeller]
+        B5[Transition Risk Engine]
+    end
+
+    subgraph Outputs["Strategic Intelligence"]
+        C1[Sustainability Dashboards]
+        C2[Compliance Reports]
+        C3[Risk Quantification]
+        C4[Portfolio Strategies]
+    end
+
+    A1 --> B1
+    A2 --> B2
+    A3 --> B4
+    A4 --> B5
+    A5 --> B2
+    A5 --> B3
+
+    B1 --> C1
+    B2 --> C4
+    B3 --> C2
+    B4 --> C3
+    B5 --> C3
+```
+
+---
+
+### Use Case 6.1: ESG-Linked Financing Tracker
+
+#### What It Does
+Monitors all sustainability-linked financing instruments (SLLs, SLBs, green bonds, transition bonds), tracks performance against KPI targets, forecasts margin step-ups/step-downs, and provides early warning when sustainability metrics risk missing thresholds that trigger pricing adjustments.
+
+#### Key Inputs
+- Sustainability-linked loan agreements and KPI definitions
+- Green bond and SLB covenants and reporting requirements
+- ESG performance data (emissions, renewables, safety, diversity)
+- Third-party ESG ratings (MSCI, Sustainalytics, ISS)
+- Corporate sustainability targets and trajectory plans
+- Market pricing for sustainability-linked instruments
+
+#### AI/LLM Approach
+Machine learning models predict ESG KPI trajectories based on operational trends, identify risk factors threatening target achievement, and calculate financial impact of margin adjustments. NLP analyzes evolving market standards, peer benchmarks, and best practice developments to recommend target recalibrations and new instrument structures.
+
+#### Example Interaction (ESG Financing Monitor)
+
+**User Prompt:**
+"Show me our ESG-linked financing portfolio performance and forecast any margin adjustments for the next reporting period."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  ESG-LINKED FINANCING PORTFOLIO TRACKER                           Q1 2026      │
+│  Stellaris Energy Corporation                                                   │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  PORTFOLIO OVERVIEW                                                             │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  Total ESG-Linked Financing: $4.2B                                              │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  SLLs         ████████████████████████████░░░░░░░░░  $2.5B (60%)        │  │
+│  │  Green Bonds  ████████████████░░░░░░░░░░░░░░░░░░░░░  $1.2B (29%)        │  │
+│  │  SLBs         █████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  $0.4B (10%)        │  │
+│  │  Transition   ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  $0.1B ( 1%)        │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  Avg Margin Benefit vs Conventional: -18 bps                                    │
+│  Potential Step-Up Exposure: $3.8M/year                                         │
+│                                                                                 │
+│  KPI PERFORMANCE DASHBOARD                                                       │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌─────────────────────────────────────────────────────────────────────────────┐│
+│  │ KPI                    │ Target  │ Current │ Trend   │ Status │ Forecast  ││
+│  ├────────────────────────┼─────────┼─────────┼─────────┼────────┼───────────┤│
+│  │ Scope 1+2 Emissions    │ -15%    │ -12.3%  │   ↗     │   ⚠    │ At Risk   ││
+│  │ Renewable Electricity  │ 50%     │ 47%     │   ↗     │   ⚠    │ On Track  ││
+│  │ Methane Intensity      │ 0.10%   │ 0.08%   │   ↘     │   ✓    │ Exceeding ││
+│  │ Water Recycling        │ 80%     │ 82%     │   →     │   ✓    │ Achieved  ││
+│  │ TRIR (Safety)          │ <0.5    │ 0.42    │   ↘     │   ✓    │ On Track  ││
+│  │ Board Diversity        │ 40%     │ 38%     │   ↗     │   ⚠    │ At Risk   ││
+│  └─────────────────────────────────────────────────────────────────────────────┘│
+│                                                                                 │
+│  INSTRUMENT-LEVEL ANALYSIS                                                       │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │  $1.5B SUSTAINABILITY-LINKED RCF                                         │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  Lenders: Syndicate (12 banks)  │  Margin: SOFR + 125bps                 │  │
+│  │  Maturity: Mar 2028             │  Testing: Annual (Dec)                  │  │
+│  │                                                                           │  │
+│  │  Linked KPIs:                                                             │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐ │  │
+│  │  │ Scope 1+2 Reduction │ Target: -15% │ Actual: -12.3% │ Step-up: +5bps│ │  │
+│  │  │ Renewable Energy    │ Target: 50%  │ Actual: 47%    │ Step-up: +5bps│ │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘ │  │
+│  │                                                                           │  │
+│  │  Current Margin Impact: +10 bps step-up = $1.5M/year additional cost     │  │
+│  │                                                                           │  │
+│  │  FORECAST SCENARIOS FOR DEC 2026 TEST                                     │  │
+│  │  ┌─────────────────────────────────────────────────────────────────────┐ │  │
+│  │  │                                                                     │ │  │
+│  │  │  EMISSIONS TRAJECTORY            │  PROBABILITY │  MARGIN IMPACT   │ │  │
+│  │  │  ────────────────────────────────┼──────────────┼─────────────────│ │  │
+│  │  │  Achieve -15% target             │     35%      │  -5 bps (reset) │ │  │
+│  │  │  Reach -14% (partial miss)       │     40%      │  +5 bps (hold)  │ │  │
+│  │  │  Stall at -12% (miss both)       │     25%      │  +10 bps (worse)│ │  │
+│  │  │                                                                     │ │  │
+│  │  │  Expected Margin Adjustment: +2.5 bps                              │ │  │
+│  │  │  Expected Annual Cost Impact: $375K                                │ │  │
+│  │  │                                                                     │ │  │
+│  │  └─────────────────────────────────────────────────────────────────────┘ │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │  $400M SUSTAINABILITY-LINKED BOND (7-Year)                                │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  Coupon: 4.25%  │  Maturity: 2030  │  Testing: 2026, 2028                │  │
+│  │                                                                           │  │
+│  │  KPI: Scope 1+2 Emissions -30% by 2028 vs 2020 baseline                  │  │
+│  │                                                                           │  │
+│  │  Progress Tracker:                                                        │  │
+│  │  2020 ──────────────────────────────────────────────────────────── 2028  │  │
+│  │  Base                                                              Target │  │
+│  │   │                                                                  │    │  │
+│  │   ▼                                                                  ▼    │  │
+│  │  2.4M     Current: 2.1M tCO2e (-12.3%)     Required: 1.68M (-30%)        │  │
+│  │   ├────────────●───────────────────────────────────────────────○───┤    │  │
+│  │   │            │                                                │  │    │  │
+│  │   0%          12.3%                                            30% │    │  │
+│  │                ▲                                                        │  │
+│  │                │                                                        │  │
+│  │         Current position (2026)                                         │  │
+│  │                                                                           │  │
+│  │  Gap to Target: -420K tCO2e (17.7% additional reduction needed)          │  │
+│  │  Annual Reduction Required: 210K tCO2e/year                              │  │
+│  │  Step-Up Risk (if miss 2028): +25 bps coupon = $1M/year                  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ESG RATING TRENDS                                                              │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │              │ 2024   │ 2025   │ 2026   │ Trend │ Sector Avg │          │  │
+│  │  ────────────┼────────┼────────┼────────┼───────┼────────────┤          │  │
+│  │  MSCI ESG    │  BBB   │  BBB   │  A     │   ↗   │    BBB     │ ✓ Above  │  │
+│  │  Sustainalytics│ 28.5 │  26.1  │  24.8  │   ↘   │    31.2    │ ✓ Better │  │
+│  │  ISS ESG     │  C+    │  B-    │  B     │   ↗   │    C+      │ ✓ Above  │  │
+│  │  CDP Climate │   B    │  B+    │  A-    │   ↗   │     B      │ ✓ Above  │  │
+│  │                                                                           │  │
+│  │  Rating Agency Commentary:                                                │  │
+│  │  • MSCI: "Strong governance improvements; emissions trajectory concern"  │  │
+│  │  • Sustainalytics: "Leading on methane; transition strategy credible"   │  │
+│  │  • CDP: "Science-based targets validated; disclosure comprehensive"      │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  RECOMMENDATIONS                                                                │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ⚠ IMMEDIATE ACTIONS REQUIRED                                            │  │
+│  │                                                                           │  │
+│  │  1. EMISSIONS ACCELERATION PLAN                                           │  │
+│  │     Gap to SLL target: 2.7% │ Time remaining: 9 months                   │  │
+│  │     → Expedite solar PPA execution (est. -1.5% emissions)               │  │
+│  │     → Accelerate flare-to-sales project (est. -0.8% emissions)          │  │
+│  │     → Consider REC purchases for gap coverage ($2.1M cost)               │  │
+│  │                                                                           │  │
+│  │  2. BOARD DIVERSITY INITIATIVE                                            │  │
+│  │     Gap to target: 2% │ Next board refresh: Q3 2026                      │  │
+│  │     → 1 additional diverse appointment achieves target                   │  │
+│  │     → Nominating committee briefed on SLL implications                   │  │
+│  │                                                                           │  │
+│  │  3. REFINANCING OPPORTUNITY                                               │  │
+│  │     $800M term loan maturing Feb 2027                                     │  │
+│  │     → ESG rating upgrades enable 15-20 bps better pricing               │  │
+│  │     → Recommend SLL structure with achievable KPIs                       │  │
+│  │     → Estimated savings: $1.2-1.6M/year                                  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Instrument Detail]  [KPI Drill-Down]  [Scenario Model]  [Export Report]      │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- ESG financing portfolio dashboard
+- KPI performance tracking by instrument
+- Margin step-up/down forecasts and probabilities
+- Action plans to achieve targets
+- ESG rating trends and commentary
+- Refinancing opportunity identification
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| KPI tracking frequency | Quarterly | Real-time | Continuous |
+| Step-up forecast accuracy | N/A | ±1 bps | Predictive |
+| ESG savings captured | Partial | Full potential | Optimized |
+| Rating agency visibility | Annual reports | Continuous | Proactive |
+
+---
+
+### Use Case 6.2: Carbon Credit & Emissions Trading Module
+
+#### What It Does
+Manages the company's carbon credit portfolio including compliance credits (EU ETS, UK ETS) and voluntary offsets, tracks pricing, optimizes buy/hold/sell timing, models future compliance obligations, and integrates carbon costs into business planning.
+
+#### Key Inputs
+- Emissions data by facility and scope
+- Carbon credit holdings (EUAs, UKAs, CERs, VERs)
+- Compliance obligations and allocation forecasts
+- Carbon market prices (spot, futures, options)
+- Regulatory developments (allocation changes, scope expansions)
+- Offset project pipelines and pricing
+
+#### AI/LLM Approach
+Time-series models forecast carbon prices incorporating policy signals, supply/demand dynamics, and macroeconomic factors. Optimization algorithms determine optimal trading strategies balancing compliance needs, price expectations, and risk tolerance. ML classifies offset quality and validates additionality claims.
+
+#### Example Interaction (Carbon Portfolio Manager)
+
+**User Prompt:**
+"Analyze our carbon position for 2026 compliance and recommend a trading strategy given current market conditions."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  CARBON PORTFOLIO MANAGEMENT SYSTEM                                2026 Analysis│
+│  Stellaris Energy - Emissions Trading Desk                                      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  COMPLIANCE POSITION SUMMARY                                                    │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  EU ETS POSITION                                                                │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  2026 Verified Emissions (Forecast): 1.85M tCO2e                          │  │
+│  │  Free Allocation: 0.62M EUAs                                              │  │
+│  │  ───────────────────────────────────────────────────────────────────────  │  │
+│  │  Net Compliance Need: 1.23M EUAs                                          │  │
+│  │                                                                           │  │
+│  │  CURRENT HOLDINGS                                                         │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ EUAs (Dec 2026)     │ 850,000  │ Avg Cost: €72.40 │ Value: €61.5M │  │  │
+│  │  │ EUAs (Dec 2027)     │ 200,000  │ Avg Cost: €68.50 │ Value: €15.2M │  │  │
+│  │  │ Total Holdings      │1,050,000 │                  │ Value: €76.7M │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Position Summary:                                                        │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Compliance Need    ████████████████████████████████░░░░  1.23M   │  │  │
+│  │  │  Current Holdings   ██████████████████████████████████░░  1.05M   │  │  │
+│  │  │  ──────────────────────────────────────────────────────────────── │  │  │
+│  │  │  SHORTFALL                                             ████  180K │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Coverage Ratio: 85%  │  Shortfall Value @ Spot: €14.6M                  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  UK ETS POSITION                                                                │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │  2026 Verified Emissions: 420K tCO2e                                      │  │
+│  │  Free Allocation: 180K UKAs                                               │  │
+│  │  Net Need: 240K UKAs │ Holdings: 240K UKAs │ Coverage: 100% ✓             │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  CARBON PRICE ANALYSIS                                                          │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  EU ETS PRICE FORECAST                                                          │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  €95 ┤                                              ╭─────── Bull Case   │  │
+│  │      │                                         ╭────╯                     │  │
+│  │  €90 ┤                                    ╭────╯                          │  │
+│  │      │                               ╭────╯   ╭─────────── Base Case     │  │
+│  │  €85 ┤                          ╭────╯   ╭────╯                           │  │
+│  │      │                     ╭────╯   ╭────╯                                │  │
+│  │  €80 ┤  CURRENT ●────╭────╯   ╭────╯                                     │  │
+│  │      │  €81.20    ╭──╯   ╭────╯   ╭─────────────────── Bear Case         │  │
+│  │  €75 ┤       ╭────╯ ╭────╯   ╭────╯                                       │  │
+│  │      │  ╭────╯  ╭───╯   ╭────╯                                            │  │
+│  │  €70 ┤──╯  ╭────╯  ╭────╯                                                 │  │
+│  │      │╭────╯  ╭────╯                                                      │  │
+│  │  €65 ┤───────╯                                                            │  │
+│  │      └───┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬───     │  │
+│  │        Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec         │  │
+│  │                              2026                                         │  │
+│  │                                                                           │  │
+│  │  SCENARIO PROBABILITIES & YEAR-END TARGETS                                │  │
+│  │  ┌────────────────┬─────────────┬────────────────────────────────────┐   │  │
+│  │  │ Scenario       │ Probability │ Dec 2026 Price  │ Key Drivers      │   │  │
+│  │  ├────────────────┼─────────────┼─────────────────┼──────────────────┤   │  │
+│  │  │ Bull Case      │    25%      │     €92-95      │ MSR withdrawal,  │   │  │
+│  │  │                │             │                 │ cold winter,     │   │  │
+│  │  │                │             │                 │ CBAM support     │   │  │
+│  │  ├────────────────┼─────────────┼─────────────────┼──────────────────┤   │  │
+│  │  │ Base Case      │    50%      │     €84-88      │ Gradual demand   │   │  │
+│  │  │                │             │                 │ recovery, stable │   │  │
+│  │  │                │             │                 │ policy           │   │  │
+│  │  ├────────────────┼─────────────┼─────────────────┼──────────────────┤   │  │
+│  │  │ Bear Case      │    25%      │     €72-76      │ Industrial       │   │  │
+│  │  │                │             │                 │ slowdown, mild   │   │  │
+│  │  │                │             │                 │ weather          │   │  │
+│  │  └────────────────┴─────────────┴─────────────────┴──────────────────┘   │  │
+│  │                                                                           │  │
+│  │  Probability-Weighted Price: €84.50                                       │  │
+│  │  Current vs Forecast: +€3.30 (+4.1%)                                     │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  TRADING STRATEGY RECOMMENDATION                                                │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  RECOMMENDED APPROACH: PHASED ACCUMULATION WITH COLLAR PROTECTION        │  │
+│  │                                                                           │  │
+│  │  Rationale:                                                               │  │
+│  │  • Current price below forecast → accumulation opportunity               │  │
+│  │  • Q2 typically seasonally weak → better entry points ahead             │  │
+│  │  • Significant shortfall (180K) requires action                          │  │
+│  │  • Volatility elevated → collar strategy protects downside              │  │
+│  │                                                                           │  │
+│  │  EXECUTION PLAN                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  PHASE 1: IMMEDIATE (This Week)                                    │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  Action: Buy 60K EUAs @ market                                     │  │  │
+│  │  │  Rationale: Cover 1/3 of shortfall at reasonable levels           │  │  │
+│  │  │  Cost: ~€4.9M @ €81.20                                            │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  PHASE 2: Q2 2026 (Apr-Jun)                                        │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  Action: Accumulate 80K EUAs on dips                               │  │  │
+│  │  │  Target entry: €78-80 range                                        │  │  │
+│  │  │  Limit orders at: €78.50, €79.00, €79.50                          │  │  │
+│  │  │  Est. Cost: €6.3-6.4M                                              │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  PHASE 3: PROTECTION (Concurrent)                                  │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  Action: Collar on 500K EUA position                               │  │  │
+│  │  │  Structure: Buy €75 put / Sell €92 call (Dec 2026)                │  │  │
+│  │  │  Net Premium: €0.80/EUA (€400K total)                             │  │  │
+│  │  │  Protection: Floor at €75, cap at €92                             │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  PHASE 4: REMAINING SHORTFALL (Q3-Q4)                              │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  Action: Final 40K EUAs                                            │  │  │
+│  │  │  Strategy: Opportunistic based on market conditions               │  │  │
+│  │  │  Backstop: Forward contract if spot exceeds €88                   │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  FINANCIAL SUMMARY                                                        │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ Strategy                  │ Est. Total Cost │ vs Spot-Only        │  │  │
+│  │  ├───────────────────────────┼─────────────────┼─────────────────────┤  │  │
+│  │  │ Recommended (Phased+Collar)│    €15.1M      │    -€1.2M (7%)     │  │  │
+│  │  │ Buy All Now @ Spot        │    €14.6M      │      Baseline       │  │  │
+│  │  │ Wait & Buy Q4             │    €15.2-17.1M │    +€0.6-2.5M       │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Risk/Reward: Collar limits downside to €75 floor (€3.9M better than    │  │
+│  │  unprotected worst case) while capping upside at €92.                    │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  VOLUNTARY CARBON OFFSET PORTFOLIO                                              │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │  Purpose: Net-Zero commitment gap coverage (Scope 3)                      │  │
+│  │                                                                           │  │
+│  │  CURRENT HOLDINGS                                                         │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ Project Type        │ Vintage │ Volume   │ Avg Cost │ Rating     │  │  │
+│  │  ├─────────────────────┼─────────┼──────────┼──────────┼────────────┤  │  │
+│  │  │ Nature-Based (REDD+)│ 2024-25 │ 150K VCUs│  $14.20  │ Verra VCS  │  │  │
+│  │  │ Cookstoves (Gold Std)│ 2024   │  50K VERs│   $8.50  │ Gold Std   │  │  │
+│  │  │ Biochar Removal     │ 2025    │  20K CDRs│  $85.00  │ Puro.earth │  │  │
+│  │  │ Direct Air Capture  │ 2026    │   5K CDRs│ $450.00  │ Pre-purch  │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Portfolio Value: $5.4M │ Avg Quality Score: 7.2/10                      │  │
+│  │                                                                           │  │
+│  │  ⚠ RECOMMENDATION: Shift portfolio toward higher-quality removals       │  │
+│  │     • REDD+ credits facing reputational risk (recent media scrutiny)    │  │
+│  │     • Increase biochar/DAC allocation to 40% by 2027                    │  │
+│  │     • Estimated additional cost: $2.8M but defensible quality           │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Execute Trade]  [Price Alerts]  [Scenario Model]  [Compliance Calendar]      │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Carbon compliance position analysis
+- Price forecasts and scenario modeling
+- Optimized trading strategies
+- Execution recommendations with timing
+- Voluntary offset portfolio management
+- Cost projections and budget integration
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Compliance coverage visibility | Quarterly | Real-time | Continuous |
+| Carbon cost vs budget | ±15% | ±5% | 3x accuracy |
+| Trading execution timing | Reactive | Optimized | Strategic |
+| Offset quality assurance | Manual review | AI-scored | Systematic |
+
+---
+
+### Use Case 6.3: Green Bond / Sustainability-Linked Loan Compliance
+
+#### What It Does
+Automates compliance monitoring and reporting for green bonds and sustainability-linked loans, tracks use of proceeds against eligible project categories, manages verification requirements, and generates investor reports and regulatory disclosures.
+
+#### Key Inputs
+- Green bond frameworks and eligible project categories
+- Use of proceeds allocations and disbursements
+- Project-level impact data (emissions avoided, capacity added)
+- Second-party opinions and verification schedules
+- Investor reporting requirements and timelines
+- EU Taxonomy and ICMA/LMA principle alignment
+
+#### AI/LLM Approach
+Classification models map expenditures to eligible categories, flag potential compliance issues, and calculate alignment percentages. NLP extracts impact metrics from project documentation and structures them for reporting. Generative AI drafts investor reports with appropriate language and disclosure levels.
+
+#### Example Interaction (Green Bond Compliance)
+
+**User Prompt:**
+"Generate the annual green bond allocation and impact report for our €500M green bond."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  GREEN BOND ANNUAL REPORT                                                       │
+│  Stellaris Energy Corporation                                                   │
+│  €500M Senior Unsecured Green Bond (2023-2033)                    FY 2025       │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  REPORT COMPLIANCE STATUS                                                       │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Framework Alignment                                                       │  │
+│  │  ├── ICMA Green Bond Principles 2021 ............................ ✓      │  │
+│  │  ├── EU Taxonomy Technical Screening Criteria ................... ✓      │  │
+│  │  ├── Climate Bonds Initiative Certification ..................... ✓      │  │
+│  │  └── Second-Party Opinion (Sustainalytics) ...................... ✓      │  │
+│  │                                                                           │  │
+│  │  Verification Status                                                       │  │
+│  │  ├── Annual Allocation Verification (KPMG) .......... Completed Jan 2026  │  │
+│  │  ├── Impact Assessment Review ........................ In Progress        │  │
+│  │  └── Next Full Verification Due ...................... Q2 2026            │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ALLOCATION OF PROCEEDS                                                         │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  Total Proceeds: €500,000,000                                                   │
+│  Allocated: €487,500,000 (97.5%)                                                │
+│  Unallocated: €12,500,000 (2.5%) - Held in eligible green deposits             │
+│                                                                                 │
+│  ALLOCATION BY ELIGIBLE CATEGORY                                                │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Renewable Energy          ████████████████████████████░░░  €285M (57%)  │  │
+│  │  Energy Efficiency         ███████████░░░░░░░░░░░░░░░░░░░░  €95M  (19%)  │  │
+│  │  Clean Transportation      ███████░░░░░░░░░░░░░░░░░░░░░░░░  €62M  (12%)  │  │
+│  │  Pollution Prevention      ████░░░░░░░░░░░░░░░░░░░░░░░░░░░  €32M   (6%)  │  │
+│  │  Sustainable Water         ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  €13.5M (3%)  │  │
+│  │  Unallocated (Green Dep.)  █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  €12.5M (3%)  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  PROJECT-LEVEL ALLOCATION DETAIL                                                │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  RENEWABLE ENERGY (€285M Allocated)                                       │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  ┌──────────────────────────────────────────────────────────────────┐    │  │
+│  │  │ Project              │ Location │ Allocation│ Status   │EU Tax │    │  │
+│  │  ├──────────────────────┼──────────┼───────────┼──────────┼───────┤    │  │
+│  │  │ Solar Farm Alpha     │ Spain    │  €85M     │ Operating│  ✓    │    │  │
+│  │  │ Wind Park Beta       │ UK       │  €120M    │ Constr.  │  ✓    │    │  │
+│  │  │ Solar Farm Gamma     │ Italy    │  €55M     │ Operating│  ✓    │    │  │
+│  │  │ Battery Storage Delta│ Germany  │  €25M     │ Constr.  │  ✓    │    │  │
+│  │  └──────────────────────────────────────────────────────────────────┘    │  │
+│  │                                                                           │  │
+│  │  EU TAXONOMY ALIGNMENT: 100%                                              │  │
+│  │  • All projects meet substantial contribution to climate mitigation      │  │
+│  │  • DNSH criteria verified for all environmental objectives               │  │
+│  │  • Minimum social safeguards confirmed                                    │  │
+│  │                                                                           │  │
+│  │  ENERGY EFFICIENCY (€95M Allocated)                                       │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  ┌──────────────────────────────────────────────────────────────────┐    │  │
+│  │  │ Project              │ Location │ Allocation│ Status   │EU Tax │    │  │
+│  │  ├──────────────────────┼──────────┼───────────┼──────────┼───────┤    │  │
+│  │  │ Refinery Heat Integr.│ NL       │  €42M     │ Complete │  ✓    │    │  │
+│  │  │ Compressor Upgrades  │ Norway   │  €28M     │ Complete │  ✓    │    │  │
+│  │  │ LED Lighting Program │ Multi    │  €8M      │ Complete │  ✓    │    │  │
+│  │  │ Building HVAC Retrofit│ UK/NL   │  €17M     │ In Prog. │  ✓    │    │  │
+│  │  └──────────────────────────────────────────────────────────────────┘    │  │
+│  │                                                                           │  │
+│  │  EU TAXONOMY ALIGNMENT: 100%                                              │  │
+│  │  • Energy savings exceed 30% threshold                                    │  │
+│  │  • Lifecycle assessments completed                                        │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ENVIRONMENTAL IMPACT METRICS                                                   │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  CLIMATE IMPACT SUMMARY                                                   │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Annual CO2 Emissions Avoided                                      │  │  │
+│  │  │  ═══════════════════════════════════════════════════════════════  │  │  │
+│  │  │                                                                    │  │  │
+│  │  │        485,000 tCO2e                                              │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Breakdown by Category:                                            │  │  │
+│  │  │  ├── Renewable Energy Generation ............ 342,000 tCO2e       │  │  │
+│  │  │  ├── Energy Efficiency Improvements ......... 89,000 tCO2e        │  │  │
+│  │  │  ├── Clean Transportation ................... 38,000 tCO2e        │  │  │
+│  │  │  └── Pollution Prevention ................... 16,000 tCO2e        │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Carbon Intensity of Investment:                                   │  │  │
+│  │  │  ════════════════════════════════════════                         │  │  │
+│  │  │  995 tCO2e avoided per €1M invested                               │  │  │
+│  │  │  (vs benchmark: 650 tCO2e/€1M)                                    │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  RENEWABLE ENERGY IMPACT                                                  │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Clean Energy Generated: 1,250 GWh/year                           │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Capacity by Technology:                                           │  │  │
+│  │  │  ┌──────────────────────────────────────────────────────────────┐ │  │  │
+│  │  │  │ Solar PV    │ 320 MW  │ ████████████████░░░░░░  (64%)       │ │  │  │
+│  │  │  │ Onshore Wind│ 150 MW  │ ██████████░░░░░░░░░░░░  (30%)       │ │  │  │
+│  │  │  │ Battery     │  30 MW  │ ██░░░░░░░░░░░░░░░░░░░░  (6%)        │ │  │  │
+│  │  │  └──────────────────────────────────────────────────────────────┘ │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Equivalent Homes Powered: 285,000                                 │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  YEAR-OVER-YEAR IMPACT TREND                                              │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  tCO2e Avoided (thousands)                                        │  │  │
+│  │  │  500 ┤                                              ●═══ 485K     │  │  │
+│  │  │      │                                         ╭────╯              │  │  │
+│  │  │  400 ┤                                    ●────╯                   │  │  │
+│  │  │      │                               ╭────╯  368K                  │  │  │
+│  │  │  300 ┤                          ●────╯                             │  │  │
+│  │  │      │                     ╭────╯  245K                            │  │  │
+│  │  │  200 ┤                ●────╯                                       │  │  │
+│  │  │      │           ╭────╯  142K                                      │  │  │
+│  │  │  100 ┤      ●────╯                                                 │  │  │
+│  │  │      │ ╭────╯  45K                                                 │  │  │
+│  │  │    0 ┤─╯                                                           │  │  │
+│  │  │      └────┬─────┬─────┬─────┬─────┬─────                          │  │  │
+│  │  │         2023   2024  2025  2026  2027  (Forecast)                 │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  INVESTOR REPORT PREVIEW                                                        │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  DRAFT NARRATIVE FOR ANNUAL GREEN BOND REPORT                             │  │
+│  │  ────────────────────────────────────────────────────────────────────────│  │
+│  │                                                                           │  │
+│  │  "Stellaris Energy is pleased to report continued strong progress in     │  │
+│  │  deploying the proceeds of our €500 million Green Bond issued in 2023.   │  │
+│  │  As of December 2025, 97.5% of proceeds have been allocated to eligible  │  │
+│  │  green projects, with 100% EU Taxonomy alignment achieved across all     │  │
+│  │  categories.                                                              │  │
+│  │                                                                           │  │
+│  │  Our investments have generated measurable environmental impact,          │  │
+│  │  avoiding an estimated 485,000 tonnes of CO2 equivalent emissions        │  │
+│  │  annually—a 32% increase from the prior year as our Wind Park Beta       │  │
+│  │  project reached partial commercial operation.                            │  │
+│  │                                                                           │  │
+│  │  The renewable energy portfolio now comprises 500MW of operational and   │  │
+│  │  under-construction capacity, generating 1,250 GWh of clean electricity  │  │
+│  │  annually—equivalent to powering 285,000 European homes.                 │  │
+│  │                                                                           │  │
+│  │  Looking ahead, we anticipate full allocation of remaining proceeds      │  │
+│  │  by Q2 2026 through our clean transportation electrification program,   │  │
+│  │  further strengthening the environmental credentials of this bond."      │  │
+│  │                                                                           │  │
+│  │  [Edit Draft]  [Compliance Check]  [Generate Full Report]                │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  COMPLIANCE CHECKLIST                                                           │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ✓ All proceeds allocated to eligible categories                         │  │
+│  │  ✓ EU Taxonomy alignment documented and verified                          │  │
+│  │  ✓ Impact metrics calculated using recognized methodologies              │  │
+│  │  ✓ Year-over-year comparison provided                                     │  │
+│  │  ✓ Project-level disclosure included                                      │  │
+│  │  ✓ External review status current                                         │  │
+│  │  ⚠ Management attestation required (pending CFO signature)               │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Download Report]  [Send for Approval]  [Schedule Publication]                │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Automated allocation tracking reports
+- EU Taxonomy alignment documentation
+- Environmental impact calculations
+- Investor-ready annual reports
+- Verification scheduling and tracking
+- Compliance checklists and attestations
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Report preparation time | 6-8 weeks | 1-2 weeks | 75% faster |
+| Allocation tracking | Manual spreadsheets | Real-time | Continuous |
+| Taxonomy alignment verification | Annual | Ongoing | Proactive |
+| Impact calculation methodology | Inconsistent | Standardized | Auditable |
+
+---
+
+### Use Case 6.4: Climate Risk Scenario Modeller (Physical & Transition)
+
+#### What It Does
+Quantifies financial exposure to both physical climate risks (extreme weather, sea level rise, water stress) and transition risks (policy changes, technology shifts, market repricing), enabling stress testing of Treasury positions and informing strategic hedging and capital allocation decisions.
+
+#### Key Inputs
+- Asset location data and physical characteristics
+- NGFS climate scenarios (orderly, disorderly, hot house)
+- Physical risk databases (flood maps, hurricane tracks, drought indices)
+- Carbon price trajectories and policy scenarios
+- Technology cost curves (renewables, CCUS, hydrogen)
+- Sector transition pathways and stranding timelines
+
+#### AI/LLM Approach
+Geospatial models overlay asset locations with climate hazard projections to estimate physical damage probabilities and costs. Economic models translate transition scenarios into revenue, cost, and asset value impacts. Monte Carlo simulation integrates uncertainties across scenarios, time horizons, and risk factors.
+
+#### Example Interaction (Climate Risk Analysis)
+
+**User Prompt:**
+"Model our portfolio's exposure to climate risks under NGFS scenarios and identify our most vulnerable assets."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  CLIMATE RISK SCENARIO ANALYSIS                                                 │
+│  NGFS Framework Implementation                                     Q1 2026      │
+│  Stellaris Energy Corporation - Treasury Risk Assessment                        │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  SCENARIO FRAMEWORK                                                             │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  NGFS SCENARIO MATRIX                                                     │  │
+│  │                                                                           │  │
+│  │                    LOW PHYSICAL RISK ◄─────────► HIGH PHYSICAL RISK       │  │
+│  │                           │                           │                   │  │
+│  │  ┌────────────────────────┼───────────────────────────┼────────────────┐  │  │
+│  │  │     ORDERLY            │     DISORDERLY            │                │  │  │
+│  │  │   ─────────────        │   ─────────────           │                │  │  │
+│  │  │   • Net Zero 2050      │   • Delayed Transition    │   HIGH         │  │  │
+│  │  │   • Gradual policy     │   • Sudden, severe policy │   TRANSITION   │  │  │
+│  │  │   • Carbon: €125/t     │   • Carbon: €200/t        │   RISK         │  │  │
+│  │  │   • Manageable         │   • Disruptive but        │                │  │  │
+│  │  │     transition         │     achievable            │                │  │  │
+│  │  ├────────────────────────┼───────────────────────────┤                │  │  │
+│  │  │     CURRENT POLICIES   │     HOT HOUSE WORLD       │                │  │  │
+│  │  │   ─────────────────    │   ─────────────────       │   LOW          │  │  │
+│  │  │   • No new policy      │   • Policy failure        │   TRANSITION   │  │  │
+│  │  │   • Carbon: €50/t      │   • Carbon: €30/t         │   RISK         │  │  │
+│  │  │   • Business as usual  │   • Extreme physical      │                │  │  │
+│  │  │     transition risk    │     damages               │                │  │  │
+│  │  └────────────────────────┴───────────────────────────┴────────────────┘  │  │
+│  │                                                                           │  │
+│  │  ★ = Current Assessment Focus                                            │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  PHYSICAL RISK ASSESSMENT                                                       │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ASSET PORTFOLIO HEAT MAP                                                       │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Physical Risk Score by Asset (0-100 scale)                              │  │
+│  │                                                                           │  │
+│  │  Asset                  │Location   │ 2030 │ 2040 │ 2050 │ Primary Hazard│  │
+│  │  ═══════════════════════╪═══════════╪══════╪══════╪══════╪═══════════════│  │
+│  │  Gulf Coast Refinery    │ Texas     │  68  │  78  │  85  │ Hurricane     │  │
+│  │  Offshore Platform A    │ GoM       │  72  │  80  │  87  │ Storm surge   │  │
+│  │  Netherlands Terminal   │ Rotterdam │  45  │  52  │  62  │ Sea level     │  │
+│  │  Singapore Hub          │ Singapore │  38  │  48  │  58  │ Flooding      │  │
+│  │  UK Processing Plant    │ Aberdeen  │  22  │  25  │  28  │ Wind          │  │
+│  │  Norway Operations      │ Stavanger │  18  │  20  │  22  │ Low exposure  │  │
+│  │                                                                           │  │
+│  │  ████ High Risk (>60)  ████ Medium Risk (40-60)  ████ Low Risk (<40)    │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  DETAILED PHYSICAL RISK: GULF COAST REFINERY (HIGHEST EXPOSURE)                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Asset Value: $2.4B  │  Insurance Coverage: $1.8B  │  Deductible: $50M   │  │
+│  │                                                                           │  │
+│  │  HURRICANE RISK PROJECTION                                                │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Annual Expected Loss (AEL)                                        │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  $M │                                                    ┌──────  │  │  │
+│  │  │  80 ┤                                              ┌─────┤  $78M  │  │  │
+│  │  │     │                                        ┌─────┤     │        │  │  │
+│  │  │  60 ┤                                  ┌─────┤     │     │        │  │  │
+│  │  │     │                            ┌─────┤ $52M│     │     │        │  │  │
+│  │  │  40 ┤                      ┌─────┤     │     │     │     │        │  │  │
+│  │  │     │                ┌─────┤ $38M│     │     │     │     │        │  │  │
+│  │  │  20 ┤          ┌─────┤     │     │     │     │     │     │        │  │  │
+│  │  │     │    ┌─────┤ $24M│     │     │     │     │     │     │        │  │  │
+│  │  │   0 ┤────┤ $18M│     │     │     │     │     │     │     │        │  │  │
+│  │  │     └────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴────    │  │  │
+│  │  │        2025  2030  2035  2040  2045  2050                          │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Drivers: +2°C SST → 15% more Cat 4-5 storms by 2050              │  │  │
+│  │  │           Sea level +0.5m → expanded storm surge footprint        │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  NPV of Physical Risk (Hot House World, 2025-2050): $385M                │  │
+│  │  vs Current Insurance + Resilience Investment: $280M                      │  │
+│  │  ═══════════════════════════════════════════════════════════════════════ │  │
+│  │  UNMITIGATED EXPOSURE GAP: $105M                                         │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  TRANSITION RISK ASSESSMENT                                                     │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  SCENARIO IMPACT ON EBITDA (2030)                                               │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Current EBITDA: $1.8B                                                    │  │
+│  │                                                                           │  │
+│  │                    ORDERLY    DISORDERLY   CURRENT    HOT HOUSE           │  │
+│  │                   NET ZERO     TRANS.      POLICIES    WORLD              │  │
+│  │  ═══════════════════════════════════════════════════════════════════════ │  │
+│  │                                                                           │  │
+│  │  Carbon Costs      -$180M      -$290M       -$60M      -$35M             │  │
+│  │                                                                           │  │
+│  │  Demand Impact     -$120M      -$180M       -$20M      +$40M             │  │
+│  │  (Oil/Gas Volume)                                                         │  │
+│  │                                                                           │  │
+│  │  Renewable Revenue +$150M      +$95M        +$45M      +$15M             │  │
+│  │                                                                           │  │
+│  │  Stranded Assets    -$40M      -$150M        $0M       $0M               │  │
+│  │  (Impairments)                                                            │  │
+│  │                                                                           │  │
+│  │  Physical Damages    -$5M       -$8M        -$25M      -$65M             │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  NET EBITDA IMPACT -$195M      -$533M       -$60M      -$45M             │  │
+│  │                                                                           │  │
+│  │  2030 EBITDA       $1.61B      $1.27B      $1.74B     $1.76B             │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  vs Base           -10.8%      -29.6%       -3.3%      -2.5%             │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  EBITDA RANGE VISUALIZATION                                        │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Hot House   ████████████████████████████████████████████░ $1.76B │  │  │
+│  │  │  Current Pol ███████████████████████████████████████████░░ $1.74B │  │  │
+│  │  │  Orderly     ████████████████████████████████████░░░░░░░░ $1.61B │  │  │
+│  │  │  Disorderly  ████████████████████████████░░░░░░░░░░░░░░░░ $1.27B │  │  │
+│  │  │              └─────────────────────────────────────────────────   │  │  │
+│  │  │              $0                                           $1.8B   │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  TREASURY IMPLICATIONS                                                          │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  LIQUIDITY STRESS TEST (Disorderly Transition Scenario)                  │  │
+│  │  ────────────────────────────────────────────────────────────────────────│  │
+│  │                                                                           │  │
+│  │  Current Liquidity: $2.1B (Cash + Undrawn RCF)                           │  │
+│  │                                                                           │  │
+│  │  Stress Impacts:                                                          │  │
+│  │  ├── EBITDA decline → -$350M operating cash flow                        │  │
+│  │  ├── Carbon credit purchases → -$290M                                    │  │
+│  │  ├── Accelerated capex (emissions reduction) → -$450M                   │  │
+│  │  ├── Asset impairment (no cash impact) → $0                             │  │
+│  │  └── Working capital release → +$80M                                     │  │
+│  │                                                                           │  │
+│  │  Stressed Liquidity Need: $1.01B                                          │  │
+│  │  Available Liquidity: $2.1B                                               │  │
+│  │  ════════════════════════════════════════                                 │  │
+│  │  BUFFER: $1.09B ✓ (Sufficient but monitor)                               │  │
+│  │                                                                           │  │
+│  │  COVENANT IMPACT                                                          │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ Ratio              │ Limit │ Current │ Stressed │ Headroom        │  │  │
+│  │  ├────────────────────┼───────┼─────────┼──────────┼─────────────────┤  │  │
+│  │  │ Net Debt/EBITDA    │ <3.5x │   1.8x  │   2.9x   │ 0.6x buffer ✓  │  │  │
+│  │  │ Interest Coverage  │ >3.0x │   8.2x  │   5.1x   │ 2.1x buffer ✓  │  │  │
+│  │  │ Debt/Capital       │ <60%  │   42%   │   48%    │ 12% buffer ✓   │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  ⚠ All covenants maintained but Net Debt/EBITDA approaches concern zone │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  RISK MITIGATION RECOMMENDATIONS                                                │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  PHYSICAL RISK ACTIONS                                                    │  │
+│  │  ════════════════════════════════════════════════════════════════════════ │  │
+│  │  1. Gulf Coast Resilience Investment: $85M capex                         │  │
+│  │     • Elevated critical equipment (+1.5m)                                │  │
+│  │     • Enhanced storm shutters and drainage                               │  │
+│  │     • Reduces AEL by ~35%                                                │  │
+│  │     • Payback: 7 years under Hot House scenario                          │  │
+│  │                                                                           │  │
+│  │  2. Insurance Optimization                                                │  │
+│  │     • Increase coverage to $2.2B (+$400M)                                │  │
+│  │     • Premium increase: ~$8M/year                                         │  │
+│  │     • Consider parametric hurricane cover for faster payout              │  │
+│  │                                                                           │  │
+│  │  TRANSITION RISK ACTIONS                                                  │  │
+│  │  ════════════════════════════════════════════════════════════════════════ │  │
+│  │  1. Carbon Hedge Program                                                  │  │
+│  │     • Lock in 50% of 2027-2030 compliance at current forwards           │  │
+│  │     • Estimated savings vs disorderly spot: €45M                         │  │
+│  │                                                                           │  │
+│  │  2. Accelerate Renewable Revenue Diversification                          │  │
+│  │     • Current renewable EBITDA: 12% of total                             │  │
+│  │     • Target: 25% by 2030 to offset hydrocarbon transition risk         │  │
+│  │                                                                           │  │
+│  │  3. Covenant Amendment Consideration                                      │  │
+│  │     • Proactive discussion with lenders on climate-adjusted EBITDA      │  │
+│  │     • Exclude one-time transition capex from leverage calculation        │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Scenario Deep-Dive]  [Asset Detail]  [Board Report]  [TCFD Disclosure]       │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Physical risk heat maps by asset
+- Transition scenario EBITDA impact analysis
+- Liquidity and covenant stress tests
+- NPV of unmitigated climate exposures
+- Risk mitigation recommendations
+- TCFD-aligned disclosure content
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Climate risk quantification | Qualitative | $M precision | Actionable |
+| Scenario coverage | 1-2 scenarios | Full NGFS suite | Comprehensive |
+| Physical risk granularity | Country level | Asset level | Targeted |
+| Stress test integration | Annual | On-demand | Responsive |
+
+---
+
+### Use Case 6.5: Stranded Asset & Transition Risk Dashboard
+
+#### What It Does
+Monitors and quantifies stranding risk for hydrocarbon assets, models optimal divestment timing, tracks competitor transition strategies, and provides strategic intelligence on which assets to prioritize for sale, conversion, or accelerated depreciation.
+
+#### Key Inputs
+- Asset portfolio with reserves, production profiles, operating costs
+- Break-even prices and remaining useful lives
+- Global energy demand scenarios and commodity forecasts
+- Peer company transition announcements and M&A activity
+- Regulatory and policy development timelines
+- Carbon price scenarios and compliance cost projections
+
+#### AI/LLM Approach
+Financial models calculate asset NPVs under multiple energy transition scenarios to identify stranding risk. Machine learning clusters assets by risk profile and identifies optimal portfolio strategies. NLP monitors competitor announcements, policy signals, and market intelligence to provide early warning of stranding triggers.
+
+#### Example Interaction (Stranded Asset Analysis)
+
+**User Prompt:**
+"Analyze our upstream portfolio for stranding risk and recommend a prioritized divestment or transition strategy."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  STRANDED ASSET & TRANSITION RISK DASHBOARD                                     │
+│  Stellaris Energy - Upstream Portfolio Analysis                    Q1 2026      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  PORTFOLIO OVERVIEW                                                             │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  Total Upstream Asset Base: $8.2B (Book Value)                                  │
+│  2P Reserves: 1.85B boe  │  Production: 185,000 boe/d  │  Avg Cost: $28/boe    │
+│                                                                                 │
+│  STRANDING RISK CLASSIFICATION                                                  │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Risk Category Distribution (by Book Value)                               │  │
+│  │                                                                           │  │
+│  │  LOW RISK          ████████████████████████████████░░░░░░  $5.1B (62%)   │  │
+│  │  (<15% NPV loss)                                                          │  │
+│  │                                                                           │  │
+│  │  MEDIUM RISK       ██████████████░░░░░░░░░░░░░░░░░░░░░░░░  $2.0B (24%)   │  │
+│  │  (15-40% NPV loss)                                                        │  │
+│  │                                                                           │  │
+│  │  HIGH RISK         ███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  $1.1B (14%)   │  │
+│  │  (>40% NPV loss)                                                          │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  HIGH-RISK ASSETS DETAILED ANALYSIS                                             │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ASSET                │ Book   │ NPV      │ NPV (Net │ Stranding │ Risk  │  │
+│  │                       │ Value  │ (Current)│ Zero)    │ Loss      │ Score │  │
+│  │  ═════════════════════╪════════╪══════════╪══════════╪═══════════╪═══════│  │
+│  │  Niger Delta Block    │ $420M  │   $380M  │   $145M  │   -62%    │  92   │  │
+│  │  Alberta Oil Sands JV │ $385M  │   $290M  │   $95M   │   -67%    │  89   │  │
+│  │  Mature North Sea     │ $295M  │   $185M  │   $75M   │   -59%    │  78   │  │
+│  │  Kazakhstan Heavy Oil │ $280M  │   $240M  │   $125M  │   -48%    │  72   │  │
+│  │  Brazil Pre-Salt (10%)│ $185M  │   $220M  │   $165M  │   -25%    │  45   │  │
+│  │  ─────────────────────┼────────┼──────────┼──────────┼───────────┼───────│  │
+│  │  TOTAL HIGH/MED RISK  │$1.57B  │  $1.32B  │  $605M   │   -54%    │       │  │
+│  │                                                                           │  │
+│  │  Risk Score: 0-100 scale incorporating NPV loss, policy exposure,        │  │
+│  │  operational flexibility, and reputational factors                        │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  NIGER DELTA BLOCK - HIGHEST STRANDING RISK                                     │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Asset Profile                                                            │  │
+│  │  ├── Reserves: 180 MMboe  │  Production: 28,000 boe/d                    │  │
+│  │  ├── Opex: $24/boe  │  Carbon Intensity: 45 kgCO2/boe                    │  │
+│  │  ├── Remaining Life: 12 years  │  Decommissioning: $95M                  │  │
+│  │  └── Working Interest: 45%                                                │  │
+│  │                                                                           │  │
+│  │  STRANDING RISK FACTORS                                                   │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Factor                           │ Impact │ Probability │ Score  │  │  │
+│  │  │  ─────────────────────────────────┼────────┼─────────────┼────────│  │  │
+│  │  │  Carbon cost escalation (EU CBAM) │  High  │    85%      │   28   │  │  │
+│  │  │  Investor/lender exclusion lists  │  High  │    70%      │   22   │  │  │
+│  │  │  Nigeria policy uncertainty       │ Medium │    65%      │   18   │  │  │
+│  │  │  Flaring/methane regulations      │ Medium │    80%      │   15   │  │  │
+│  │  │  Security/operational disruption  │ Medium │    50%      │    9   │  │  │
+│  │  │  ─────────────────────────────────┴────────┴─────────────┴────────│  │  │
+│  │  │  COMPOSITE RISK SCORE                                        92   │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  NPV SENSITIVITY TO CARBON PRICE                                          │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  NPV │                                                             │  │  │
+│  │  │ $400M┤ ●                                                           │  │  │
+│  │  │      │  ╲                                                          │  │  │
+│  │  │ $300M┤   ╲                                                         │  │  │
+│  │  │      │    ╲                                                        │  │  │
+│  │  │ $200M┤     ╲  ● Current Policy                                    │  │  │
+│  │  │      │      ╲  │                                                   │  │  │
+│  │  │ $100M┤       ╲ ▼                                                   │  │  │
+│  │  │      │        ●────●                                               │  │  │
+│  │  │    $0┤              ╲                                              │  │  │
+│  │  │      │               ●────● Net Zero                               │  │  │
+│  │  │-$100M┤                     ╲                                       │  │  │
+│  │  │      │                      ●                                      │  │  │
+│  │  │      └───┬────┬────┬────┬────┬────┬────                           │  │  │
+│  │  │        €30  €60  €90 €120 €150 €180 €200                          │  │  │
+│  │  │              Carbon Price (€/tCO2)                                 │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Break-even Carbon Price: €95/tCO2                                │  │  │
+│  │  │  Current EU ETS: €81/tCO2 │ 2030 Forecast (Net Zero): €125/tCO2   │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  DIVESTMENT STRATEGY ANALYSIS                                                   │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  PRIORITIZED ACTION MATRIX                                                │  │
+│  │                                                                           │  │
+│  │          DIVESTMENT ATTRACTIVENESS                                        │  │
+│  │                 LOW          MEDIUM          HIGH                         │  │
+│  │        ┌───────────────┬───────────────┬───────────────┐                 │  │
+│  │        │               │               │               │                 │  │
+│  │  HIGH  │   CONVERT/    │    SELL       │  ACCELERATE   │                 │  │
+│  │        │   REPURPOSE   │    SOON       │    SALE       │                 │  │
+│  │        │               │               │               │                 │  │
+│  │ STRAND │   Kazakhstan  │  Mature N Sea │  Niger Delta  │                 │  │
+│  │  RISK  │               │               │  Alberta JV   │                 │  │
+│  │        ├───────────────┼───────────────┼───────────────┤                 │  │
+│  │        │               │               │               │                 │  │
+│  │  LOW   │    HOLD       │  OPTIMIZE &   │  STRATEGIC    │                 │  │
+│  │        │               │    HOLD       │    REVIEW     │                 │  │
+│  │        │               │               │               │                 │  │
+│  │        │   Norway      │  Brazil PS    │               │                 │  │
+│  │        │   UK Offshore │               │               │                 │  │
+│  │        └───────────────┴───────────────┴───────────────┘                 │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  RECOMMENDED DIVESTMENT TIMELINE                                                │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  PHASE 1: ACCELERATE (2026)                                               │  │
+│  │  ════════════════════════════════════════════════════════════════════════ │  │
+│  │                                                                           │  │
+│  │  NIGER DELTA BLOCK                                                        │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Current Book Value:     $420M                                     │  │  │
+│  │  │  Expected Sale Value:    $280-320M (33-25% discount)              │  │  │
+│  │  │  NPV if Retained (NZ):   $145M                                     │  │  │
+│  │  │  ────────────────────────────────────────────────────────────────  │  │  │
+│  │  │  Value Preserved by Sale: $135-175M vs NZ retention               │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Potential Buyers:                                                 │  │  │
+│  │  │  • National oil companies (NNPC, Petronas)                        │  │  │
+│  │  │  • Private equity (Seplat, First E&P, Heirs Holdings)            │  │  │
+│  │  │  • Local independents (Sahara, Oando)                             │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Recent Comparable: Shell Nigeria divestment Q4 2025 at 0.7x PV10 │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  RECOMMENDATION: Launch sale process Q2 2026                       │  │  │
+│  │  │  Impairment if sold: $100-140M (pre-tax)                          │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  ALBERTA OIL SANDS JV                                                     │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Current Book Value:     $385M                                     │  │  │
+│  │  │  Expected Sale Value:    $180-220M (50-43% discount)              │  │  │
+│  │  │  NPV if Retained (NZ):   $95M                                      │  │  │
+│  │  │  ────────────────────────────────────────────────────────────────  │  │  │
+│  │  │  Value Preserved by Sale: $85-125M vs NZ retention                │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  ⚠ Market Challenge: Limited buyer universe for oil sands        │  │  │
+│  │  │  Consider: Farm-down to Canadian midsize (MEG, Athabasca) or      │  │  │
+│  │  │            asset swap for lower-carbon Canadian conventional       │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  RECOMMENDATION: Engage advisors Q2, target close Q4 2026         │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  PHASE 2: STRUCTURED (2027)                                               │  │
+│  │  ════════════════════════════════════════════════════════════════════════ │  │
+│  │                                                                           │  │
+│  │  MATURE NORTH SEA                                                         │  │
+│  │  • Decommissioning liability offsetting value                            │  │
+│  │  • Explore P&A securitization or specialist acquirer                     │  │
+│  │  • Timeline: Launch 2027, allow 18 months                                │  │
+│  │                                                                           │  │
+│  │  PHASE 3: CONDITIONAL (2028+)                                             │  │
+│  │  ════════════════════════════════════════════════════════════════════════ │  │
+│  │                                                                           │  │
+│  │  KAZAKHSTAN HEAVY OIL                                                     │  │
+│  │  • Evaluate conversion to CCUS hub (geological storage potential)        │  │
+│  │  • If no conversion viable, divest 2028-2029                             │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  PEER COMPARISON - TRANSITION ACTIVITY                                          │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Company        │ 2025 Divestments │ Portfolio Shift │ Stranding Talk   │  │
+│  │  ════════════════╪══════════════════╪═════════════════╪══════════════════│  │
+│  │  Shell          │ $4.8B            │ Aggressive      │ Explicit targets │  │
+│  │  TotalEnergies  │ $2.2B            │ Moderate        │ Integrated model │  │
+│  │  BP             │ $3.6B            │ Aggressive      │ Explicit targets │  │
+│  │  Equinor        │ $0.8B            │ Moderate        │ Selective        │  │
+│  │  Stellaris (Us) │ $0.3B            │ Conservative    │ Limited          │  │
+│  │                                                                           │  │
+│  │  ⚠ Peer activity suggests market window for high-carbon assets closing  │  │
+│  │    Recommend accelerating divestment to capture remaining value          │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  FINANCIAL IMPACT SUMMARY                                                       │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  RECOMMENDED DIVESTMENT PROGRAM (2026-2028)                               │  │
+│  │  ════════════════════════════════════════════════════════════════════════ │  │
+│  │                                                                           │  │
+│  │  Gross Proceeds:            $750M - $950M                                 │  │
+│  │  Book Value Divested:       $1.1B                                         │  │
+│  │  Expected Impairments:      $200M - $350M (pre-tax)                      │  │
+│  │  Tax Shield (@ 25%):        $50M - $90M                                   │  │
+│  │  ────────────────────────────────────────────────────────────────────────│  │
+│  │  Net After-Tax Impact:      -$150M to -$260M                             │  │
+│  │                                                                           │  │
+│  │  vs ALTERNATIVE: Retain and strand                                        │  │
+│  │  ════════════════════════════════════════════════════════════════════════ │  │
+│  │  NPV under Net Zero:        $440M                                         │  │
+│  │  ────────────────────────────────────────────────────────────────────────│  │
+│  │  VALUE PRESERVED BY DIVESTING: $310M - $510M                             │  │
+│  │                                                                           │  │
+│  │  Plus qualitative benefits:                                               │  │
+│  │  • Reduced carbon intensity of portfolio                                  │  │
+│  │  • Improved ESG ratings and financing terms                              │  │
+│  │  • Lower operational complexity and risk                                 │  │
+│  │  • Capital recycled to low-carbon growth                                 │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Asset Deep-Dive]  [Scenario Model]  [Buyer Analysis]  [Board Package]        │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Portfolio stranding risk classification
+- Asset-level NPV under transition scenarios
+- Prioritized divestment recommendations
+- Buyer universe and comparable transaction analysis
+- Financial impact modeling (proceeds, impairments, tax)
+- Peer benchmarking on transition activity
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Stranding risk visibility | Qualitative | Quantified NPV | Actionable |
+| Scenario modeling frequency | Annual | On-demand | Responsive |
+| Divestment timing optimization | Reactive | Proactive | Strategic |
+| Value preservation vs strand | Unmeasured | Tracked | Maximized |
+
+---
+
+## Layer 7: External Benchmarking, Market Intelligence & Board Narratives
+
+### Purpose
+Provide Treasury leadership with competitive intelligence, peer benchmarking analytics, and automated narrative generation capabilities that enable confident, data-driven communication with boards, investors, and analysts—transforming raw financial data into compelling strategic stories.
+
+### Core Capability
+The External Benchmarking & Board Narratives module aggregates peer financial data, market intelligence feeds, and internal KPIs to produce automated benchmarking analyses, variance commentary, and board-ready presentations. Through integration with financial databases, news feeds, and internal reporting systems, Treasury gains the ability to contextualize performance, anticipate analyst questions, and maintain consistent, high-quality stakeholder communications.
+
+```mermaid
+flowchart TB
+    subgraph Inputs["Data Sources"]
+        A1[Peer Financials]
+        A2[Market Intelligence]
+        A3[Internal KPIs]
+        A4[Strategic Plans]
+        A5[Analyst Reports]
+    end
+
+    subgraph Processing["Benchmarking & Narrative Engine"]
+        B1[Peer Benchmarking]
+        B2[Market Intelligence]
+        B3[Narrative Generator]
+        B4[Analyst Prep]
+        B5[KPI Dashboard]
+        B6[Initiative Tracker]
+    end
+
+    subgraph Outputs["Stakeholder Communications"]
+        C1[Board Presentations]
+        C2[Investor Materials]
+        C3[Performance Reports]
+        C4[Strategic Updates]
+    end
+
+    A1 --> B1
+    A2 --> B2
+    A3 --> B5
+    A4 --> B6
+    A5 --> B4
+
+    B1 --> C1
+    B2 --> C2
+    B3 --> C1
+    B3 --> C2
+    B4 --> C2
+    B5 --> C3
+    B6 --> C4
+```
+
+---
+
+### Use Case 7.1: Peer Financial Benchmarking
+
+#### What It Does
+Automatically collects, normalizes, and analyzes financial metrics from peer companies, generating comparative dashboards that highlight relative performance on liquidity, leverage, capital efficiency, and funding costs—enabling Treasury to identify competitive gaps and best practices.
+
+#### Key Inputs
+- Peer company financial statements (10-K, 20-F, annual reports)
+- Credit ratings and rating agency reports
+- Debt capital markets pricing and spreads
+- Treasury policy disclosures
+- ESG and sustainability metrics
+- Analyst consensus estimates
+
+#### AI/LLM Approach
+NLP extracts financial metrics from unstructured filings and reports, normalizing for accounting differences and currency. Machine learning identifies statistical outliers and performance drivers. Automated commentary explains relative positioning and trends, highlighting actionable insights for Treasury strategy.
+
+#### Example Interaction (Peer Benchmarking)
+
+**User Prompt:**
+"Generate a peer benchmarking analysis comparing our Treasury metrics to our 5 closest competitors for the board meeting."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  TREASURY PEER BENCHMARKING ANALYSIS                                            │
+│  Stellaris Energy vs Selected Peers                                Q4 2025      │
+│  Prepared for: Board of Directors                                               │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  PEER GROUP COMPOSITION                                                         │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │  Company          │ Market Cap │ Revenue  │ Credit Rating │ Geography    │  │
+│  │  ═════════════════╪════════════╪══════════╪═══════════════╪══════════════│  │
+│  │  Stellaris (Us)   │   $28B     │  $42B    │  BBB+/Baa1    │ Europe/Intl  │  │
+│  │  NordicPetro      │   $32B     │  $48B    │  A-/A3        │ Europe       │  │
+│  │  AtlanticEnergy   │   $25B     │  $38B    │  BBB/Baa2     │ Europe/US    │  │
+│  │  MediterraneanOil │   $22B     │  $35B    │  BBB/Baa2     │ Europe/MENA  │  │
+│  │  BalticResources  │   $18B     │  $28B    │  BBB-/Baa3    │ Europe       │  │
+│  │  CaspianEnergy    │   $15B     │  $24B    │  BB+/Ba1      │ Europe/CIS   │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  Selection Criteria: European-headquartered integrated E&P companies with      │
+│  comparable scale and business mix                                              │
+│                                                                                 │
+│  EXECUTIVE SUMMARY - TREASURY POSITIONING                                       │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  OVERALL TREASURY RANKING: 2nd of 6 peers                                │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  STRENGTHS                     │  AREAS FOR IMPROVEMENT            │  │  │
+│  │  │  ═════════════════════════════ │  ═══════════════════════════════ │  │  │
+│  │  │  ✓ Liquidity coverage (1st)   │  ⚠ Debt maturity profile (4th)   │  │  │
+│  │  │  ✓ Interest coverage (2nd)    │  ⚠ FX hedge ratio (5th)          │  │  │
+│  │  │  ✓ Working capital mgmt (1st) │  ⚠ Cash centralization (3rd)     │  │  │
+│  │  │  ✓ ESG financing mix (2nd)    │                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  DETAILED METRIC COMPARISON                                                     │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  LIQUIDITY METRICS                                                              │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  LIQUIDITY / NEXT 12M DEBT MATURITIES                                    │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Stellaris      ████████████████████████████████████████░  4.2x ★ │  │  │
+│  │  │  NordicPetro    ██████████████████████████████████░░░░░░░  3.4x   │  │  │
+│  │  │  AtlanticEnergy ██████████████████████████████░░░░░░░░░░░  2.9x   │  │  │
+│  │  │  MediterraneanOil████████████████████████████░░░░░░░░░░░░  2.7x   │  │  │
+│  │  │  BalticResources██████████████████████░░░░░░░░░░░░░░░░░░░  2.1x   │  │  │
+│  │  │  CaspianEnergy  ████████████████░░░░░░░░░░░░░░░░░░░░░░░░░  1.6x   │  │  │
+│  │  │                 └─────────────────────────────────────────────    │  │  │
+│  │  │                 0x        1x        2x        3x        4x         │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Peer Median: 2.8x  │  Stellaris Premium: +1.4x (+50%)            │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Commentary: Stellaris maintains sector-leading liquidity         │  │  │
+│  │  │  coverage, providing superior financial flexibility. Consider     │  │  │
+│  │  │  modest reduction toward 3.5x to optimize cost of carry.         │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  CASH & EQUIVALENTS (% OF REVENUE)                                        │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Company        │  Cash  │  Undrawn RCF │  Total Liq │  % Revenue │  │  │
+│  │  │  ═══════════════╪════════╪══════════════╪════════════╪════════════│  │  │
+│  │  │  Stellaris      │ $1.2B  │    $1.5B     │   $2.7B    │    6.4%    │  │  │
+│  │  │  NordicPetro    │ $1.8B  │    $2.0B     │   $3.8B    │    7.9%    │  │  │
+│  │  │  AtlanticEnergy │ $0.9B  │    $1.2B     │   $2.1B    │    5.5%    │  │  │
+│  │  │  Mediterranean  │ $0.7B  │    $1.0B     │   $1.7B    │    4.9%    │  │  │
+│  │  │  Baltic         │ $0.5B  │    $0.8B     │   $1.3B    │    4.6%    │  │  │
+│  │  │  Caspian        │ $0.3B  │    $0.5B     │   $0.8B    │    3.3%    │  │  │
+│  │  │  ═══════════════╪════════╪══════════════╪════════════╪════════════│  │  │
+│  │  │  Peer Median    │ $0.8B  │    $1.1B     │   $1.9B    │    5.2%    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  LEVERAGE & CAPITAL STRUCTURE                                                   │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  NET DEBT / EBITDA                                                        │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │      0x      1x      2x      3x      4x                           │  │  │
+│  │  │      ├───────┼───────┼───────┼───────┤                            │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Nordic        ●──────────────────────────── 0.8x  (Best)         │  │  │
+│  │  │  Stellaris         ●───────────────────────── 1.2x  (2nd) ★       │  │  │
+│  │  │  Atlantic              ●────────────────────── 1.5x               │  │  │
+│  │  │  Mediterranean             ●─────────────────── 1.8x              │  │  │
+│  │  │  Baltic                        ●──────────────── 2.2x             │  │  │
+│  │  │  Caspian                               ●───────── 2.9x            │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Peer Median: 1.65x  │  Stellaris vs Median: -0.45x (Better)     │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  DEBT MATURITY PROFILE                                                    │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Company        │ Avg Mat │ % Due <3yr │ Weighted Avg │  Rank     │  │  │
+│  │  │  ═══════════════╪═════════╪════════════╪══════════════╪═══════════│  │  │
+│  │  │  NordicPetro    │  6.2yr  │    18%     │    3.85%     │    1st    │  │  │
+│  │  │  Mediterranean  │  5.8yr  │    22%     │    4.12%     │    2nd    │  │  │
+│  │  │  AtlanticEnergy │  5.1yr  │    28%     │    4.35%     │    3rd    │  │  │
+│  │  │  Stellaris      │  4.6yr  │    32%     │    4.28%     │    4th ⚠ │  │  │
+│  │  │  BalticResources│  4.2yr  │    35%     │    4.85%     │    5th    │  │  │
+│  │  │  CaspianEnergy  │  3.8yr  │    42%     │    5.62%     │    6th    │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  INSIGHT: Stellaris has shorter average maturity than top peers.  │  │  │
+│  │  │  Recommend extending duration in next refinancing cycle.          │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  FUNDING COST ANALYSIS                                                          │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ALL-IN COST OF DEBT (Including Fees)                                    │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Company        │ Spread │ All-In │ vs Rating Implied │ Efficiency │  │  │
+│  │  │  ═══════════════╪════════╪════════╪═══════════════════╪════════════│  │  │
+│  │  │  NordicPetro    │ +95bps │  4.15% │      -15bps       │  Optimal   │  │  │
+│  │  │  Stellaris      │ +125bps│  4.45% │      -10bps       │  Good   ★  │  │  │
+│  │  │  AtlanticEnergy │ +145bps│  4.65% │       +5bps       │  Average   │  │  │
+│  │  │  Mediterranean  │ +155bps│  4.75% │      +10bps       │  Average   │  │  │
+│  │  │  Baltic         │ +185bps│  5.05% │      +15bps       │  Suboptimal│  │  │
+│  │  │  Caspian        │ +275bps│  5.95% │      +25bps       │  Suboptimal│  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Commentary: Stellaris achieves funding 10bps inside rating-     │  │  │
+│  │  │  implied levels, reflecting strong investor relationships and     │  │  │
+│  │  │  ESG positioning. Top-tier peers achieve 15bps inside.           │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  CREDIT SPREAD TREND (5-Year CDS)                                         │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  bps│                                                              │  │  │
+│  │  │  200├─────────────────────────────────────────────────────────────│  │  │
+│  │  │     │    ╱╲                                                        │  │  │
+│  │  │  150├───╱──╲──────────────────────────────────────────────────────│  │  │
+│  │  │     │  ╱    ╲         ╱╲                                          │  │  │
+│  │  │  125├─╱──────╲───────╱──╲─────────────────────────────────────────│  │  │
+│  │  │     │╱        ╲     ╱    ╲    ╱─╲          Stellaris              │  │  │
+│  │  │  100├──────────╲───╱──────╲──╱───╲────────●═══════════════════════│  │  │
+│  │  │     │           ╲─╱        ╲╱     ╲   ╱                 98bps     │  │  │
+│  │  │   75├──────────────────────────────╲─╱────────────────────────────│  │  │
+│  │  │     │                                     Peer Median             │  │  │
+│  │  │   50├─────────────────────────────────────●═══════════════════════│  │  │
+│  │  │     │                                                   72bps     │  │  │
+│  │  │     └────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────│  │  │
+│  │  │        Q1  Q2  Q3  Q4  Q1  Q2  Q3  Q4  Q1  Q2  Q3  Q4            │  │  │
+│  │  │              2024           2025           2026                   │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Stellaris CDS: 98bps │ Peer Median: 72bps │ Gap: +26bps         │  │  │
+│  │  │  Gap driver: Rating differential (BBB+ vs A- median)             │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  WORKING CAPITAL & CASH MANAGEMENT                                              │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  CASH CONVERSION CYCLE (Days)                                             │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Stellaris      █████████████████░░░░░░░░░░░░░░░░░░░  28 days ★  │  │  │
+│  │  │  NordicPetro    █████████████████████░░░░░░░░░░░░░░░░  35 days   │  │  │
+│  │  │  Mediterranean  ██████████████████████████░░░░░░░░░░░  42 days   │  │  │
+│  │  │  Atlantic       ███████████████████████████░░░░░░░░░░  45 days   │  │  │
+│  │  │  Baltic         ████████████████████████████████░░░░░  52 days   │  │  │
+│  │  │  Caspian        █████████████████████████████████████░ 58 days   │  │  │
+│  │  │                 └─────────────────────────────────────────────    │  │  │
+│  │  │                 0      15      30      45      60      75         │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Stellaris Best-in-Class: 7 days faster than next peer           │  │  │
+│  │  │  Working capital efficiency equivalent to ~$200M cash release    │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  STRATEGIC RECOMMENDATIONS                                                      │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  BASED ON PEER BENCHMARKING ANALYSIS                                      │  │
+│  │                                                                           │  │
+│  │  1. EXTEND DEBT MATURITY PROFILE                                          │  │
+│  │     Current: 4.6yr avg │ Target: 5.5yr+ │ Method: 10yr bond issuance     │  │
+│  │     Estimated impact: +5bps cost, -12% refinancing risk                  │  │
+│  │                                                                           │  │
+│  │  2. ENHANCE FX HEDGE PROGRAM                                              │  │
+│  │     Current hedge ratio: 45% │ Peer best practice: 65%+                  │  │
+│  │     Opportunity: Reduce earnings volatility from FX by ~40%              │  │
+│  │                                                                           │  │
+│  │  3. OPTIMIZE LIQUIDITY LEVEL                                              │  │
+│  │     Current: 4.2x coverage │ Recommended: 3.5x                           │  │
+│  │     Cash release opportunity: ~$350M for debt reduction or buybacks      │  │
+│  │                                                                           │  │
+│  │  4. PURSUE RATING UPGRADE PATH                                            │  │
+│  │     Key gaps vs A-rated peers:                                           │  │
+│  │     • FFO/Debt: 42% (need 50%+)                                          │  │
+│  │     • Debt/Capital: 38% (at threshold)                                   │  │
+│  │     Path: $500M debt reduction achieves metrics by Q4 2026               │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Full Report]  [Peer Deep-Dive]  [Historical Trends]  [Export for Board]      │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Peer comparison dashboards
+- Metric ranking tables
+- Trend analysis and gap identification
+- Actionable recommendations
+- Board-ready visualizations
+- Historical benchmarking trends
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Peer data collection | Manual, weeks | Automated, hours | 95% faster |
+| Benchmarking frequency | Annual | Quarterly | 4x more frequent |
+| Metrics tracked | 10-15 | 50+ | Comprehensive |
+| Insight generation | Manual analysis | AI-driven | Objective |
+
+---
+
+### Use Case 7.2: Market Intelligence Feed
+
+#### What It Does
+Aggregates and synthesizes market intelligence from multiple sources—news, analyst reports, regulatory filings, social media—to provide Treasury with early warning on competitor actions, market developments, and emerging trends that could impact funding strategies or financial planning.
+
+#### Key Inputs
+- Financial news feeds (Bloomberg, Reuters, FT)
+- Analyst reports and rating agency commentary
+- Regulatory filings (8-K, material events)
+- Social media and sentiment data
+- Commodity and FX market data
+- Central bank communications
+
+#### AI/LLM Approach
+NLP models process thousands of daily news items and documents, extracting Treasury-relevant signals and classifying by impact and urgency. Sentiment analysis tracks market perception trends. Summarization models condense lengthy reports into actionable briefings, while entity recognition links news to specific peers, counterparties, or markets.
+
+#### Example Interaction (Market Intelligence)
+
+**User Prompt:**
+"What market developments from the past week should Treasury be aware of, particularly regarding our peer group and funding markets?"
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  TREASURY MARKET INTELLIGENCE BRIEFING                                          │
+│  Week of January 6-12, 2026                                      Priority: HIGH │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  EXECUTIVE SUMMARY                                                              │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  KEY DEVELOPMENTS THIS WEEK                                               │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  🔴 HIGH IMPACT                                                          │  │
+│  │  • NordicPetro announces $2B bond offering—credit spreads tightening    │  │
+│  │  • ECB signals potential March rate cut—EUR funding window opening      │  │
+│  │                                                                           │  │
+│  │  🟡 MEDIUM IMPACT                                                        │  │
+│  │  • AtlanticEnergy credit outlook upgraded to Positive by S&P           │  │
+│  │  • Oil price rally (+8% WTI)—improves sector credit metrics            │  │
+│  │                                                                           │  │
+│  │  🟢 MONITORING                                                           │  │
+│  │  • OPEC+ extends production cuts through Q2                              │  │
+│  │  • EU carbon price hits €85/t—5-month high                              │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  PEER ACTIVITY MONITOR                                                          │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  NORDICPETRO - MAJOR FINANCING ACTIVITY                      🔴 HIGH     │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Event: Announced $2B dual-tranche bond offering (7yr + 12yr)           │  │
+│  │  Timing: Books open Jan 15, pricing expected Jan 17                      │  │
+│  │  Guidance: +110-115bps (7yr), +135-140bps (12yr) vs mid-swaps          │  │
+│  │                                                                           │  │
+│  │  Market Reception:                                                        │  │
+│  │  • Orderbook 3.2x oversubscribed by EOD Thursday                        │  │
+│  │  • Strong ESG investor participation (35% of book)                      │  │
+│  │  • Pricing expected to tighten 5-10bps vs guidance                      │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  IMPLICATIONS FOR STELLARIS                                        │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  • Confirms strong appetite for energy sector paper                │  │  │
+│  │  │  • Suggests favorable window for Stellaris issuance               │  │  │
+│  │  │  • Our comparable spread: ~+125-130bps (7yr) given rating diff   │  │  │
+│  │  │  • RECOMMENDATION: Consider accelerating 2026 refinancing plan    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  ATLANTICENERGY - CREDIT UPGRADE                             🟡 MEDIUM   │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Event: S&P revised outlook to Positive from Stable                      │  │
+│  │  Key Factors Cited:                                                       │  │
+│  │  • Debt reduction of $1.2B over past 18 months                          │  │
+│  │  • FFO/Debt improvement to 48% (from 38%)                               │  │
+│  │  • Successful renewable energy diversification                           │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  IMPLICATIONS FOR STELLARIS                                        │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  • Atlantic now on upgrade path—potential competitive pressure    │  │  │
+│  │  │  • Our FFO/Debt: 42% vs their 48%                                 │  │  │
+│  │  │  • Validates rating agency focus on debt reduction + transition   │  │  │
+│  │  │  • RECOMMENDATION: Discuss upgrade path with S&P in Q1 meeting   │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  CASPIANENERGY - REFINANCING CHALLENGE                       🟡 MEDIUM   │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Event: Pulled planned €500M bond offering due to "market conditions"   │  │
+│  │  Background: BB+/Ba1 rated, significant Russia-adjacent exposure        │  │
+│  │  Market Talk: Investor concerns over geopolitical risk, pricing >+350bp │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  IMPLICATIONS FOR STELLARIS                                        │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  • Market discriminating sharply on credit quality/geopolitics   │  │  │
+│  │  │  • Investment grade issuers (like us) benefiting from flight     │  │  │
+│  │  │  • Potential counterparty monitoring: review Caspian exposures   │  │  │
+│  │  │  • Stellaris exposure to Caspian: €45M trade receivables         │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  CENTRAL BANK & RATE ENVIRONMENT                                                │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ECB POLICY SIGNAL                                           🔴 HIGH     │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Source: ECB Governing Council minutes + Lagarde speech (Jan 10)        │  │
+│  │                                                                           │  │
+│  │  Key Signals:                                                             │  │
+│  │  • "Disinflation process well on track"                                  │  │
+│  │  • "Rates moving toward neutral level over coming quarters"             │  │
+│  │  • Market pricing: 85% probability of 25bp cut in March                 │  │
+│  │                                                                           │  │
+│  │  EUR SWAP CURVE SHIFT (Past Week)                                         │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Tenor   │  Jan 6   │  Jan 12  │  Change  │  Implication         │  │  │
+│  │  │  ════════╪══════════╪══════════╪══════════╪══════════════════════│  │  │
+│  │  │  2-Year  │   2.65%  │   2.52%  │  -13bps  │  Front-end rally     │  │  │
+│  │  │  5-Year  │   2.48%  │   2.41%  │   -7bps  │  Belly steepening    │  │  │
+│  │  │  10-Year │   2.55%  │   2.52%  │   -3bps  │  Long-end stable     │  │  │
+│  │  │  30-Year │   2.72%  │   2.71%  │   -1bps  │  Ultra-long anchored │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  TREASURY ACTION ITEMS                                             │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  1. Consider pre-hedging 2026 refinancing with rate locks         │  │  │
+│  │  │  2. Evaluate floating-to-fixed swap opportunities                 │  │  │
+│  │  │  3. Review deposit placement strategy (falling rates)            │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  COMMODITY & FX MOVEMENTS                                                       │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  WTI +8.2% | Brent +7.5% | EUR/USD -1.2% | Carbon +4.8%                 │  │
+│  │                                                                           │  │
+│  │  Impact on Stellaris Metrics:                                             │  │
+│  │  • Projected EBITDA improvement: +$85M (oil price)                       │  │
+│  │  • Translation impact: -$35M (EUR weakness)                              │  │
+│  │  • Carbon compliance cost: +$12M (EUA rally)                             │  │
+│  │  • NET IMPACT: +$38M vs prior week assumptions                           │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  SENTIMENT ANALYSIS - STELLARIS MENTIONS                                        │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Media Mentions: 23 (vs 18 avg)  │  Sentiment: Neutral-Positive (+0.12) │  │
+│  │                                                                           │  │
+│  │  Notable Coverage:                                                        │  │
+│  │  • Reuters: "Stellaris Q4 production beats estimates" (Positive)        │  │
+│  │  • FT: Sector piece on European E&P transition (Neutral)                │  │
+│  │  • Bloomberg: "Energy credit spreads compress" (Mentions Stellaris)     │  │
+│  │                                                                           │  │
+│  │  No negative analyst commentary or rating agency concerns noted.         │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  RECOMMENDED ACTIONS THIS WEEK                                                  │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  PRIORITY 1: Evaluate bond issuance window                               │  │
+│  │  • NordicPetro success + ECB dovish turn = favorable conditions         │  │
+│  │  • Discuss with banks on timing for 2026 refinancing                     │  │
+│  │                                                                           │  │
+│  │  PRIORITY 2: Rate hedging review                                          │  │
+│  │  • Convene rates committee to assess pre-hedge opportunities             │  │
+│  │  • 2-year rates down 13bps—consider locking                              │  │
+│  │                                                                           │  │
+│  │  PRIORITY 3: Counterparty review                                          │  │
+│  │  • Review CaspianEnergy exposure limits given refinancing challenges    │  │
+│  │  • Current exposure within limits but warrants monitoring               │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Full Feed]  [Alert Settings]  [Historical Archive]  [Export Briefing]        │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Daily/weekly intelligence briefings
+- Peer activity alerts
+- Market sentiment tracking
+- Actionable Treasury recommendations
+- Counterparty risk signals
+- Rate and commodity impact analysis
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Information sources monitored | 5-10 | 100+ | Comprehensive |
+| Alert latency | Hours/days | Minutes | Real-time |
+| Relevance filtering | Manual | AI-curated | Efficient |
+| Actionable insights generated | Ad hoc | Systematic | Proactive |
+
+---
+
+### Use Case 7.3: Board & Investor Narrative Generator
+
+#### What It Does
+Automatically generates draft narratives, talking points, and presentation content for board meetings, investor calls, and stakeholder communications—ensuring consistent messaging that contextualizes Treasury performance within market conditions and strategic objectives.
+
+#### Key Inputs
+- Internal financial results and KPIs
+- Peer benchmarking data
+- Market conditions and trends
+- Strategic plan and initiatives
+- Prior period communications
+- Audience-specific requirements
+
+#### AI/LLM Approach
+Large language models generate contextually appropriate narratives that explain financial results, link outcomes to strategic drivers, and maintain consistency with prior communications. Style transfer ensures appropriate tone for different audiences (board vs investors vs analysts). Fact-checking validates all quantitative claims against source data.
+
+#### Example Interaction (Narrative Generation)
+
+**User Prompt:**
+"Draft the Treasury section for the upcoming board presentation covering Q4 2025 performance and 2026 outlook."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  BOARD PRESENTATION DRAFT                                                       │
+│  Treasury Performance & Outlook                                                 │
+│  Stellaris Energy - Q4 2025 & FY 2026                         Draft v1.0       │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  SLIDE 1: TREASURY EXECUTIVE SUMMARY                                            │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  TREASURY PERFORMANCE HIGHLIGHTS - Q4 2025                                │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  KEY MESSAGES FOR BOARD                                                   │  │
+│  │                                                                           │  │
+│  │  1. STRONG LIQUIDITY POSITION MAINTAINED                                  │  │
+│  │     "Total liquidity of $2.7B provides 4.2x coverage of near-term        │  │
+│  │     maturities, positioning us well above peer median of 2.8x and        │  │
+│  │     ensuring financial flexibility for strategic opportunities."          │  │
+│  │                                                                           │  │
+│  │  2. FUNDING COSTS OPTIMIZED                                               │  │
+│  │     "Successfully refinanced $800M at 4.25%, achieving pricing 10bps     │  │
+│  │     inside rating-implied levels—reflecting strong investor confidence   │  │
+│  │     and our ESG leadership position."                                     │  │
+│  │                                                                           │  │
+│  │  3. RISK MANAGEMENT EFFECTIVE                                             │  │
+│  │     "FX hedging program protected $45M of EBITDA from EUR/USD             │  │
+│  │     volatility. Commodity hedges lock in 65% of 2026 production          │  │
+│  │     at attractive levels."                                                │  │
+│  │                                                                           │  │
+│  │  4. SUSTAINABILITY FINANCING EXPANDED                                     │  │
+│  │     "ESG-linked instruments now represent 42% of total debt, up from     │  │
+│  │     35% at year-end 2024. All sustainability KPI targets on track."      │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  SPEAKER NOTES:                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  "Treasury delivered another strong quarter, maintaining our sector-     │  │
+│  │  leading liquidity position while optimizing funding costs. Our Q4       │  │
+│  │  refinancing achieved pricing 10 basis points inside where our rating    │  │
+│  │  alone would suggest, reflecting the market's recognition of our         │  │
+│  │  operational performance and transition strategy.                         │  │
+│  │                                                                           │  │
+│  │  Importantly, we continued to advance our sustainable finance agenda,    │  │
+│  │  with ESG-linked instruments now representing 42% of our debt stack.     │  │
+│  │  This positions us well for increasingly ESG-focused capital markets    │  │
+│  │  while generating real economic benefit through lower margins."          │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  SLIDE 2: LIQUIDITY & CAPITAL STRUCTURE                                         │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  LIQUIDITY POSITION                                                       │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Component          │  Q4 2025  │  Q3 2025  │  Change  │  Target  │  │  │
+│  │  │  ══════════════════╪═══════════╪═══════════╪══════════╪══════════│  │  │
+│  │  │  Cash & Equivalents│   $1.2B   │   $1.0B   │  +$200M  │  $0.8B+  │  │  │
+│  │  │  Undrawn RCF       │   $1.5B   │   $1.5B   │     —    │  $1.5B   │  │  │
+│  │  │  ──────────────────┼───────────┼───────────┼──────────┼──────────│  │  │
+│  │  │  Total Liquidity   │   $2.7B   │   $2.5B   │  +$200M  │  $2.3B+  │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Next 12M Maturities: $650M                                       │  │  │
+│  │  │  Liquidity Coverage: 4.2x ✓                                       │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  NARRATIVE POINT:                                                         │  │
+│  │  "Cash generation of $200M in Q4 reflects strong operational             │  │
+│  │  performance and disciplined working capital management. Liquidity       │  │
+│  │  coverage of 4.2x provides substantial buffer against market             │  │
+│  │  disruption while funding 2026 capital program internally."              │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  DEBT MATURITY PROFILE                                                    │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  $M                                                                │  │  │
+│  │  │  1,200┤                                                            │  │  │
+│  │  │       │                                        ┌────┐              │  │  │
+│  │  │  1,000┤                                        │    │   ┌────┐     │  │  │
+│  │  │       │                              ┌────┐    │    │   │    │     │  │  │
+│  │  │    800┤                    ┌────┐    │    │    │    │   │    │     │  │  │
+│  │  │       │                    │    │    │    │    │    │   │    │     │  │  │
+│  │  │    600┤          ┌────┐    │    │    │    │    │    │   │    │     │  │  │
+│  │  │       │  ┌────┐  │    │    │    │    │    │    │    │   │    │     │  │  │
+│  │  │    400┤  │$350│  │$650│    │$750│    │$900│    │$1.1B│   │$1.0B│   │  │  │
+│  │  │       │  │    │  │    │    │    │    │    │    │    │   │    │     │  │  │
+│  │  │    200┤  │    │  │    │    │    │    │    │    │    │   │    │     │  │  │
+│  │  │       │  │    │  │    │    │    │    │    │    │    │   │    │     │  │  │
+│  │  │      0┤──┴────┴──┴────┴────┴────┴────┴────┴────┴────┴───┴────┴──── │  │  │
+│  │  │          2026    2027    2028    2029    2030    2031+             │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Average Maturity: 4.6 years │ Weighted Avg Cost: 4.28%           │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  NARRATIVE POINT:                                                         │  │
+│  │  "No material refinancing wall until 2028. The $650M 2027 maturity      │  │
+│  │  is well-covered by current liquidity and can be refinanced             │  │
+│  │  opportunistically given favorable current market conditions."           │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  SLIDE 3: 2026 TREASURY OUTLOOK                                                 │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  STRATEGIC PRIORITIES FOR 2026                                            │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  1. EXTEND DEBT MATURITY PROFILE                                   │  │  │
+│  │  │     ─────────────────────────────────────────────────────────────  │  │  │
+│  │  │     Objective: Increase average maturity from 4.6 to 5.5+ years   │  │  │
+│  │  │     Action: Issue 10-year bond in H1 2026 ($750M-$1B)            │  │  │
+│  │  │     Benefit: Reduced refinancing risk, demonstrates market access │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  2. PURSUE RATING UPGRADE PATH                                     │  │  │
+│  │  │     ─────────────────────────────────────────────────────────────  │  │  │
+│  │  │     Objective: Position for A- rating by 2027                     │  │  │
+│  │  │     Key Metric: FFO/Debt from 42% to 50%+                         │  │  │
+│  │  │     Benefit: 15-20bps lower funding costs, ~$8M annual savings   │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  3. EXPAND SUSTAINABLE FINANCE PROGRAM                             │  │  │
+│  │  │     ─────────────────────────────────────────────────────────────  │  │  │
+│  │  │     Objective: Increase ESG-linked debt to 50% of total           │  │  │
+│  │  │     Action: Refinance 2027 maturity with sustainability-linked   │  │  │
+│  │  │     Benefit: Margin benefit + stakeholder positioning             │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  4. OPTIMIZE LIQUIDITY DEPLOYMENT                                  │  │  │
+│  │  │     ─────────────────────────────────────────────────────────────  │  │  │
+│  │  │     Objective: Reduce excess liquidity from 4.2x to 3.5x coverage │  │  │
+│  │  │     Action: Deploy ~$350M to debt reduction or shareholder return │  │  │
+│  │  │     Benefit: Improved ROIC, supports rating upgrade path          │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  SPEAKER NOTES:                                                           │  │
+│  │  "For 2026, Treasury will focus on four strategic priorities that       │  │
+│  │  support our broader corporate strategy. First, extending our debt      │  │
+│  │  maturity profile through a 10-year bond issuance—current market        │  │
+│  │  conditions are favorable, and peer activity confirms investor demand.   │  │
+│  │                                                                           │  │
+│  │  Second, we'll continue on our rating upgrade path. The key metric is   │  │
+│  │  FFO-to-Debt, where we need to improve from 42% to above 50%. This is   │  │
+│  │  achievable through our planned debt reduction and continued strong     │  │
+│  │  operational cash generation.                                            │  │
+│  │                                                                           │  │
+│  │  Third, we'll expand our sustainable finance program, targeting 50%     │  │
+│  │  ESG-linked debt by year-end. This delivers real economic benefit       │  │
+│  │  through lower margins while positioning us well with ESG-focused       │  │
+│  │  investors.                                                               │  │
+│  │                                                                           │  │
+│  │  Finally, we'll optimize our liquidity level. While our 4.2x coverage   │  │
+│  │  is sector-leading, we believe 3.5x provides adequate protection. The   │  │
+│  │  released capital can support debt reduction or shareholder returns."   │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  SLIDE 4: KEY RISKS & MITIGANTS                                                 │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  RISK MATRIX                                                              │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Risk               │ Impact │ Likelihood │ Mitigant              │  │  │
+│  │  │  ═══════════════════╪════════╪════════════╪═══════════════════════│  │  │
+│  │  │  Interest rate spike│  High  │   Medium   │ 75% fixed-rate debt,  │  │  │
+│  │  │                     │        │            │ rate swaps in place   │  │  │
+│  │  │  ───────────────────┼────────┼────────────┼───────────────────────│  │  │
+│  │  │  Credit market      │ Medium │    Low     │ Strong liquidity,     │  │  │
+│  │  │  disruption         │        │            │ no near-term needs    │  │  │
+│  │  │  ───────────────────┼────────┼────────────┼───────────────────────│  │  │
+│  │  │  FX volatility      │ Medium │   High     │ Rolling hedge program │  │  │
+│  │  │  (EUR/USD, GBP)     │        │            │ covering 12M exposure │  │  │
+│  │  │  ───────────────────┼────────┼────────────┼───────────────────────│  │  │
+│  │  │  Counterparty       │ Medium │    Low     │ Diversified bank      │  │  │
+│  │  │  default            │        │            │ group, credit limits  │  │  │
+│  │  │  ───────────────────┼────────┼────────────┼───────────────────────│  │  │
+│  │  │  Covenant breach    │  High  │  V. Low    │ 1.3x+ headroom on     │  │  │
+│  │  │                     │        │            │ all ratios            │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  NARRATIVE POINT:                                                         │  │
+│  │  "Treasury risks are well-managed within established policy limits.      │  │
+│  │  Our fixed-rate debt and hedging programs protect against rate and FX    │  │
+│  │  volatility, while strong liquidity insulates us from market disruption. │  │
+│  │  Covenant headroom remains comfortable at 1.3x+ across all metrics."     │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  APPENDIX: ANTICIPATED BOARD QUESTIONS                                          │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  Q: "Why not reduce liquidity further to optimize returns?"              │  │
+│  │  A: "Our 3.5x target balances optimization with prudent risk management. │  │
+│  │     Given commodity price volatility and geopolitical uncertainty,       │  │
+│  │     maintaining above-peer liquidity provides strategic optionality."    │  │
+│  │                                                                           │  │
+│  │  Q: "What's driving the funding cost advantage vs peers?"                │  │
+│  │  A: "Three factors: our track record of meeting guidance, transparent    │  │
+│  │     investor communication, and leadership in sustainable finance.       │  │
+│  │     ESG-focused investors now represent 40%+ of our bond orderbooks."    │  │
+│  │                                                                           │  │
+│  │  Q: "How confident are we in achieving the rating upgrade?"              │  │
+│  │  A: "Cautiously optimistic. S&P's recent upgrade of AtlanticEnergy      │  │
+│  │     confirms the path—they achieved it with FFO/Debt at 48%. We're at   │  │
+│  │     42% and targeting 50%+ through debt reduction and cash generation." │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Edit Draft]  [Add Slides]  [Fact-Check]  [Export to PowerPoint]              │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Draft presentation slides with narratives
+- Speaker notes and talking points
+- Anticipated Q&A with suggested responses
+- Consistent messaging across stakeholders
+- Fact-checked quantitative claims
+- Export-ready formats
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Presentation prep time | 2-3 days | 2-3 hours | 90% faster |
+| Message consistency | Variable | Systematic | Controlled |
+| Fact-checking coverage | Spot-check | Comprehensive | Complete |
+| Q&A preparation | Ad hoc | Structured | Proactive |
+
+---
+
+### Use Case 7.4: Analyst Call Preparation
+
+#### What It Does
+Prepares Treasury leadership for analyst and investor calls by synthesizing recent analyst commentary, predicting likely questions based on current topics and peer discussions, and generating data-backed response frameworks with supporting evidence.
+
+#### Key Inputs
+- Recent analyst reports and recommendations
+- Peer company earnings call transcripts
+- Current market themes and concerns
+- Company-specific developments
+- Historical Q&A patterns
+- Financial model assumptions
+
+#### AI/LLM Approach
+NLP analyzes analyst reports to extract concerns, questions, and sentiment. Pattern matching identifies recurring themes across peer earnings calls. Generative AI creates question predictions with probability weightings and drafts response frameworks incorporating relevant data points and messaging guidance.
+
+#### Example Interaction (Analyst Prep)
+
+**User Prompt:**
+"Prepare me for Treasury-related questions on tomorrow's Q4 earnings call. What are analysts likely to ask?"
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  ANALYST CALL PREPARATION BRIEF                                                 │
+│  Q4 2025 Earnings Call - Treasury Questions                     January 2026   │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  ANALYST SENTIMENT OVERVIEW                                                     │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  RECENT ANALYST COMMENTARY ON STELLARIS TREASURY                          │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Analyst       │ Rating │ Key Treasury Comments                    │  │  │
+│  │  │  ═════════════╪════════╪══════════════════════════════════════════│  │  │
+│  │  │  Goldman Sachs│  Buy   │ "Balance sheet strength underappreciated"│  │  │
+│  │  │  JPMorgan     │  OW    │ "Excess liquidity drag on returns"      │  │  │
+│  │  │  Morgan Stanley│ EW    │ "Refinancing risk minimal vs peers"     │  │  │
+│  │  │  Barclays     │  OW    │ "ESG financing leadership differentiator"│  │  │
+│  │  │  UBS          │  Neutral│ "Hedge gains masking operational weakness"│  │  │
+│  │  │  Citi         │  Buy   │ "Rating upgrade potential undervalued"   │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Consensus View: Generally positive on balance sheet, some concern       │  │
+│  │  about capital efficiency (liquidity level) and hedge reliance          │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  PREDICTED QUESTIONS - RANKED BY LIKELIHOOD                                     │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  QUESTION 1: CAPITAL ALLOCATION & LIQUIDITY          Probability: 85%    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Likely Formulation:                                                      │  │
+│  │  "With liquidity at 4.2x coverage—well above peers—how do you think     │  │
+│  │  about deploying excess cash? Should we expect debt reduction,           │  │
+│  │  increased buybacks, or higher dividends?"                                │  │
+│  │                                                                           │  │
+│  │  CONTEXT:                                                                 │  │
+│  │  • JPMorgan flagged "excess liquidity drag" in recent note              │  │
+│  │  • NordicPetro reduced liquidity from 4.0x to 3.2x, funded buyback      │  │
+│  │  • Peer median liquidity: 2.8x                                           │  │
+│  │                                                                           │  │
+│  │  SUGGESTED RESPONSE FRAMEWORK:                                            │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Key Messages:                                                     │  │  │
+│  │  │  1. Acknowledge elevated liquidity is intentional, not passive    │  │  │
+│  │  │  2. Announce 3.5x target—releasing ~$350M                         │  │  │
+│  │  │  3. Primary use: debt reduction to support rating upgrade path    │  │  │
+│  │  │  4. Maintain flexibility for opportunistic uses                   │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Draft Response:                                                   │  │  │
+│  │  │  "You're right that we've maintained higher liquidity than peers, │  │  │
+│  │  │  and that's been deliberate given the uncertain environment.      │  │  │
+│  │  │  However, with our strong operational performance and reduced     │  │  │
+│  │  │  macro uncertainty, we're now comfortable optimizing.             │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  We're targeting 3.5x coverage going forward, which releases      │  │  │
+│  │  │  approximately $350 million. Our priority is debt reduction to    │  │  │
+│  │  │  support our rating upgrade path—FFO-to-Debt improvement is key.  │  │  │
+│  │  │  This doesn't preclude shareholder returns, but credit metrics    │  │  │
+│  │  │  come first."                                                      │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Supporting Data:                                                  │  │  │
+│  │  │  • $350M debt reduction improves FFO/Debt by 5 percentage points │  │  │
+│  │  │  • Brings us to 47%—within striking distance of 50% upgrade target│  │  │
+│  │  │  • 3.5x still provides 18-month runway with zero market access   │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  QUESTION 2: HEDGE PROGRAM & SUSTAINABILITY          Probability: 75%    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Likely Formulation:                                                      │  │
+│  │  "Hedging gains contributed $45M to EBITDA this quarter. How should     │  │
+│  │  we think about the sustainability of this contribution, and what's     │  │
+│  │  your hedge book look like for 2026?"                                    │  │
+│  │                                                                           │  │
+│  │  CONTEXT:                                                                 │  │
+│  │  • UBS note questioned "hedge gains masking operational weakness"       │  │
+│  │  • Q4 hedge gains: $45M FX, $28M commodity                              │  │
+│  │  • 2026 hedge coverage: 65% production, 45% FX exposure                 │  │
+│  │                                                                           │  │
+│  │  SUGGESTED RESPONSE FRAMEWORK:                                            │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Key Messages:                                                     │  │  │
+│  │  │  1. Hedging is risk management, not profit center                 │  │  │
+│  │  │  2. Gains/losses symmetric over time—focus on underlying ops      │  │  │
+│  │  │  3. 2026 hedge book provides visibility and downside protection   │  │  │
+│  │  │  4. Operational EBITDA was strong independent of hedges           │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Draft Response:                                                   │  │  │
+│  │  │  "I'd push back slightly on characterizing these as 'gains' in   │  │  │
+│  │  │  the traditional sense. Our hedge program is designed for risk    │  │  │
+│  │  │  management and cash flow predictability, not speculation.        │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  To your question on sustainability—our 2026 hedge book provides  │  │  │
+│  │  │  65% production coverage at $78 Brent equivalent, and 45% FX      │  │  │
+│  │  │  coverage at EUR/USD 1.08. At current spot levels, that's roughly │  │  │
+│  │  │  neutral. So you shouldn't model significant hedge contribution   │  │  │
+│  │  │  or drag in 2026—we're focused on the underlying business."       │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Supporting Data:                                                  │  │  │
+│  │  │  • 2025 hedge P&L: +$182M (commodity), +$95M (FX) = $277M total   │  │  │
+│  │  │  • 2024 hedge P&L: -$145M (commodity), +$62M (FX) = -$83M total   │  │  │
+│  │  │  • Demonstrates symmetry over time                                 │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  QUESTION 3: REFINANCING & CREDIT MARKETS            Probability: 70%    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Likely Formulation:                                                      │  │
+│  │  "NordicPetro just priced a successful deal. What's your plan for       │  │
+│  │  2026 refinancing, and are you looking to extend duration?"              │  │
+│  │                                                                           │  │
+│  │  SUGGESTED RESPONSE FRAMEWORK:                                            │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Draft Response:                                                   │  │  │
+│  │  │  "We're watching NordicPetro's deal closely—it's encouraging to   │  │  │
+│  │  │  see strong investor demand for the sector. Our $650M 2027        │  │  │
+│  │  │  maturity is the near-term focus, and yes, we're actively looking │  │  │
+│  │  │  at extending duration.                                            │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Current plan is a 10-year issuance in the first half, subject to │  │  │
+│  │  │  market conditions. Given ECB's dovish pivot, we think the window │  │  │
+│  │  │  is favorable. We'd expect pricing in the 130-135 basis point     │  │  │
+│  │  │  range over mid-swaps—in line with our recent transactions."      │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  QUESTION 4: RATING UPGRADE PROSPECTS                Probability: 60%    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Likely Formulation:                                                      │  │
+│  │  "AtlanticEnergy just got an outlook upgrade from S&P. Where are you    │  │
+│  │  on the rating agency dialogue, and what would trigger a similar        │  │
+│  │  improvement for Stellaris?"                                              │  │
+│  │                                                                           │  │
+│  │  SUGGESTED RESPONSE FRAMEWORK:                                            │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Draft Response:                                                   │  │  │
+│  │  │  "We're in regular dialogue with both S&P and Moody's. The key    │  │  │
+│  │  │  metric they're focused on is FFO-to-Debt—Atlantic achieved their │  │  │
+│  │  │  positive outlook at 48%. We're currently at 42%, targeting 50%+. │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  The debt reduction we discussed will be a big step forward—      │  │  │
+│  │  │  $350-500 million reduction improves that ratio by 5-8 percentage │  │  │
+│  │  │  points. Combined with continued strong operational performance,  │  │  │
+│  │  │  we believe we can be in a position for upgrade consideration by  │  │  │
+│  │  │  late 2026 or early 2027."                                         │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  ⚠ CAUTION: Don't commit to specific timeline or promise upgrade  │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ADDITIONAL LIKELY TOPICS                                                       │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  QUESTION 5: ESG Financing Progress (50% probability)                    │  │
+│  │  "What's the update on sustainability-linked financing targets?"         │  │
+│  │  → Key point: 42% ESG-linked, targeting 50% by year-end 2026            │  │
+│  │                                                                           │  │
+│  │  QUESTION 6: Interest Rate Exposure (45% probability)                    │  │
+│  │  "How are you positioned for potential rate cuts?"                       │  │
+│  │  → Key point: 75% fixed, but monitoring opportunities to lock in rates  │  │
+│  │                                                                           │  │
+│  │  QUESTION 7: Counterparty Risk (30% probability)                         │  │
+│  │  "Any concerns about bank counterparty exposure?"                        │  │
+│  │  → Key point: Diversified across 15 banks, no single exposure >10%      │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  DO'S AND DON'TS                                                                │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ✓ DO: Emphasize balance sheet strength as competitive advantage        │  │
+│  │  ✓ DO: Reference peer comparisons where we outperform                   │  │
+│  │  ✓ DO: Connect Treasury actions to strategic priorities                 │  │
+│  │  ✓ DO: Acknowledge areas for improvement (liquidity optimization)       │  │
+│  │                                                                           │  │
+│  │  ✗ DON'T: Commit to specific rating upgrade timeline                    │  │
+│  │  ✗ DON'T: Provide detailed hedge book pricing/positions                 │  │
+│  │  ✗ DON'T: Discuss specific bank relationships or terms                  │  │
+│  │  ✗ DON'T: Forecast hedge P&L for 2026                                   │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Practice Mode]  [Data Pack]  [Peer Transcripts]  [Export Brief]              │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Predicted question list with probabilities
+- Response frameworks with key messages
+- Supporting data points and evidence
+- Peer comparison context
+- Do's and don'ts guidance
+- Practice mode for rehearsal
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Prep time for calls | 4-6 hours | 1-2 hours | 70% faster |
+| Question prediction accuracy | 50-60% | 80-90% | More prepared |
+| Response consistency | Variable | Systematic | On-message |
+| Supporting data access | Manual lookup | Instant | Efficient |
+
+---
+
+### Use Case 7.5: KPI Dashboard with Variance Commentary
+
+#### What It Does
+Automatically generates Treasury KPI dashboards with AI-written variance commentary explaining performance against targets, prior periods, and budgets—transforming raw metrics into actionable management information with consistent, audit-ready explanations.
+
+#### Key Inputs
+- Treasury KPIs and actuals
+- Budget and forecast comparisons
+- Prior period data
+- Target thresholds and tolerances
+- Operational context (one-offs, known drivers)
+- Management commentary preferences
+
+#### AI/LLM Approach
+Statistical models detect significant variances and anomalies. NLP generates natural language explanations linking variances to root causes, contextual factors, and implications. Template-based generation ensures consistent formatting while allowing customization for different audiences and reporting frequencies.
+
+#### Example Interaction (KPI Dashboard)
+
+**User Prompt:**
+"Generate the monthly Treasury KPI dashboard with variance commentary for December 2025."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  TREASURY KPI DASHBOARD                                                         │
+│  December 2025 Performance Report                                               │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  PERFORMANCE SUMMARY                                                            │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  OVERALL STATUS: 14 of 16 KPIs On Target ✓                               │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  ████████████████████████████████████████░░░░░  88% On Target     │  │  │
+│  │  │  ██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  12% Needs Attention│  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  ⚠ ATTENTION ITEMS                                                       │  │
+│  │  • FX Hedge Ratio: 45% vs 60% target (operational timing)               │  │
+│  │  • Cash Forecast Accuracy: 91% vs 95% target (year-end seasonality)     │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  LIQUIDITY METRICS                                                              │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ Metric              │ Dec'25 │ Target │ Nov'25 │ Status │ Trend   │  │  │
+│  │  │ ════════════════════╪════════╪════════╪════════╪════════╪═════════│  │  │
+│  │  │ Total Liquidity     │ $2.7B  │ >$2.3B │ $2.5B  │   ✓    │   ↗     │  │  │
+│  │  │ Cash & Equivalents  │ $1.2B  │ >$0.8B │ $1.0B  │   ✓    │   ↗     │  │  │
+│  │  │ RCF Utilization     │   0%   │ <30%   │   0%   │   ✓    │   →     │  │  │
+│  │  │ Liquidity Coverage  │  4.2x  │ >2.5x  │  3.8x  │   ✓    │   ↗     │  │  │
+│  │  │ Days Cash on Hand   │  105   │ >60    │   92   │   ✓    │   ↗     │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  VARIANCE COMMENTARY:                                                     │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Total Liquidity: $2.7B (+$200M vs Nov)                           │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  December cash generation benefited from:                         │  │  │
+│  │  │  • Strong Q4 oil price environment (+$85M operating cash flow)   │  │  │
+│  │  │  • Favorable working capital timing (+$65M receivables collection)│  │  │
+│  │  │  • Tax payment deferral to January (+$50M timing benefit)        │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Liquidity coverage of 4.2x exceeds target, providing substantial │  │  │
+│  │  │  buffer for 2026 capital program and opportunistic deployment.    │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Note: January will see ~$95M tax outflow (timing reversal).     │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  CAPITAL STRUCTURE METRICS                                                      │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ Metric              │ Dec'25 │ Target │ Covenant│ Status │ Headroom│  │  │
+│  │  │ ════════════════════╪════════╪════════╪═════════╪════════╪═════════│  │  │
+│  │  │ Net Debt/EBITDA     │  1.2x  │ <2.0x  │  <3.5x  │   ✓    │  2.3x   │  │  │
+│  │  │ Interest Coverage   │  8.2x  │ >5.0x  │  >3.0x  │   ✓    │  5.2x   │  │  │
+│  │  │ Debt/Capital        │  38%   │ <45%   │  <60%   │   ✓    │  22%    │  │  │
+│  │  │ FFO/Debt            │  42%   │ >40%   │   N/A   │   ✓    │   +2%   │  │  │
+│  │  │ Fixed Rate %        │  75%   │ 65-80% │   N/A   │   ✓    │  In Range│  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  VARIANCE COMMENTARY:                                                     │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Net Debt/EBITDA: 1.2x (-0.1x vs Nov)                             │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  Improvement driven by:                                            │  │  │
+│  │  │  • LTM EBITDA increase from Q4 performance (+$120M)              │  │  │
+│  │  │  • Modest net debt reduction from cash build (-$50M)             │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Covenant headroom remains robust at 2.3x (can absorb 66% EBITDA │  │  │
+│  │  │  decline before breach). All credit ratios comfortably within    │  │  │
+│  │  │  policy limits and covenant thresholds.                           │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Rating Agency Focus: FFO/Debt at 42% is progressing toward 50%  │  │  │
+│  │  │  upgrade threshold. Q1 debt reduction planned to accelerate.      │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  RISK MANAGEMENT METRICS                                                        │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ Metric              │ Dec'25 │ Target │ Nov'25 │ Status │ Action  │  │  │
+│  │  │ ════════════════════╪════════╪════════╪════════╪════════╪═════════│  │  │
+│  │  │ FX Hedge Ratio      │  45%   │ >60%   │  52%   │   ⚠    │ Review  │  │  │
+│  │  │ Commodity Hedge %   │  65%   │ 50-70% │  68%   │   ✓    │   —     │  │  │
+│  │  │ Counterparty Limits │  Pass  │ All <10%│  Pass  │   ✓    │   —     │  │  │
+│  │  │ VaR (95%, 1-day)    │ $12M   │ <$20M  │ $11M   │   ✓    │   —     │  │  │
+│  │  │ Hedge Effectiveness │  96%   │ >90%   │  95%   │   ✓    │   —     │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  VARIANCE COMMENTARY:                                                     │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  ⚠ FX Hedge Ratio: 45% vs 60% target (-7% vs Nov)                 │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  Below target due to:                                              │  │  │
+│  │  │  • December hedge maturities ($180M EUR contracts expired)       │  │  │
+│  │  │  • Deliberate pause ahead of Q1 rolling program review           │  │  │
+│  │  │  • EUR/USD volatility made replacement execution suboptimal      │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  REMEDIATION PLAN:                                                 │  │  │
+│  │  │  • Q1 hedge execution to restore 60%+ coverage by end-January    │  │  │
+│  │  │  • Currently sourcing quotes for $250M EUR hedges                │  │  │
+│  │  │  • Targeting 1.08-1.10 EUR/USD execution range                   │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Risk Assessment: Unhedged exposure of $380M. At current EUR/USD │  │  │
+│  │  │  1.06, 2% move = $7.6M P&L impact. Within tolerance but elevated.│  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  OPERATIONAL EFFICIENCY METRICS                                                 │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │ Metric              │ Dec'25 │ Target │ Nov'25 │ Status │ Trend   │  │  │
+│  │  │ ════════════════════╪════════╪════════╪════════╪════════╪═════════│  │  │
+│  │  │ Cash Forecast Acc.  │  91%   │ >95%   │  96%   │   ⚠    │   ↘     │  │  │
+│  │  │ Payment STP Rate    │  98%   │ >95%   │  97%   │   ✓    │   ↗     │  │  │
+│  │  │ Bank Fee Efficiency │ 0.08%  │ <0.10% │ 0.09%  │   ✓    │   ↗     │  │  │
+│  │  │ Cash Centralization │  82%   │ >85%   │  81%   │   ✓    │   ↗     │  │  │
+│  │  │ Interco Settlement  │  99%   │ >98%   │  98%   │   ✓    │   ↗     │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  VARIANCE COMMENTARY:                                                     │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  ⚠ Cash Forecast Accuracy: 91% vs 95% target (-5% vs Nov)         │  │  │
+│  │  │  ─────────────────────────────────────────────────────────────────│  │  │
+│  │  │  December variance driven by year-end timing factors:              │  │  │
+│  │  │  • Accelerated customer collections ($42M ahead of forecast)      │  │  │
+│  │  │  • Delayed supplier payments ($28M timing shift to January)       │  │  │
+│  │  │  • Unforecast bonus accrual reversal ($15M)                       │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  These are seasonal factors typical of December. Full-year 2025   │  │  │
+│  │  │  forecast accuracy averaged 95.2%, meeting annual target.          │  │  │
+│  │  │  No structural process concerns identified.                        │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  MANAGEMENT ACTION SUMMARY                                                      │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  PRIORITY ACTIONS FOR JANUARY 2026                                        │  │
+│  │                                                                           │  │
+│  │  1. FX Hedge Program: Execute $250M EUR hedges to restore 60% coverage   │  │
+│  │     Owner: FX Desk │ Due: Jan 31 │ Status: In Progress                   │  │
+│  │                                                                           │  │
+│  │  2. Liquidity Optimization: Present 3.5x target proposal to CFO          │  │
+│  │     Owner: Treasurer │ Due: Jan 15 │ Status: Draft Complete              │  │
+│  │                                                                           │  │
+│  │  3. Refinancing: Initiate bank discussions for H1 bond issuance          │  │
+│  │     Owner: Capital Markets │ Due: Jan 20 │ Status: Scheduled             │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Historical Trends]  [Drill Down]  [Export PDF]  [Email Distribution]         │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Visual KPI dashboards
+- Automated variance commentary
+- Root cause explanations
+- Trend analysis and alerts
+- Management action items
+- Audit-ready documentation
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Report generation time | 4-6 hours | 30 minutes | 90% faster |
+| Commentary consistency | Variable | Standardized | Controlled |
+| Variance explanation | Manual | Automated | Efficient |
+| Action item tracking | Separate | Integrated | Actionable |
+
+---
+
+### Use Case 7.6: Strategic Initiative Tracker
+
+#### What It Does
+Monitors progress on Treasury strategic initiatives, tracks milestone completion, identifies risks and dependencies, and generates status reports for leadership—ensuring visibility and accountability across multi-quarter transformation programs.
+
+#### Key Inputs
+- Initiative plans and milestones
+- Progress updates and status reports
+- Resource allocation data
+- Dependency mappings
+- Risk registers and issues logs
+- Benefit realization metrics
+
+#### AI/LLM Approach
+Project analytics models track milestone completion rates, predict delays based on historical patterns, and identify at-risk initiatives. NLP generates status narratives that contextualize progress, explain variances, and recommend interventions. Dependency analysis highlights critical path items and resource conflicts.
+
+#### Example Interaction (Initiative Tracking)
+
+**User Prompt:**
+"Show me the status of all active Treasury strategic initiatives and highlight any that need attention."
+
+**AI Response:**
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│  TREASURY STRATEGIC INITIATIVE TRACKER                                          │
+│  2026 Transformation Program Status                               January 2026  │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  PORTFOLIO OVERVIEW                                                             │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  INITIATIVE STATUS SUMMARY                                                │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Total Initiatives: 8                                              │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  ████████████████████████████████░░░░░░░░░░  5 On Track  (62%)    │  │  │
+│  │  │  ████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  2 At Risk   (25%)    │  │  │
+│  │  │  █████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  1 Completed (13%)    │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Total Investment: $4.2M  │  YTD Spend: $1.8M (43%)                      │  │
+│  │  Expected Benefits: $12M/year  │  Realized YTD: $3.2M (27%)             │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ⚠ INITIATIVES REQUIRING ATTENTION                                             │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  🔴 TMS IMPLEMENTATION (SAP Treasury)                         AT RISK    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Overview:                                                                │  │
+│  │  Replace legacy treasury management system with SAP S/4HANA Treasury     │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Phase           │ Status    │ Target    │ Actual    │ Variance  │  │  │
+│  │  │  ════════════════╪═══════════╪═══════════╪═══════════╪═══════════│  │  │
+│  │  │  Design          │ Complete  │ Sep 2025  │ Sep 2025  │    —      │  │  │
+│  │  │  Build           │ Complete  │ Nov 2025  │ Dec 2025  │ +4 weeks  │  │  │
+│  │  │  Testing         │ In Progress│ Jan 2026 │ Feb 2026  │ +4 weeks  │  │  │
+│  │  │  Go-Live         │ Not Started│ Mar 2026 │ Apr 2026  │ +4 weeks  │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Progress: ████████████████████████░░░░░░░░░░░░░░░░░░░  55%             │  │
+│  │                                                                           │  │
+│  │  ROOT CAUSE ANALYSIS:                                                     │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  1. Data Migration Complexity (High Impact)                        │  │  │
+│  │  │     Legacy system has 8 years of transaction history with          │  │  │
+│  │  │     inconsistent data formats. Migration scripts required          │  │  │
+│  │  │     significant rework.                                            │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  2. Bank Connectivity Testing (Medium Impact)                      │  │  │
+│  │  │     Two banks (Bank A, Bank C) required format modifications       │  │  │
+│  │  │     not identified in original scoping.                           │  │  │
+│  │  │                                                                    │  │  │
+│  │  │  3. Resource Availability (Medium Impact)                          │  │  │
+│  │  │     Key SME pulled to support year-end close for 3 weeks.         │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  RECOVERY ACTIONS:                                                        │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Action                        │ Owner      │ Due      │ Status   │  │  │
+│  │  │  ═════════════════════════════╪════════════╪══════════╪══════════│  │  │
+│  │  │  Add 2 contractors for testing│ PM         │ Jan 15   │ In Prog  │  │  │
+│  │  │  Parallel run period extended │ Steering   │ Approved │ Complete │  │  │
+│  │  │  Bank connectivity UAT        │ IT         │ Jan 31   │ Scheduled│  │  │
+│  │  │  Go-live decision gate        │ CFO        │ Mar 15   │ Scheduled│  │  │
+│  │  │                                                                    │  │  │
+│  │  │  Confidence in April go-live: 75%                                 │  │  │
+│  │  │  Alternative: May go-live if testing issues persist               │  │  │
+│  │  │                                                                    │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  Budget: $2.4M  │  Spent: $1.6M (67%)  │  Forecast: $2.6M (+$200K)      │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  🟡 CASH POOLING EXPANSION (APAC)                             AT RISK    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  Overview:                                                                │  │
+│  │  Extend European cash pool structure to APAC entities (SG, AU, JP, CN)  │  │
+│  │                                                                           │  │
+│  │  Progress: █████████████████████████████░░░░░░░░░░░░░░░  65%            │  │
+│  │                                                                           │  │
+│  │  ┌────────────────────────────────────────────────────────────────────┐  │  │
+│  │  │  Entity      │ Status      │ Blocker                              │  │  │
+│  │  │  ════════════╪═════════════╪══════════════════════════════════════│  │  │
+│  │  │  Singapore   │ ✓ Complete  │ —                                    │  │  │
+│  │  │  Australia   │ ✓ Complete  │ —                                    │  │  │
+│  │  │  Japan       │ In Progress │ Regulatory approval (2 weeks delay)  │  │  │
+│  │  │  China       │ Delayed     │ SAFE cross-border approval pending   │  │  │
+│  │  └────────────────────────────────────────────────────────────────────┘  │  │
+│  │                                                                           │  │
+│  │  CHINA REGULATORY UPDATE:                                                 │  │
+│  │  • SAFE approval application submitted: October 2025                     │  │
+│  │  • Expected timeline: 90-120 days (now extended to 150+ days)           │  │
+│  │  • New requirement: Additional documentation on intercompany pricing    │  │
+│  │  • Resubmission completed: December 15, 2025                            │  │
+│  │  • Expected approval: March 2026 (best case)                            │  │
+│  │                                                                           │  │
+│  │  MITIGATION:                                                              │  │
+│  │  • Proceed with Japan go-live (Feb 2026) independent of China          │  │
+│  │  • China benefits deferred to Q2 2026 (vs Q1 target)                    │  │
+│  │  • Engaged local advisors to expedite SAFE process                      │  │
+│  │                                                                           │  │
+│  │  Budget: $380K  │  Spent: $285K (75%)  │  Forecast: On Budget           │  │
+│  │  Annual Benefit: $2.1M  │  Realized: $1.4M (SG+AU)  │  Deferred: $0.7M  │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  ✓ INITIATIVES ON TRACK                                                        │
+│  ══════════════════════════════════════════════════════════════════════════════ │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ✓ SUSTAINABLE FINANCE PROGRAM EXPANSION                     ON TRACK    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  Progress: ████████████████████████████████░░░░░░░░░░░░  72%            │  │
+│  │  Target: Increase ESG-linked debt from 35% to 50%                        │  │
+│  │  Current: 42% ESG-linked │ On track for 50% by Q4 2026                  │  │
+│  │  Next Milestone: Refinance $650M 2027 maturity with SLL (Q2 2026)       │  │
+│  │                                                                           │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  ✓ FX HEDGE AUTOMATION                                       ON TRACK    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  Progress: ██████████████████████████████████████████░░░  85%           │  │
+│  │  Target: Automate 80% of FX hedge execution                              │  │
+│  │  Current: 72% automated │ Remaining: API integration with 2 banks       │  │
+│  │  Expected Completion: February 2026                                      │  │
+│  │  Benefit Realized: $180K/year (vs $220K target)                         │  │
+│  │                                                                           │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  ✓ WORKING CAPITAL OPTIMIZATION                              ON TRACK    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  Progress: ████████████████████████████████████████░░░░  80%            │  │
+│  │  Target: Reduce cash conversion cycle by 5 days                          │  │
+│  │  Current: CCC reduced 4 days (from 32 to 28)                            │  │
+│  │  Cash Released: $185M (vs $200M target)                                  │  │
+│  │  Remaining: Supplier payment term renegotiation (2 major suppliers)     │  │
+│  │                                                                           │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  ✓ BANK RELATIONSHIP RATIONALIZATION                         ON TRACK    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  Progress: ██████████████████████████████████░░░░░░░░░░  68%            │  │
+│  │  Target: Reduce banking partners from 18 to 12                           │  │
+│  │  Current: 14 banks │ 4 exits completed, 2 in progress                   │  │
+│  │  Fee Savings Realized: $420K/year (vs $600K target)                     │  │
+│  │  Completion: Q2 2026                                                     │  │
+│  │                                                                           │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │                                                                           │  │
+│  │  ✓ RATING UPGRADE PROGRAM                                    ON TRACK    │  │
+│  │  ─────────────────────────────────────────────────────────────────────── │  │
+│  │  Progress: ████████████████████████░░░░░░░░░░░░░░░░░░░░  48%            │  │
+│  │  Target: Achieve A- rating by 2027                                       │  │
+│  │  Key Metric: FFO/Debt at 42% (target: 50%+)                             │  │
+│  │  Next Action: $350M debt reduction in Q1 2026                           │  │
+│  │  Rating Agency Engagement: S&P meeting scheduled Feb 2026               │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  COMPLETED INITIATIVES                                                          │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  ✓ PAYMENT FACTORY IMPLEMENTATION                           COMPLETE     │  │
+│  │  Completed: December 2025 │ Budget: $450K │ Actual: $420K               │  │
+│  │  Benefit: $180K/year processing savings + improved controls             │  │
+│  │  Post-Implementation Review: Scheduled January 2026                      │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  EXECUTIVE SUMMARY FOR STEERING COMMITTEE                                       │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                           │  │
+│  │  "The Treasury transformation program is progressing well overall, with │  │
+│  │  62% of initiatives on track and one successfully completed. Two         │  │
+│  │  initiatives require steering committee attention:                        │  │
+│  │                                                                           │  │
+│  │  1. TMS Implementation: Four-week delay primarily due to data migration │  │
+│  │     complexity. Recovery plan in place with 75% confidence in April     │  │
+│  │     go-live. Request approval for $200K contingency and decision gate   │  │
+│  │     in March.                                                             │  │
+│  │                                                                           │  │
+│  │  2. APAC Cash Pooling: China SAFE approval delayed by ~60 days. Japan  │  │
+│  │     and China proceeding independently. Recommend accepting Q2 China    │  │
+│  │     go-live with partial benefit deferral.                               │  │
+│  │                                                                           │  │
+│  │  All other initiatives tracking to plan with benefits realization       │  │
+│  │  at 27% of annual target—consistent with timing of completions."        │  │
+│  │                                                                           │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                 │
+│  [Gantt View]  [Risk Register]  [Benefits Tracker]  [Export Report]            │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Initiative portfolio dashboards
+- Progress tracking and milestone status
+- Root cause analysis for delays
+- Recovery action plans
+- Executive summary narratives
+- Benefit realization tracking
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Status reporting time | 4+ hours | 30 minutes | 90% faster |
+| Risk identification | Reactive | Predictive | Proactive |
+| Progress visibility | Monthly | Real-time | Continuous |
+| Executive summary quality | Variable | Consistent | Professional |
+
+---
+
