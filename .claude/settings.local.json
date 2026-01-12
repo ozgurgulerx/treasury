@@ -28,7 +28,9 @@
       "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury commit -m \"$\\(cat <<''EOF''\nAdd comprehensive notebook documentation to MkDocs site\n\nDocumentation for all 8 Treasury AI notebooks:\n- Detailed descriptions of approaches and methodologies\n- Data design and simulation patterns explained\n- Thinking traces and business context\n- Code examples and key results\n- Learning objectives and next steps\n\nIncludes:\n- notebooks/index.md: Overview and learning path\n- Individual pages for each notebook \\(01-08\\)\n- data-generators.md: Full API documentation\n- Updated navigation in mkdocs.yml\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)"
     ]
   }
 }
