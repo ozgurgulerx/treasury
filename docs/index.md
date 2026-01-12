@@ -1,16 +1,45 @@
 # Treasury AI for Oil & Gas
 
-Enterprise AI Solutions for Treasury Operations in the Downstream Oil & Gas Sector.
+## The Future of Treasury is Intelligent
 
-!!! info "About This Documentation"
+Treasury functions in the oil & gas industry sit at the intersection of extreme complexity and critical importance. Every day, treasury teams navigate volatile commodity markets, manage billions in liquidity across global operations, execute complex hedging strategies, and ensure compliance across dozens of jurisdictions—often using fragmented systems and manual processes that haven't fundamentally changed in decades.
 
-    This knowledge base provides comprehensive documentation for AI-powered Treasury solutions tailored to the **Oil & Gas sector**. Each use case includes detailed descriptions, example AI interactions, and implementation guidance.
+**This is changing.**
+
+Large Language Models (LLMs) and modern AI are unlocking capabilities that were previously impossible: natural language interfaces that query across disparate systems, intelligent agents that monitor risks 24/7, predictive models that forecast cash flows with unprecedented accuracy, and copilots that augment human expertise rather than replace it. The question is no longer *whether* AI will transform treasury—it's *how fast* and *how well* organizations can harness this potential.
+
+### What You'll Find Here
+
+This knowledge base is a comprehensive exploration of **AI-powered treasury capabilities** specifically designed for the downstream oil & gas sector. We've organized over **250 use cases** across **9 functional towers**, each representing a critical domain of treasury operations:
+
+- **Towers T1-T8** cover the full spectrum of treasury functions—from cash management and FX hedging to trade finance, working capital, and strategic foresight
+- **Tower T9** represents the "Experience Layer"—the AI copilots and intelligent interfaces that bring these capabilities to life
+
+Each use case follows a consistent structure: **what it does**, **key inputs**, **AI/LLM approach**, **example interactions** (showing realistic AI-generated responses), **outputs**, and **KPIs**. This isn't theoretical—these are practical blueprints informed by real treasury challenges.
+
+### Why These Use Cases Matter
+
+We've deliberately chosen use cases that showcase where AI delivers transformational value:
+
+- **High-volume, pattern-rich tasks** where ML excels (fraud detection, reconciliation, cash forecasting)
+- **Complex multi-source analysis** where LLMs synthesize information humans can't process at scale
+- **Natural language interactions** that democratize access to treasury data and insights
+- **Predictive capabilities** that shift treasury from reactive to proactive
+- **Narrative generation** that transforms raw data into board-ready intelligence
+
+The examples throughout this documentation demonstrate the *art of the possible*—not distant future concepts, but capabilities achievable today with current AI technology.
+
+!!! tip "How to Use This Documentation"
+
+    **Start with your pain points.** Browse the tower that matches your biggest challenges, explore the use cases, and envision how the example interactions could transform your daily operations. Each tower builds from foundational capabilities (Layer 1) to advanced optimization (Layer 6).
+
+---
 
 ## Treasury Use Case Classes
 
 ![Treasury Use Cases](assets/images/treasury_use_cases.png)
 
-Our AI solutions span **9 core use-case classes** designed specifically for oil & gas treasury operations:
+The framework organizes AI capabilities into **9 interconnected towers**, each addressing a distinct domain of treasury operations:
 
 | Class | Name | Focus Areas |
 |-------|------|-------------|
