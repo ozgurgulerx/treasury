@@ -4,6 +4,10 @@
 
 The T9 Experience Layer represents user-facing AI copilots that orchestrate data and tools to assist treasury staff. This layer is the primary interface through which treasury teams interact with AI capabilities, providing conversational access to data, automated report generation, intelligent alerts, and guided workflows across all treasury functions (T1-T8).
 
+!!! tip "Human-in-the-Loop Design"
+
+    All T9 copilots follow a **human-in-the-loop** architecture. AI assists with analysis, drafting, and recommendations, but critical decisions—especially those involving payments or risk positions—require explicit human approval before execution.
+
 **Design Philosophy:**
 - **LLM as Orchestrator**: The AI acts as an intelligent coordinator and explainer, not a decision-maker
 - **Deterministic Data**: All critical numbers come from verified systems (ERP/TMS/BI) - never hallucinated

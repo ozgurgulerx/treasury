@@ -4,6 +4,10 @@
 
 Cash and Liquidity Management is the cornerstone of treasury operations in downstream oil & gas. AI-powered solutions enable real-time visibility, accurate multi-horizon forecasting, stress testing, and optimal liquidity allocation across the enterprise.
 
+!!! info "Oil & Gas Context"
+
+    Downstream treasury operations face unique challenges: volatile crude prices, significant excise tax timing, margin call requirements, and complex intercompany funding structures. The use cases in this tower are specifically designed to address these industry-specific needs.
+
 This tower organizes **32 AI use cases** across **6 functional layers**:
 
 ```mermaid

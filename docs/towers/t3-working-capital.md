@@ -4,6 +4,10 @@
 
 Working Capital Management transforms Tüpraş's AR, AP, and inventory operations with AI-driven solutions that create self-adjusting loops, accelerate collections, optimize payment timing, and proactively manage disputes. AI and GenAI predict risks, digest unstructured inputs into actionable data, and orchestrate tasks across systems—releasing cash tied up in operations while maintaining finance-grade controls.
 
+!!! tip "Cash Conversion Cycle Impact"
+
+    Optimizing DSO, DPO, and DIO in oil & gas can release **hundreds of millions** in trapped cash. Each day of improvement in cash conversion cycle translates to significant working capital benefits at enterprise scale.
+
 This tower organizes **40 AI use cases** across **6 functional layers**:
 
 ```mermaid

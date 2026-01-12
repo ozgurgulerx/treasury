@@ -4,6 +4,10 @@
 
 Treasury operations form the backbone of financial execution - from closing the books to processing payments, maintaining compliance, and detecting fraud. This tower addresses the critical operational workflows that keep treasury running efficiently while maintaining robust controls.
 
+!!! danger "Financial Crime Prevention"
+
+    This tower includes AI-powered **fraud detection**, **sanctions screening**, and **AML monitoring** capabilities. All alerts are designed for human review and decision-making—AI assists in detection but humans make final determinations on suspicious activity.
+
 **Key Transformation Themes:**
 - **Close Acceleration**: Reduce month-end close from days to hours with AI-assisted automation
 - **Intelligent Matching**: ML-powered reconciliation replacing manual exception handling

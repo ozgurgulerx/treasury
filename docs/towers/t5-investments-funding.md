@@ -4,6 +4,10 @@
 
 Managing surplus cash and funding requirements in oil & gas requires balancing yield optimization with liquidity needs and policy compliance. AI enables intelligent investment strategies and funding optimization.
 
+!!! note "Investment Policy Framework"
+
+    All investment recommendations operate within defined **policy constraints** including counterparty limits, duration limits, instrument eligibility, and minimum credit ratings. AI optimizes returns within these guardrails.
+
 ## Key Use Cases
 
 ### Cash Laddering

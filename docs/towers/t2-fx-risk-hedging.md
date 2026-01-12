@@ -4,6 +4,10 @@
 
 FX, Rates & Hedging Analysis is the risk management backbone of treasury operations in downstream oil & gas. AI-powered solutions enable real-time exposure aggregation, market regime detection, optimal hedge design, automated execution, and continuous effectiveness monitoring across FX, interest rate, and commodity risks.
 
+!!! warning "Market Risk Considerations"
+
+    Oil & gas treasury faces **correlated risk exposures** across FX, commodity prices, and interest rates. The AI models in this tower are designed to capture these correlations and recommend holistic hedging strategies rather than siloed risk management.
+
 This tower organizes **36 AI use cases** across **6 functional layers**:
 
 ```mermaid

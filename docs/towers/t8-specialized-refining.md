@@ -4,6 +4,10 @@
 
 Specialized Treasury for Refining addresses the unique financial challenges of downstream oil & gas operations. Unlike generic treasury functions, refining treasury must manage vessel operations, fuel procurement, environmental compliance, insurance claims, and complex documentation workflows that are specific to the industry.
 
+!!! info "Industry-Specific Solutions"
+
+    T8 covers **domain-specific** treasury challenges unique to refining: demurrage/laytime optimization, bunker fuel procurement, crack spread hedging, carbon credit management, and marine insurance claims—capabilities not found in generic treasury platforms.
+
 **T8 Scope:** Domain-specific AI solutions for maritime logistics finance, carbon/ESG compliance, insurance optimization, and cross-cutting treasury enablers that support the entire refining value chain.
 
 This tower organizes **28 AI use cases** across **6 functional layers**:

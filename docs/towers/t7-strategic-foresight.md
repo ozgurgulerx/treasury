@@ -4,6 +4,10 @@
 
 Strategic treasury management requires forward-looking analysis that transforms treasury from a reactive reporting function into a proactive strategic partner. T7 addresses the critical "foresight gap" - the ability to anticipate covenant breaches, optimize refinancing windows, model regulatory impacts, and prepare actionable scenarios for executive decision-making.
 
+!!! example "Board-Ready Intelligence"
+
+    T7 transforms complex treasury analytics into **executive-ready narratives** and scenario packs. AI generates variance explanations, risk summaries, and strategic recommendations formatted for board presentations and ALCO meetings.
+
 **Key Transformation Themes:**
 - **Driver-Based Forecasting**: Move from static budgets to dynamic, driver-linked rolling forecasts with MAPE tracking
 - **Scenario Intelligence**: Multi-factor stress testing with probability-weighted outcomes and tail-risk quantiles

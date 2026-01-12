@@ -2,6 +2,10 @@
 
 Enterprise AI Solutions for Treasury Operations in the Downstream Oil & Gas Sector.
 
+!!! info "About This Documentation"
+
+    This knowledge base provides comprehensive documentation for AI-powered Treasury solutions tailored to the **Oil & Gas sector**. Each use case includes detailed descriptions, example AI interactions, and implementation guidance.
+
 ## Treasury Use Case Classes
 
 ![Treasury Use Cases](assets/images/treasury_use_cases.png)

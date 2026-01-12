@@ -4,6 +4,10 @@
 
 Trade Finance (T4) encompasses the complex world of Letters of Credit (LCs), Bank Guarantees (BGs), Standby Letters of Credit (SBLCs), trade loans, and commodity-linked exposures. For Tüpraş, this involves managing high-value oil and petrochemical transactions with counterparties across diverse geographies, each carrying unique risk profiles and compliance requirements.
 
+!!! info "Regulatory Compliance"
+
+    Trade finance AI solutions ensure compliance with **UCP 600**, **ISBP 745**, **sanctions regulations** (OFAC, EU, UN), and **AML requirements**. All document processing maintains full audit trails for regulatory examination.
+
 This tower transforms traditional paper-intensive, manual trade finance operations into an AI-augmented function that:
 - **Structures optimal instruments** by analyzing cost, risk, and collateral trade-offs
 - **Monitors counterparty and country risks** in real-time with early warning signals

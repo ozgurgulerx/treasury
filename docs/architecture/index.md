@@ -2,6 +2,10 @@
 
 This section evaluates three Microsoft platform options for building Treasury AI solutions for the Oil & Gas sector.
 
+!!! note "Hybrid Architecture Recommended"
+
+    For enterprise treasury AI, we recommend a **hybrid approach** combining Microsoft Fabric (data foundation), Azure AI Foundry (custom ML models), and Copilot Studio (user-facing chatbots) based on specific use case requirements.
+
 ## Platform Overview
 
 | Platform | Type | Primary Use |

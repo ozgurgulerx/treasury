@@ -2,6 +2,10 @@
 
 Treasury operations in the downstream oil and gas sector face unique challenges: volatile commodity prices, complex multi-currency transactions, massive working capital requirements, and stringent regulatory compliance. AI offers transformative solutions across the entire treasury function.
 
+!!! tip "Implementation Priority"
+
+    Use cases are prioritized based on **business impact** and **implementation complexity**. Start with high-impact, low-complexity solutions (fraud detection, reconciliation) before advancing to complex multi-system integrations.
+
 ## Priority Use Cases
 
 Based on industry research and implementation success rates, these are the **highest-impact AI applications** for oil & gas treasury:
@@ -37,9 +41,3 @@ Based on industry research and implementation success rates, these are the **hig
 - Integrated FX-commodity risk optimization
 - Predictive counterparty risk monitoring
 
-## Key Benefits
-
-- **50%+ improvement** in cash forecast accuracy
-- **95% reduction** in manual reconciliation tasks
-- **Real-time** risk monitoring and alerts
-- **Faster decisions** through AI-powered insights
