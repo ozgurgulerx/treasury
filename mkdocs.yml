@@ -56,7 +56,16 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
+  - Use Case Classes:
+    - T1 Cash & Liquidity (ALM): towers/t1-cash-liquidity.md
+    - T2 FX / Rates / Commodity Risk: towers/t2-fx-risk-hedging.md
+    - T3 Working Capital: towers/t3-working-capital.md
+    - T4 Trade Finance & Collateral: towers/t4-trade-finance.md
+    - T5 Investments & Funding: towers/t5-investments-funding.md
+    - T6 Ops Automation & Controls: towers/t6-ops-automation.md
+    - T7 Strategic Foresight: towers/t7-strategic-foresight.md
+    - T8 Specialized (Refining): towers/t8-specialized-refining.md
+    - T9 Experience Layer: towers/t9-experience-layer.md
   - AI Use Cases:
     - Overview: use-cases/index.md
     - Cash Flow Forecasting: use-cases/cash-forecasting.md
