@@ -33,7 +33,8 @@
       "Bash(find:*)",
       "Bash(tr:*)",
       "Bash(pip3 install:*)",
-      "Bash(python enhance_template.py:*)"
+      "Bash(python enhance_template.py:*)",
+      "WebFetch(domain:ozgurgulerx.github.io)"
     ]
   }
 }
