@@ -19,11 +19,3 @@ Our AI solutions span **9 core use-case classes** designed specifically for oil 
 | **T7** | [Strategic Foresight (Scenario + Constraints)](towers/t7-strategic-foresight.md) | Covenants early-warning, macro/market scenario engine, regulatory shifts, digital twin |
 | **T8** | [Specialized (Refining)](towers/t8-specialized-refining.md) | Demurrage/laytime, bunker fuel, crack spreads, carbon credits, insurance/claims |
 | **T9** | [Experience Layer](towers/t9-experience-layer.md) | Copilots, dashboards, Teams alerts, self-serve Q&A, report/bulletin generation |
-
-## Key Benefits
-
-- **50%+ improvement** in cash forecast accuracy
-- **95% reduction** in manual reconciliation tasks
-- **Real-time** risk monitoring and alerts
-- **Faster decisions** through AI-powered insights
-- **Reduced fraud** through ML-based anomaly detection
