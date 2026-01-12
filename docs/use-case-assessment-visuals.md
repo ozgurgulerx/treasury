@@ -18,11 +18,47 @@ quadrantChart
     quadrant-3 Low Priority
     quadrant-4 Strategic
 
-    %% Example use cases (uncomment and modify as needed)
-    %% Daily cash monitoring: [0.3, 0.8]
-    %% FX exposure automation: [0.5, 0.85]
-    %% Covenant early warning: [0.7, 0.9]
-    %% Bank statement matching: [0.25, 0.6]
+    Daily Cash Monitoring: [0.25, 0.85]
+    Bank Statement Matching: [0.30, 0.70]
+    Policy RAG Q&A: [0.20, 0.55]
+    Payment Anomaly Detection: [0.35, 0.80]
+    FX Exposure Automation: [0.55, 0.85]
+    Demurrage Prediction: [0.50, 0.90]
+    Carbon Credit Forecasting: [0.60, 0.85]
+    Covenant Early Warning: [0.65, 0.90]
+    Treasury Copilot: [0.80, 0.95]
+    Voyage Cost Optimizer: [0.75, 0.88]
+```
+
+### Example Priority Matrix (T8 Use Cases)
+
+```
+                           HIGH IMPACT
+                                │
+    ┌───────────────────────────┼───────────────────────────┐
+    │                           │                           │
+    │      QUICK WINS           │        BIG BETS           │
+    │      Do First             │        Plan Carefully     │
+    │                           │                           │
+    │  • Daily Cash Monitoring  │  • Demurrage Prediction   │
+    │  • Bank Statement Match   │  • Carbon Credit Forecast │
+    │  • Payment Anomaly Det.   │  • FX Exposure Automation │
+    │  • Policy RAG Q&A         │  • Covenant Early Warning │
+    │                           │  • Treasury Copilot       │
+    │                           │  • Voyage Cost Optimizer  │
+    │                           │                           │
+────┼───────────────────────────┼───────────────────────────┼────
+    │                           │                           │
+    │      LOW PRIORITY         │        STRATEGIC          │
+    │      Deprioritize         │        Long-term          │
+    │                           │                           │
+    │  • Basic report templates │  • Full CTRM integration  │
+    │  • Static dashboards      │  • End-to-end automation  │
+    │                           │                           │
+    └───────────────────────────┼───────────────────────────┘
+                                │
+                           LOW IMPACT
+         LOW EFFORT ────────────┼──────────── HIGH EFFORT
 ```
 
 ### Quadrant Definitions

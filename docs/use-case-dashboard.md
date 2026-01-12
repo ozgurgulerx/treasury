@@ -12,19 +12,19 @@ This dashboard provides an overview of AI use case prioritization for Oil & Gas 
 
 | Status | Count | % of Total |
 |--------|-------|------------|
-| Ideation | 0 | 0% |
+| Ideation | 10 | 100% |
 | Assessment | 0 | 0% |
 | Approved | 0 | 0% |
 | In Development | 0 | 0% |
 | Live | 0 | 0% |
-| **Total** | **0** | **100%** |
+| **Total** | **10** | **100%** |
 
 ### Priority Distribution
 
 ```
-HIGH PRIORITY     ████████████████████  0 use cases
-MEDIUM PRIORITY   ████████████████████  0 use cases
-LOW PRIORITY      ████████████████████  0 use cases
+HIGH PRIORITY     ████████████████████  6 use cases (60%)
+MEDIUM PRIORITY   ████████████░░░░░░░░  3 use cases (30%)
+LOW PRIORITY      ████░░░░░░░░░░░░░░░░  1 use cases (10%)
 ```
 
 ---
@@ -34,15 +34,20 @@ LOW PRIORITY      ████████████████████  
 ```
                            HIGH IMPACT
                                 │
-                                │
     ┌───────────────────────────┼───────────────────────────┐
     │                           │                           │
     │      QUICK WINS           │        BIG BETS           │
     │      (Do First)           │        (Plan Carefully)   │
     │                           │                           │
-    │   Count: 0                │   Count: 0                │
-    │   Avg Priority: --        │   Avg Priority: --        │
+    │   Count: 4                │   Count: 6                │
+    │   Avg Priority: 7.2       │   Avg Priority: 6.8       │
     │                           │                           │
+    │   • Cash Monitoring       │   • Demurrage Prediction  │
+    │   • Bank Matching         │   • Carbon Forecasting    │
+    │   • Payment Anomaly       │   • FX Automation         │
+    │   • Policy Q&A            │   • Covenant Warning      │
+    │                           │   • Treasury Copilot      │
+    │                           │   • Voyage Optimizer      │
 ────┼───────────────────────────┼───────────────────────────┼────
     │                           │                           │
     │      LOW PRIORITY         │        STRATEGIC          │
@@ -63,16 +68,16 @@ LOW PRIORITY      ████████████████████  
 
 | Area | Count | Avg Impact | Avg Effort | Top Priority |
 |------|-------|------------|------------|--------------|
-| Treasury Liquidity & ALM | 0 | -- | -- | -- |
-| Treasury, Market & Commodity Risk | 0 | -- | -- | -- |
-| Payments & Treasury Ops | 0 | -- | -- | -- |
+| Treasury Liquidity & ALM | 2 | 4.5 | 2.5 | Cash Monitoring |
+| Treasury, Market & Commodity Risk | 2 | 4.0 | 3.5 | FX Automation |
+| Payments & Treasury Ops | 2 | 4.0 | 2.0 | Bank Matching |
+| Maritime & Shipping Finance | 2 | 4.5 | 3.5 | Demurrage Prediction |
+| Carbon & Energy Transition | 1 | 4.0 | 3.0 | Carbon Forecasting |
+| Compliance / Risk / Controls | 1 | 4.5 | 3.5 | Covenant Warning |
 | Trade Finance | 0 | -- | -- | -- |
-| Compliance / Risk / Controls | 0 | -- | -- | -- |
-| Maritime & Shipping Finance | 0 | -- | -- | -- |
-| Carbon & Energy Transition | 0 | -- | -- | -- |
 | Storage & Inventory Finance | 0 | -- | -- | -- |
 | Excise Tax & Regulatory | 0 | -- | -- | -- |
-| **Total** | **0** | -- | -- | -- |
+| **Total** | **10** | **4.2** | **3.0** | -- |
 
 ---
 
@@ -80,14 +85,14 @@ LOW PRIORITY      ████████████████████  
 
 | AI Pattern | Count | % | Complexity |
 |------------|-------|---|------------|
+| Monitoring / anomaly detection | 3 | 30% | Medium |
+| Forecasting / predictive ML | 3 | 30% | High |
+| RAG Q&A over docs/data | 2 | 20% | Medium |
+| Optimization / decision support | 1 | 10% | High |
+| Agentic workflow (multi-step) | 1 | 10% | Very High |
 | M365 Copilot (assist) | 0 | 0% | Low |
-| RAG Q&A over docs/data | 0 | 0% | Medium |
 | Document intelligence | 0 | 0% | Medium |
-| Monitoring / anomaly detection | 0 | 0% | Medium |
-| Forecasting / predictive ML | 0 | 0% | High |
-| Optimization / decision support | 0 | 0% | High |
-| Agentic workflow (multi-step) | 0 | 0% | Very High |
-| **Total** | **0** | **100%** | -- |
+| **Total** | **10** | **100%** | -- |
 
 ---
 
@@ -95,16 +100,16 @@ LOW PRIORITY      ████████████████████  
 
 | Rank | Use Case | Area | Impact | Effort | Confidence | Priority | Quadrant |
 |------|----------|------|--------|--------|------------|----------|----------|
-| 1 | -- | -- | -- | -- | -- | -- | -- |
-| 2 | -- | -- | -- | -- | -- | -- | -- |
-| 3 | -- | -- | -- | -- | -- | -- | -- |
-| 4 | -- | -- | -- | -- | -- | -- | -- |
-| 5 | -- | -- | -- | -- | -- | -- | -- |
-| 6 | -- | -- | -- | -- | -- | -- | -- |
-| 7 | -- | -- | -- | -- | -- | -- | -- |
-| 8 | -- | -- | -- | -- | -- | -- | -- |
-| 9 | -- | -- | -- | -- | -- | -- | -- |
-| 10 | -- | -- | -- | -- | -- | -- | -- |
+| 1 | Daily Cash Position Monitoring | Treasury ALM | 5 | 2 | 5 | 12.5 | Quick Win |
+| 2 | Bank Statement Smart Matching | Payments Ops | 4 | 2 | 5 | 10.0 | Quick Win |
+| 3 | Payment Anomaly Detection | Payments Ops | 4 | 2 | 4 | 8.0 | Quick Win |
+| 4 | Policy RAG Q&A | Treasury ALM | 4 | 2 | 4 | 8.0 | Quick Win |
+| 5 | Demurrage Prediction | Maritime | 5 | 3 | 4 | 6.7 | Big Bet |
+| 6 | Carbon Credit Forecasting | Carbon & ESG | 4 | 3 | 4 | 5.3 | Big Bet |
+| 7 | FX Exposure Automation | Risk Mgmt | 4 | 3 | 4 | 5.3 | Big Bet |
+| 8 | Covenant Early Warning | Compliance | 5 | 4 | 4 | 5.0 | Big Bet |
+| 9 | Voyage Cost Optimizer | Maritime | 4 | 4 | 4 | 4.0 | Big Bet |
+| 10 | Treasury Copilot | Treasury ALM | 5 | 4 | 4 | 5.0 | Big Bet |
 
 ---
 
@@ -114,26 +119,26 @@ LOW PRIORITY      ████████████████████  
 
 | Source System | Use Cases | % Coverage |
 |---------------|-----------|------------|
-| SAP S/4HANA (FI/CO) | 0 | 0% |
-| Bank host-to-host / API | 0 | 0% |
-| Bloomberg / Refinitiv | 0 | 0% |
-| SharePoint / M365 | 0 | 0% |
-| Power BI | 0 | 0% |
-| ETRM (Endur/Allegro) | 0 | 0% |
-| MarineTraffic / AIS | 0 | 0% |
-| EU ETS Registry | 0 | 0% |
+| SAP S/4HANA (FI/CO) | 8 | 80% |
+| Bank host-to-host / API | 4 | 40% |
+| Bloomberg / Refinitiv | 3 | 30% |
+| SharePoint / M365 | 2 | 20% |
+| Power BI | 2 | 20% |
+| MarineTraffic / AIS | 2 | 20% |
+| EU ETS Registry | 1 | 10% |
+| ETRM (Endur/Allegro) | 1 | 10% |
 
 ### Data Type Distribution
 
 | Data Type | Count | % |
 |-----------|-------|---|
-| Structured transactions | 0 | 0% |
-| Bank statements (MT940/camt) | 0 | 0% |
-| Market data (FX/commodities) | 0 | 0% |
-| Contracts / PDFs | 0 | 0% |
-| Emails / Teams chats | 0 | 0% |
-| Spreadsheets | 0 | 0% |
-| Master data | 0 | 0% |
+| Structured transactions | 8 | 80% |
+| Bank statements (MT940/camt) | 4 | 40% |
+| Market data (FX/commodities) | 4 | 40% |
+| Master data | 3 | 30% |
+| Vessel tracking (AIS) | 2 | 20% |
+| Contracts / PDFs | 2 | 20% |
+| Carbon credits/allowances | 1 | 10% |
 
 ---
 

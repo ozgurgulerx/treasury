@@ -32,7 +32,8 @@
       "Bash(cat:*)",
       "Bash(find:*)",
       "Bash(tr:*)",
-      "Bash(pip3 install:*)"
+      "Bash(pip3 install:*)",
+      "Bash(python enhance_template.py:*)"
     ]
   }
 }

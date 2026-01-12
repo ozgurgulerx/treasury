@@ -1755,3 +1755,870 @@ Continuously monitors financial metrics against loan covenant thresholds, projec
 
 ---
 
+## Layer 4: Document Intelligence
+
+### Overview
+
+This layer applies AI to extract, validate, and draft treasury-related documents. From processing vendor invoices to drafting Letters of Credit and analyzing demurrage claims, document intelligence automates the reading and writing of complex financial documents.
+
+**Key Pain Points Addressed:**
+- Manual invoice processing taking 15+ minutes per invoice
+- LC discrepancies discovered only after submission to banks
+- Demurrage calculations requiring days of manual work
+- Contract terms buried in PDF documents
+- KYC dossier review consuming compliance team bandwidth
+
+---
+
+### Use Case 4.1: AP Invoice OCR & 3-Way Match Assistant
+
+#### What It Does
+Automatically extracts data from vendor invoices using OCR, matches against PO and goods receipt, identifies discrepancies, and routes exceptions with AI-generated explanations and resolution suggestions.
+
+#### Key Inputs
+- Scanned/PDF invoices
+- Purchase order data
+- Goods receipt records
+- Vendor master data
+- Historical matching patterns
+
+#### AI/LLM Approach
+- **OCR extraction**: Extracts key fields (vendor, amount, PO#, dates)
+- **Intelligent matching**: Fuzzy matching against PO/GR with tolerance rules
+- **Exception explanation**: Generates reasons for mismatches
+- **Coding suggestion**: Proposes GL account coding based on history
+
+#### Example Interaction
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ AP INVOICE PROCESSING COPILOT                          Invoice Queue: 47    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ INVOICE PROCESSING - Siemens Energy AG                                     │
+│                                                                             │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  📄 EXTRACTED DATA (OCR Confidence: 98.2%)                         │    │
+│ │  ═══════════════════════════════════════════════════════════════   │    │
+│ │                                                                     │    │
+│ │  Vendor: Siemens Energy AG                                         │    │
+│ │  Invoice #: SE-2026-INV-78234                                      │    │
+│ │  Invoice Date: January 5, 2026                                     │    │
+│ │  Due Date: February 4, 2026 (Net 30)                               │    │
+│ │  PO Reference: 4500089234                                          │    │
+│ │  Amount: EUR 847,562.00                                            │    │
+│ │  VAT: EUR 152,561.16 (18%)                                         │    │
+│ │  Total: EUR 1,000,123.16                                           │    │
+│ │                                                                     │    │
+│ │  Line Items:                                                        │    │
+│ │  1. Turbine maintenance service - EUR 650,000                      │    │
+│ │  2. Spare parts kit - EUR 147,562                                  │    │
+│ │  3. Technical consulting (4 days) - EUR 50,000                     │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ 3-WAY MATCH RESULTS:                                                        │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  PURCHASE ORDER MATCH: PO 4500089234 ✓                             │    │
+│ │  ┌───────────────────────────────────────────────────────────────┐ │    │
+│ │  │ Item        │ PO Amount    │ Invoice     │ Variance │ Status │ │    │
+│ │  ├─────────────┼──────────────┼─────────────┼──────────┼────────┤ │    │
+│ │  │ Maintenance │ EUR 650,000  │ EUR 650,000 │    -     │ ✓      │ │    │
+│ │  │ Spare parts │ EUR 145,000  │ EUR 147,562 │ +1.77%   │ ⚠️     │ │    │
+│ │  │ Consulting  │ EUR 40,000   │ EUR 50,000  │ +25.0%   │ 🔴     │ │    │
+│ │  └─────────────┴──────────────┴─────────────┴──────────┴────────┘ │    │
+│ │                                                                     │    │
+│ │  GOODS RECEIPT MATCH: GR 5000123456 ✓                              │    │
+│ │  • Service completion confirmed: Jan 3, 2026                       │    │
+│ │  • Sign-off by: Plant Manager İzmit                                │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ ⚠️ EXCEPTIONS REQUIRING REVIEW:                                            │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  EXCEPTION 1: Spare Parts Price Variance (+1.77%)                  │    │
+│ │  ──────────────────────────────────────────────────────────────    │    │
+│ │  AI Analysis: Within 2% tolerance. Price increase appears to be   │    │
+│ │  due to material cost escalation clause in contract (Section 8.2). │    │
+│ │  Siemens notified of 1.8% steel price increase in Dec 2025.       │    │
+│ │                                                                     │    │
+│ │  Recommendation: AUTO-APPROVE (within tolerance)                   │    │
+│ │                                                                     │    │
+│ │  EXCEPTION 2: Consulting Days Over-Billed (+25%)                   │    │
+│ │  ──────────────────────────────────────────────────────────────    │    │
+│ │  AI Analysis: PO specifies 4 days at EUR 10,000/day = EUR 40,000  │    │
+│ │  Invoice shows 4 days at EUR 12,500/day = EUR 50,000              │    │
+│ │                                                                     │    │
+│ │  Possible causes:                                                   │    │
+│ │  • Day rate increased without PO amendment (likely)                │    │
+│ │  • Different consultant seniority level                            │    │
+│ │  • Error in invoice                                                │    │
+│ │                                                                     │    │
+│ │  Recommendation: ROUTE TO PROCUREMENT for rate verification        │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ PROPOSED ACTION:                                                            │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  □ Post EUR 847,562 (approved portion) to AP                       │    │
+│ │  □ Route EUR 10,000 consulting variance for approval               │    │
+│ │  □ GL Coding: 6230100 (Maintenance) / 1340200 (Spare Parts)       │    │
+│ │                                                                     │    │
+│ │  [Process Approved Portion]  [Route All for Review]  [Reject]      │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Extracted invoice data with confidence scores
+- 3-way match results with variance analysis
+- Exception explanations and recommendations
+- Proposed GL coding
+- Audit trail of processing decisions
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Invoice processing time | 15-20 min | 2-3 min | 85% reduction |
+| Straight-through processing | 40% | 75% | 88% improvement |
+| Exception resolution time | 2-3 days | Same day | 80% faster |
+| Duplicate invoice detection | 85% | 99% | 16% improvement |
+
+---
+
+### Use Case 4.2: LC Drafting & Document Checking Assistant
+
+#### What It Does
+Assists trade finance teams by drafting Letters of Credit from standard templates, checking presented documents against LC terms and UCP 600/ISBP rules, and generating discrepancy reports with amendment suggestions.
+
+#### Key Inputs
+- LC application details (amount, beneficiary, terms)
+- Standard LC templates
+- Presented documents (commercial invoice, B/L, certificates)
+- UCP 600/ISBP rule database
+- Historical discrepancy patterns
+
+#### AI/LLM Approach
+- **Template population**: Drafts LCs from structured parameters
+- **Document comparison**: Compares presented docs against LC terms
+- **Rule-based checking**: Validates against UCP 600/ISBP requirements
+- **Discrepancy classification**: Identifies and explains documentary discrepancies
+
+#### Example Interaction
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TRADE FINANCE LC ASSISTANT                               Document Checking  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ LC DOCUMENT CHECK - LC# 2026-IMP-00234 (Vitol Crude Cargo)                 │
+│                                                                             │
+│ LC SUMMARY:                                                                 │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │  Beneficiary: Vitol SA, Geneva                                      │    │
+│ │  Amount: USD 45,000,000.00 (+/- 5%)                                │    │
+│ │  Goods: Urals Crude Oil, approx. 650,000 BBL                       │    │
+│ │  Latest Shipment: January 25, 2026                                 │    │
+│ │  Expiry: February 10, 2026                                         │    │
+│ │  Presentation Period: 21 days after B/L date                       │    │
+│ │  Issuing Bank: Garanti BBVA                                        │    │
+│ │  Advising Bank: Credit Suisse, Geneva                              │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ DOCUMENTS RECEIVED FOR CHECKING:                                            │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │  ✓ Commercial Invoice (3 originals)                                │    │
+│ │  ✓ Full set Bills of Lading (3/3)                                  │    │
+│ │  ✓ Certificate of Origin                                           │    │
+│ │  ✓ Certificate of Quality (SGS)                                    │    │
+│ │  ✓ Insurance Certificate                                           │    │
+│ │  ⚠️ Packing List                                                   │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ DOCUMENT CHECK RESULTS:                                                     │
+│                                                                             │
+│ 🔴 DISCREPANCIES FOUND (3):                                                │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  DISCREPANCY 1: LATE SHIPMENT                            [MAJOR]   │    │
+│ │  ────────────────────────────────────────────────────────────────  │    │
+│ │  LC Requirement: Latest shipment January 25, 2026                  │    │
+│ │  B/L Date: January 27, 2026                                        │    │
+│ │  Variance: 2 days late                                             │    │
+│ │                                                                     │    │
+│ │  UCP 600 Reference: Article 14(d) - documents must comply with    │    │
+│ │  stipulated dates                                                   │    │
+│ │                                                                     │    │
+│ │  Recommendation: Request LC amendment extending shipment date to  │    │
+│ │  January 31, 2026, OR obtain applicant waiver letter              │    │
+│ │                                                                     │    │
+│ │                                                                     │    │
+│ │  DISCREPANCY 2: GOODS DESCRIPTION MISMATCH               [MINOR]   │    │
+│ │  ────────────────────────────────────────────────────────────────  │    │
+│ │  LC: "Urals Crude Oil"                                             │    │
+│ │  Invoice: "Russian Export Blend Crude Oil (Urals)"                 │    │
+│ │                                                                     │    │
+│ │  UCP 600 Reference: Article 18(c) - goods description must        │    │
+│ │  correspond to that in the credit                                  │    │
+│ │                                                                     │    │
+│ │  Recommendation: This may be acceptable as "Urals" is clearly     │    │
+│ │  identified. However, safest to request invoice re-issue with     │    │
+│ │  exact LC wording.                                                 │    │
+│ │                                                                     │    │
+│ │                                                                     │    │
+│ │  DISCREPANCY 3: B/L CONSIGNEE ERROR                      [MAJOR]   │    │
+│ │  ────────────────────────────────────────────────────────────────  │    │
+│ │  LC: "To order of Garanti BBVA"                                    │    │
+│ │  B/L: "To order of Garanti Bank"                                   │    │
+│ │                                                                     │    │
+│ │  UCP 600 Reference: Article 20(a)(ii) - B/L must indicate        │    │
+│ │  goods consigned as per LC terms                                   │    │
+│ │                                                                     │    │
+│ │  Recommendation: Bank name abbreviation differs from LC. Request  │    │
+│ │  B/L correction or amendment endorsement from carrier.             │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ ✓ COMPLIANT ITEMS:                                                          │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │  • Invoice amount USD 42,847,562 within +/-5% tolerance ✓         │    │
+│ │  • Quantity 650,234 BBL within tolerance ✓                        │    │
+│ │  • Port of loading: Novorossiysk ✓                                │    │
+│ │  • Port of discharge: Tüpraş Izmit ✓                              │    │
+│ │  • Insurance coverage 110% CIF value ✓                            │    │
+│ │  • Certificate of Origin endorsed by Chamber of Commerce ✓        │    │
+│ │  • Quality certificate from approved surveyor (SGS) ✓             │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ RECOMMENDED ACTIONS:                                                        │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  Option A: Present with Discrepancies                              │    │
+│ │  • Request applicant waiver for all 3 discrepancies               │    │
+│ │  • Bank may charge discrepancy fee (~$150)                        │    │
+│ │  • Risk: Applicant may refuse documents                           │    │
+│ │                                                                     │    │
+│ │  Option B: Cure Discrepancies (Recommended)                        │    │
+│ │  • Request LC amendment for shipment date (+2-3 days)             │    │
+│ │  • Request beneficiary to re-issue invoice                        │    │
+│ │  • Request B/L correction from carrier                            │    │
+│ │  • Timeline: 2-3 business days                                    │    │
+│ │                                                                     │    │
+│ │  [Draft Amendment Request]  [Draft Waiver Letter]  [Full Report]  │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- LC draft documents from templates
+- Discrepancy reports with UCP 600 references
+- Amendment request drafts
+- Compliance checklists
+- Document comparison matrices
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| LC drafting time | 2-3 hours | 15-20 min | 90% reduction |
+| Document check time | 2-4 hours | 30 min | 85% reduction |
+| Discrepancy detection rate | 85% | 98% | 15% improvement |
+| Presentation rejections | 12%/year | 3%/year | 75% reduction |
+
+---
+
+### Use Case 4.3: Demurrage & Laytime Calculator
+
+#### What It Does
+Parses Statement of Facts (SoF) documents, calculates laytime and demurrage based on charter party terms, validates counterparty claims, and drafts dispute letters or claim submissions.
+
+#### Key Inputs
+- Statement of Facts (SoF) documents
+- Charter party contracts
+- Laytime calculation rules
+- Port working hour schedules
+- Weather and exception records
+
+#### AI/LLM Approach
+- **OCR/NLP extraction**: Extracts timestamps and events from SoF
+- **Rule application**: Applies charter party laytime terms
+- **Exception identification**: Finds time exclusions (weather, strikes)
+- **Claim validation**: Compares against counterparty calculations
+
+#### Example Interaction
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ DEMURRAGE CALCULATOR                                 Voyage: TX-2026-00234  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ VOYAGE DETAILS:                                                             │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │  Vessel: MT Suez Max Star                                           │    │
+│ │  Charter Party: Vitol-2024-CP-089                                  │    │
+│ │  Cargo: 650,000 BBL Urals Crude                                    │    │
+│ │  Load Port: Novorossiysk                                           │    │
+│ │  Discharge Port: Tüpraş İzmit Terminal                             │    │
+│ │  Demurrage Rate: $45,000/day (pro-rata)                           │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ LAYTIME CALCULATION (Discharge - İzmit):                                   │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  ALLOWED LAYTIME:                                                   │    │
+│ │  Per Charter Party: 36 hours (SHEX)                                │    │
+│ │                                                                     │    │
+│ │  LAYTIME STATEMENT (Extracted from SoF):                           │    │
+│ │  ┌───────────────────────────────────────────────────────────────┐ │    │
+│ │  │ Event                    │ Date/Time        │ Time Used      │ │    │
+│ │  ├──────────────────────────┼──────────────────┼────────────────┤ │    │
+│ │  │ NOR Tendered             │ Jan 08, 06:00    │ -              │ │    │
+│ │  │ NOR Accepted             │ Jan 08, 08:00    │ -              │ │    │
+│ │  │ Laytime Commenced        │ Jan 08, 14:00    │ Start          │ │    │
+│ │  │ Berthed                  │ Jan 08, 16:30    │ 2h 30m         │ │    │
+│ │  │ Hoses Connected          │ Jan 08, 18:00    │ 4h 00m         │ │    │
+│ │  │ Discharge Started        │ Jan 08, 18:30    │ 4h 30m         │ │    │
+│ │  │ Weekend (Sat-Sun)        │ Jan 09-10        │ EXCLUDED       │ │    │
+│ │  │ Discharge Resumed        │ Jan 11, 06:00    │ 4h 30m         │ │    │
+│ │  │ Discharge Completed      │ Jan 11, 22:00    │ 20h 30m        │ │    │
+│ │  │ Hoses Disconnected       │ Jan 11, 23:30    │ 22h 00m        │ │    │
+│ │  │ Vessel Sailed            │ Jan 12, 02:00    │ -              │ │    │
+│ │  ├──────────────────────────┴──────────────────┴────────────────┤ │    │
+│ │  │ TIME EXCLUSIONS:                                             │ │    │
+│ │  │ • Weekend (SHEX): 48h excluded per CP clause 12.3           │ │    │
+│ │  │ • Waiting for berth: 6h (not owner's fault - excluded)      │ │    │
+│ │  └───────────────────────────────────────────────────────────────┘ │    │
+│ │                                                                     │    │
+│ │  SUMMARY:                                                           │    │
+│ │  Gross Time at Port:         68 hours                              │    │
+│ │  Less: Weekend (SHEX):       -48 hours                             │    │
+│ │  Less: Waiting (berth):       -6 hours                             │    │
+│ │  ─────────────────────────────────────────                         │    │
+│ │  Net Laytime Used:           14 hours                              │    │
+│ │  Allowed Laytime:            36 hours                              │    │
+│ │  ─────────────────────────────────────────                         │    │
+│ │  Time Saved (Despatch):      22 hours                              │    │
+│ │                                                                     │    │
+│ │  DESPATCH DUE TO OWNER: 22h × ($45,000/24h) × 50% = $20,625       │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ COUNTERPARTY CLAIM COMPARISON:                                              │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  Vitol's Claim: DEMURRAGE $36,000                                  │    │
+│ │  Our Calculation: DESPATCH $20,625 (in our favor)                 │    │
+│ │  ────────────────────────────────────────────────                  │    │
+│ │  DISCREPANCY: $56,625                                              │    │
+│ │                                                                     │    │
+│ │  DISCREPANCY ANALYSIS:                                              │    │
+│ │  ⚠️ Vitol did NOT exclude weekend per SHEX terms                   │    │
+│ │  ⚠️ Vitol did NOT exclude berth waiting time                       │    │
+│ │  ⚠️ Vitol used 68h gross instead of 14h net                       │    │
+│ │                                                                     │    │
+│ │  CP Reference: Clause 12.3 "Sundays and Holidays Excluded"        │    │
+│ │  CP Reference: Clause 14.1 "Time waiting for berth not to count"  │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ RECOMMENDED ACTION:                                                         │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  DISPUTE Vitol's claim and submit COUNTER-CLAIM for despatch      │    │
+│ │                                                                     │    │
+│ │  [Draft Dispute Letter]  [Generate Full Calculation]  [Export]    │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Laytime calculations with full breakdown
+- Demurrage/despatch determinations
+- Counterparty claim comparisons
+- Dispute letter drafts
+- Supporting calculation worksheets
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Laytime calculation time | 4-6 hours | 30 min | 90% reduction |
+| Claim disputes won | 60% | 85% | 42% improvement |
+| Erroneous claims paid | $200K/year | $30K/year | 85% reduction |
+| Processing backlog | 15-20 claims | 2-3 claims | 85% reduction |
+
+---
+
+## Layer 5: Working Capital Copilots
+
+### Overview
+
+This layer provides AI-powered tools to optimize working capital through better AR collections, payment timing, supplier terms, and inventory management. The copilots predict payment behaviors, recommend actions, and automate routine collection activities.
+
+---
+
+### Use Case 5.1: AR Pay-Date Prediction & Collections Playbook
+
+#### What It Does
+Predicts when customers will actually pay (vs. due date), segments customers by payment risk, and generates personalized collection playbooks with AI-drafted dunning communications.
+
+#### Key Inputs
+- Historical payment patterns by customer
+- Invoice aging data
+- Customer credit scores and limits
+- Economic/industry indicators
+- Correspondence history
+
+#### AI/LLM Approach
+- **Predictive modeling**: ML model predicts likely pay date
+- **Risk segmentation**: Clusters customers by payment behavior
+- **Playbook generation**: Creates tiered dunning strategies
+- **Communication drafting**: GenAI writes personalized collection emails
+
+#### Example Interaction
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ AR COLLECTIONS COPILOT                                    Weekly Dashboard  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ COLLECTIONS PRIORITY DASHBOARD - Week of Jan 12, 2026                      │
+│                                                                             │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │  AGING SUMMARY                                                      │    │
+│ │  Total AR: TRY 892.4M  │  Overdue: TRY 156.8M (17.6%)              │    │
+│ │                                                                     │    │
+│ │  Current     │  1-30 Days  │  31-60 Days │  61-90 Days │  90+ Days │    │
+│ │  TRY 735.6M  │  TRY 89.2M  │  TRY 42.3M  │  TRY 18.4M  │  TRY 6.9M │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ 🔴 HIGH PRIORITY COLLECTIONS (AI-Predicted Late Payments):                 │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  Customer         │ Amount    │ Due Date │ Predicted │ Risk  │ Act │    │
+│ │  ─────────────────────────────────────────────────────────────────  │    │
+│ │  Aytemiz Akaryakıt│ TRY 28.4M │ Jan 5    │ Jan 25    │ HIGH  │ 🔴 │    │
+│ │  ├─ Predicted 20 days late (historical avg: 18 days)              │    │
+│ │  ├─ Credit utilization: 92% of limit                               │    │
+│ │  └─ Last contact: Dec 28 (no response)                             │    │
+│ │                                                                     │    │
+│ │  Petrol Ofisi     │ TRY 45.2M │ Jan 10   │ Jan 18    │ MED   │ 🟡 │    │
+│ │  ├─ Predicted 8 days late (historical avg: 5 days)                │    │
+│ │  ├─ Recent payment pattern deteriorating                           │    │
+│ │  └─ CFO change in Nov 2025 - new approval process                  │    │
+│ │                                                                     │    │
+│ │  Total Türkiye    │ TRY 12.8M │ Jan 15   │ Jan 15    │ LOW   │ ✓  │    │
+│ │  ├─ Predicted on-time (historical: 98% on-time)                   │    │
+│ │  └─ Strong payment record, no action needed                        │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ RECOMMENDED COLLECTION ACTIONS - Aytemiz Akaryakıt:                        │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  PLAYBOOK: Escalated Collection (High Risk Customer)               │    │
+│ │                                                                     │    │
+│ │  Day 1 (Today):                                                    │    │
+│ │  ☐ Phone call to AP Manager (Elif Yılmaz: +90 532 XXX XXXX)       │    │
+│ │  ☐ Send formal reminder email (see draft below)                   │    │
+│ │                                                                     │    │
+│ │  Day 3 (Jan 15):                                                   │    │
+│ │  ☐ If no response: Escalate to CFO (Ahmet Kaya)                   │    │
+│ │  ☐ Request payment commitment with specific date                   │    │
+│ │                                                                     │    │
+│ │  Day 7 (Jan 19):                                                   │    │
+│ │  ☐ If no commitment: Suspend credit / COD only                    │    │
+│ │  ☐ Formal demand letter                                           │    │
+│ │                                                                     │    │
+│ │  Day 14 (Jan 26):                                                  │    │
+│ │  ☐ If unpaid: Engage legal / collections agency                   │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ AI-DRAFTED COLLECTION EMAIL:                                                │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  To: muhasebe@aytemiz.com.tr                                       │    │
+│ │  Subject: Urgent: Overdue Payment - TRY 28.4M (7 Days Past Due)   │    │
+│ │                                                                     │    │
+│ │  Sayın Elif Hanım,                                                 │    │
+│ │                                                                     │    │
+│ │  I hope this message finds you well. I am writing regarding       │    │
+│ │  outstanding invoices totaling TRY 28,456,234 that became due     │    │
+│ │  on January 5, 2026.                                               │    │
+│ │                                                                     │    │
+│ │  Outstanding Invoices:                                             │    │
+│ │  • INV-2025-089234: TRY 15,234,567 (Due: Jan 5)                   │    │
+│ │  • INV-2025-089456: TRY 13,221,667 (Due: Jan 5)                   │    │
+│ │                                                                     │    │
+│ │  We value our partnership with Aytemiz and would appreciate       │    │
+│ │  confirmation of your payment timeline at your earliest           │    │
+│ │  convenience. If there are any concerns or disputes regarding     │    │
+│ │  these invoices, please let us know so we can address them        │    │
+│ │  promptly.                                                         │    │
+│ │                                                                     │    │
+│ │  Please remit payment to:                                          │    │
+│ │  Bank: Garanti BBVA | IBAN: TR12 0006 2000 XXXX XXXX XXXX XX     │    │
+│ │                                                                     │    │
+│ │  Saygılarımla,                                                     │    │
+│ │  [Collections Team Name]                                           │    │
+│ │  Tüpraş Türkiye Petrol Rafinerileri A.Ş.                          │    │
+│ │                                                                     │    │
+│ │  [Edit]  [Send]  [Schedule for Later]  [Log Call Instead]         │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Payment date predictions by customer/invoice
+- Risk-segmented customer lists
+- Personalized collection playbooks
+- AI-drafted collection communications
+- Collection effectiveness analytics
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| DSO (Days Sales Outstanding) | 45 days | 38 days | 16% reduction |
+| Collection call efficiency | 25% response | 55% response | 2x improvement |
+| Overdue balances | 22% of AR | 12% of AR | 45% reduction |
+| Write-offs | 0.8% of revenue | 0.3% of revenue | 63% reduction |
+
+---
+
+## Layer 6: Risk & Treasury Decision Copilots
+
+### Overview
+
+This layer provides AI-assisted decision support for treasury risk management, including hedge recommendations, scenario analysis, and counterparty monitoring. These copilots help treasury managers make better-informed decisions faster.
+
+---
+
+### Use Case 6.1: Hedge Copilot
+
+#### What It Does
+Aggregates exposures across entities and risk types, recommends hedge actions based on policy, market conditions, and risk appetite, and prepares trade tickets for human approval.
+
+#### Key Inputs
+- FX/commodity/IR exposures by entity
+- Current hedge book and coverage ratios
+- Market data and forward curves
+- Treasury policy limits and guidelines
+- Risk appetite parameters
+
+#### AI/LLM Approach
+- **Exposure aggregation**: Consolidates multi-source exposure data
+- **Gap analysis**: Compares exposures against policy targets
+- **Recommendation engine**: Suggests optimal hedge instruments/tenors
+- **Trade ticket drafting**: Prepares execution-ready deal parameters
+
+#### Example Interaction
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ HEDGE COPILOT                                           FX Risk Management  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ FX EXPOSURE & HEDGE RECOMMENDATION                                          │
+│                                                                             │
+│ CURRENT USD/TRY EXPOSURE (Next 6 Months):                                  │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  Period    │ Gross Exp  │ Hedged   │ Net Open │ Coverage │ Policy  │    │
+│ │  ──────────────────────────────────────────────────────────────────│    │
+│ │  Jan 2026  │ ($156M)    │ $142M    │ ($14M)   │ 91%      │ 80-95%  │    │
+│ │  Feb 2026  │ ($189M)    │ $134M    │ ($55M)   │ 71%  ⚠️  │ 75-90%  │    │
+│ │  Mar 2026  │ ($167M)    │ $98M     │ ($69M)   │ 59%  🔴  │ 70-85%  │    │
+│ │  Apr 2026  │ ($145M)    │ $45M     │ ($100M)  │ 31%  🔴  │ 60-80%  │    │
+│ │  May 2026  │ ($178M)    │ $34M     │ ($144M)  │ 19%  🔴  │ 50-75%  │    │
+│ │  Jun 2026  │ ($134M)    │ $12M     │ ($122M)  │ 9%   🔴  │ 40-70%  │    │
+│ │  ──────────────────────────────────────────────────────────────────│    │
+│ │  TOTAL     │ ($969M)    │ $465M    │ ($504M)  │ 48%      │         │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ 🔴 HEDGE GAP ALERT: March-June coverage below policy minimum               │
+│                                                                             │
+│ AI HEDGE RECOMMENDATIONS:                                                   │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  RECOMMENDED HEDGES (to achieve policy mid-point):                 │    │
+│ │                                                                     │    │
+│ │  1. FORWARD - USD/TRY Buy                               [PRIORITY] │    │
+│ │     ────────────────────────────────────────────────────────────   │    │
+│ │     Amount: $50M                                                   │    │
+│ │     Tenor: March 31, 2026 (78 days)                               │    │
+│ │     Indicative Rate: 35.85 (vs. spot 34.89)                       │    │
+│ │     Forward Points: 960 pips (2.75% premium)                       │    │
+│ │                                                                     │    │
+│ │     Rationale:                                                     │    │
+│ │     • Brings March coverage to 89% (within 70-85% policy)         │    │
+│ │     • Forward premium reasonable vs. 3-month historical avg (3.2%)│    │
+│ │     • Timing: Q1 crude purchase payments concentrated in March    │    │
+│ │                                                                     │    │
+│ │     [Prepare Trade Ticket]                                        │    │
+│ │                                                                     │    │
+│ │  2. FORWARD - USD/TRY Buy                                          │    │
+│ │     ────────────────────────────────────────────────────────────   │    │
+│ │     Amount: $80M                                                   │    │
+│ │     Tenor: May 31, 2026 (139 days)                                │    │
+│ │     Indicative Rate: 36.95                                        │    │
+│ │     Forward Points: 2,060 pips (5.9% premium)                     │    │
+│ │                                                                     │    │
+│ │     Rationale:                                                     │    │
+│ │     • Brings April-May average coverage to 72%                    │    │
+│ │     • Consider splitting across April/May maturities              │    │
+│ │                                                                     │    │
+│ │     [Prepare Trade Ticket]                                        │    │
+│ │                                                                     │    │
+│ │  3. OPTION - USD Call / TRY Put (Alternative)                     │    │
+│ │     ────────────────────────────────────────────────────────────   │    │
+│ │     Amount: $40M                                                   │    │
+│ │     Strike: 36.00 (ATM+3%)                                        │    │
+│ │     Expiry: June 30, 2026                                         │    │
+│ │     Premium: ~1.8% ($720K)                                        │    │
+│ │                                                                     │    │
+│ │     Rationale:                                                     │    │
+│ │     • Provides downside protection with TRY upside participation  │    │
+│ │     • Consider if uncertain about TRY trajectory in H2            │    │
+│ │     • Requires CFO approval (options per policy 5.3)              │    │
+│ │                                                                     │    │
+│ │     [Prepare Option Request]                                      │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ MARKET CONTEXT:                                                             │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │  • USD/TRY spot: 34.89 (+1.1% WoW)                                │    │
+│ │  • 3M forward premium: 2.75% (vs. 3.2% 30-day avg) - FAVORABLE   │    │
+│ │  • TCMB next meeting: Feb 6 - rate hold expected                  │    │
+│ │  • Fed rate path: 2 cuts expected in 2026                         │    │
+│ │  • Implied vol 3M: 18.5% (moderate)                               │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ [Execute Recommended Hedges]  [Customize]  [Schedule Review Meeting]       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- Exposure dashboards with hedge coverage
+- AI-generated hedge recommendations
+- Draft trade tickets
+- Policy compliance analysis
+- Market context summaries
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Hedge coverage monitoring | Weekly | Real-time | Continuous |
+| Time to hedge decision | 2-3 days | Same day | 75% faster |
+| Policy breaches | 3-4/year | 0/year | 100% reduction |
+| Hedge effectiveness | 85% | 92% | 8% improvement |
+
+---
+
+## Layer 7: Agentic Orchestration
+
+### Overview
+
+This layer represents the most advanced AI capability - multi-step workflow automation where AI agents coordinate actions across multiple systems while maintaining human oversight for critical decisions.
+
+---
+
+### Use Case 7.1: Cross-App Runbook Orchestrator
+
+#### What It Does
+Executes complex multi-step treasury workflows that span multiple applications (ERP, TMS, bank portals, email) by coordinating a sequence of actions with appropriate checkpoints and human approvals.
+
+#### Key Inputs
+- Workflow definitions and runbooks
+- System integration capabilities
+- Approval routing rules
+- Exception handling procedures
+- Audit requirements
+
+#### AI/LLM Approach
+- **Workflow decomposition**: Breaks complex tasks into atomic steps
+- **Multi-system orchestration**: Coordinates actions across platforms
+- **Checkpoint management**: Pauses for human approval at critical points
+- **Exception handling**: Manages errors and routes for resolution
+
+#### Example Interaction
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ WORKFLOW ORCHESTRATOR                              Month-End Close Runbook  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ ORCHESTRATED WORKFLOW: January 2026 Treasury Close                         │
+│                                                                             │
+│ WORKFLOW STATUS:                                                            │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  Progress: ████████████████░░░░░░░░░░ 64% Complete                │    │
+│ │  Status: AWAITING APPROVAL (Step 8)                                │    │
+│ │  Started: Jan 31, 2026 18:00                                       │    │
+│ │  Estimated Completion: Feb 1, 2026 09:00                          │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ WORKFLOW STEPS:                                                             │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │                                                                     │    │
+│ │  ✓ Step 1: Pull Bank Balances                         [COMPLETED] │    │
+│ │    └─ Retrieved balances from 12 bank accounts via API            │    │
+│ │    └─ Duration: 3 minutes                                         │    │
+│ │                                                                     │    │
+│ │  ✓ Step 2: Import MT940 Statements                    [COMPLETED] │    │
+│ │    └─ Imported 847 transactions from 8 banks                      │    │
+│ │    └─ Duration: 8 minutes                                         │    │
+│ │                                                                     │    │
+│ │  ✓ Step 3: Run Auto-Reconciliation                    [COMPLETED] │    │
+│ │    └─ Matched 812/847 transactions (95.9%)                        │    │
+│ │    └─ 35 exceptions routed to recon queue                         │    │
+│ │    └─ Duration: 12 minutes                                        │    │
+│ │                                                                     │    │
+│ │  ✓ Step 4: Retrieve FX Rates                          [COMPLETED] │    │
+│ │    └─ Bloomberg closing rates for 15 currency pairs               │    │
+│ │    └─ Duration: 1 minute                                          │    │
+│ │                                                                     │    │
+│ │  ✓ Step 5: Run FX Revaluation                         [COMPLETED] │    │
+│ │    └─ Revalued 234 FX positions                                   │    │
+│ │    └─ Total FX gain/(loss): TRY (45.2M)                          │    │
+│ │    └─ Duration: 5 minutes                                         │    │
+│ │                                                                     │    │
+│ │  ✓ Step 6: Calculate Derivative MTM                   [COMPLETED] │    │
+│ │    └─ 78 derivatives marked to market                             │    │
+│ │    └─ Net MTM: USD (2.3M)                                        │    │
+│ │    └─ Duration: 15 minutes                                        │    │
+│ │                                                                     │    │
+│ │  ✓ Step 7: Generate Accrual Entries                   [COMPLETED] │    │
+│ │    └─ 23 accrual journal entries prepared                         │    │
+│ │    └─ Total accruals: TRY 12.4M                                  │    │
+│ │    └─ Duration: 4 minutes                                         │    │
+│ │                                                                     │    │
+│ │  ⏸️ Step 8: Post Journal Entries                 [AWAITING APPROVAL]│    │
+│ │    └─ 45 journal entries ready for posting                        │    │
+│ │    └─ Total debits: TRY 892.4M                                   │    │
+│ │    └─ Requires: Treasury Controller approval                      │    │
+│ │                                                                     │    │
+│ │    ┌─────────────────────────────────────────────────────────┐    │    │
+│ │    │  APPROVAL REQUIRED                                      │    │    │
+│ │    │                                                         │    │    │
+│ │    │  45 journal entries totaling TRY 892.4M ready to post  │    │    │
+│ │    │  Please review summary and approve/reject:              │    │    │
+│ │    │                                                         │    │    │
+│ │    │  [View JE Summary]  [Approve & Continue]  [Reject]     │    │    │
+│ │    │                                                         │    │    │
+│ │    └─────────────────────────────────────────────────────────┘    │    │
+│ │                                                                     │    │
+│ │  ○ Step 9: Run Trial Balance                          [PENDING]   │    │
+│ │                                                                     │    │
+│ │  ○ Step 10: Generate Close Report                     [PENDING]   │    │
+│ │                                                                     │    │
+│ │  ○ Step 11: Distribute to Stakeholders                [PENDING]   │    │
+│ │                                                                     │    │
+│ │  ○ Step 12: Archive & Complete                        [PENDING]   │    │
+│ │                                                                     │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ EXCEPTIONS REQUIRING ATTENTION:                                             │
+│ ┌─────────────────────────────────────────────────────────────────────┐    │
+│ │  ⚠️ 35 reconciliation exceptions need manual review               │    │
+│ │  ⚠️ 1 derivative valuation variance >$100K flagged               │    │
+│ │                                                                     │    │
+│ │  [View Exceptions]  [Route to Team]                               │    │
+│ └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│ AUDIT TRAIL:                                                                │
+│ All 7 completed steps logged with timestamps, data snapshots, and          │
+│ system confirmations. Full audit package available for download.           │
+│                                                                             │
+│ [Download Audit Log]  [Pause Workflow]  [Escalate Issues]                  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Outputs
+- End-to-end workflow execution
+- Human approval checkpoints
+- Exception routing and tracking
+- Complete audit trail
+- Status dashboards and notifications
+
+#### KPIs
+| Metric | Before | After | Improvement |
+|--------|--------|-------|-------------|
+| Close cycle time | 5-7 days | 2-3 days | 60% reduction |
+| Manual steps in close | 150+ | 30-40 | 75% reduction |
+| Close errors | 8-12/month | 1-2/month | 85% reduction |
+| Staff time on close | 120 hrs | 40 hrs | 67% reduction |
+
+---
+
+## Implementation Roadmap
+
+### Phase 1: Now (0-6 months)
+| Use Case | Priority | Complexity | Quick Win |
+|----------|----------|------------|-----------|
+| Ask Treasury Q&A | HIGH | Medium | Yes |
+| Daily Cash Packet | HIGH | Low | Yes |
+| Policy Q&A Chatbot | HIGH | Low | Yes |
+| Reconciliation Explainer | HIGH | Medium | Yes |
+
+### Phase 2: Next (6-12 months)
+| Use Case | Priority | Complexity |
+|----------|----------|------------|
+| Weekly Market Bulletin | HIGH | Medium |
+| AP Invoice Processing | HIGH | Medium |
+| AR Collections Copilot | HIGH | Medium |
+| Covenant Early Warning | MEDIUM | Medium |
+
+### Phase 3: Later (12-24 months)
+| Use Case | Priority | Complexity |
+|----------|----------|------------|
+| Hedge Copilot | MEDIUM | High |
+| LC Document Checking | MEDIUM | High |
+| Agentic Close Orchestration | LOW | Very High |
+| Full Workflow Automation | LOW | Very High |
+
+---
+
+## Expected Benefits Summary
+
+| Benefit Category | Estimated Impact |
+|-----------------|------------------|
+| Report preparation time | 85-95% reduction |
+| Query response time | 95-99% reduction |
+| Exception investigation | 80-90% reduction |
+| Policy compliance errors | 90% reduction |
+| Audit support effort | 75% reduction |
+| Close cycle time | 50-60% reduction |
+| DSO improvement | 15-20% reduction |
+| Hedge effectiveness | 5-10% improvement |
+
+---
+
+## Guardrails & Governance
+
+All T9 Experience Layer copilots operate under strict governance:
+
+1. **Human-in-the-Loop**: All high-risk actions require human approval
+2. **Audit Trail**: Every AI action logged with reasoning and sources
+3. **Data Grounding**: All numbers from verified systems, never generated
+4. **Policy Enforcement**: AI cannot recommend outside policy limits
+5. **Segregation of Duties**: AI respects existing approval workflows
+6. **Explainability**: Every recommendation includes rationale
+7. **Error Handling**: Graceful degradation when uncertain
+
