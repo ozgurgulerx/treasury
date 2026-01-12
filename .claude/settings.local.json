@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(textutil:*)",
+      "Bash(pdftotext:*)",
+      "Bash(ls:*)",
+      "Bash(python3:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(mkdocs new . --force)",
+      "Bash(mkdocs build:*)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury status)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury remote:*)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury add .gitignore README.md docs/ mkdocs.yml requirements.txt)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury commit -m \"$\\(cat <<''EOF''\nInitial project setup with MkDocs documentation\n\n- Add .gitignore for Python, venv, and reference materials\n- Configure MkDocs with Material theme \\(oil & gas color scheme\\)\n- Add requirements.txt with MkDocs dependencies\n- Create documentation structure with index, getting started, and about pages\n- Add professional README\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury push -u origin main)",
+      "Bash(mkdocs gh-deploy:*)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury add docs/ mkdocs.yml)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury commit -m \"$\\(cat <<''EOF''\nAdd comprehensive AI use cases documentation for O&G Treasury\n\n- Add 8 detailed use case pages covering:\n  - Cash flow forecasting & liquidity management\n  - Fraud detection & payment security\n  - FX risk management\n  - Commodity price hedging\n  - Trade finance automation\n  - Working capital optimization\n  - Treasury analytics & AI assistant\n  - Regulatory compliance\n\n- Update navigation structure\n- Enhance homepage with use case overview\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury push origin main)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury add docs/architecture/ mkdocs.yml)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury commit -m \"$\\(cat <<''EOF''\nAdd architecture comparison documentation\n\nCompare Microsoft Foundry, Fabric, and Copilot Studio for Treasury AI:\n\n- Microsoft Foundry: Multi-agent AI platform analysis\n- Microsoft Fabric: Data lakehouse architecture\n- Copilot Studio: Low-code chatbot platform\n- Data sources catalog with simulation strategies\n- Verdict: Hybrid architecture recommendation\n\nIncludes:\n- Detailed pros/cons tables\n- ASCII architecture diagrams\n- Data simulation code examples\n- Implementation roadmap \\(3 phases\\)\n- Prototype tracking templates\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(./venv/bin/python:*)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury add notebooks/ src/ requirements.txt)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury commit -m \"$\\(cat <<''EOF''\nAdd comprehensive Jupyter notebooks for Treasury AI use cases\n\nEducational notebooks covering 8 Treasury AI applications:\n- 01_cash_flow_forecasting: Prophet model, baseline comparisons\n- 02_fraud_detection: Isolation Forest + Rules hybrid system\n- 03_fx_risk_management: Monte Carlo, hedge optimization\n- 04_commodity_hedging: ARIMA, crack spread analysis\n- 05_trade_finance: Document AI, OCR simulation\n- 06_working_capital: Receivables prediction, CCC analysis\n- 07_treasury_copilot: RAG-based Q&A chatbot\n- 08_compliance: TAS 29 hyperinflation automation\n\nIncludes:\n- src/treasury_sim/generators.py for data simulation\n- Updated requirements.txt with ML dependencies\n- Thinking traces and executive dashboards\n- Business context and AI model explanations\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury log --oneline -3)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury add docs/notebooks/ mkdocs.yml)",
+      "Bash(git -C /Users/ozgurguler/Developer/Projects/treasury commit -m \"$\\(cat <<''EOF''\nAdd comprehensive notebook documentation to MkDocs site\n\nDocumentation for all 8 Treasury AI notebooks:\n- Detailed descriptions of approaches and methodologies\n- Data design and simulation patterns explained\n- Thinking traces and business context\n- Code examples and key results\n- Learning objectives and next steps\n\nIncludes:\n- notebooks/index.md: Overview and learning path\n- Individual pages for each notebook \\(01-08\\)\n- data-generators.md: Full API documentation\n- Updated navigation in mkdocs.yml\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
