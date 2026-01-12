@@ -91,13 +91,6 @@ nav:
     - 07 Treasury Copilot: notebooks/07-treasury-copilot.md
     - 08 Compliance (TAS 29): notebooks/08-compliance.md
     - Data Generators: notebooks/data-generators.md
-  - Architecture:
-    - Overview: architecture/index.md
-    - Microsoft Foundry: architecture/microsoft-foundry.md
-    - Microsoft Fabric: architecture/microsoft-fabric.md
-    - Copilot Studio: architecture/copilot-studio.md
-    - Data Sources: architecture/data-sources.md
-    - Verdict & Recommendation: architecture/verdict.md
   - About: about.md
 
 extra:
