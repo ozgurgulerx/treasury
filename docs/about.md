@@ -85,4 +85,4 @@ Demonstrating how AI can transform treasury from a reactive reporting function i
 
 ## Contact
 
-For inquiries about this knowledge base, please reach out to the Treasury AI team.
+For inquiries about this knowledge base, please contact ozgurguler@microsoft.com.
